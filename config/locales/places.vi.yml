@@ -23,8 +23,13 @@ vi:
       quantity: "Số lượng"
       add_to_cart: "+"
     reviews:
+      reviews: "Đánh gía"
       overall: "Tổng điểm"
       write_review: "Viết đánh gía"
+    info_box:
+      open_time: "Giờ mở cửa:"
+      close_time: "Giờ đóng cửa:"
+      ship_price: "Phí ship:"
   sesions:
     params_nil: "Tài khoản và mật khẩu không được để trống"
     create:

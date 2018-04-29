@@ -4,7 +4,7 @@ class CreatePlaceImages < ActiveRecord::Migration[5.1]
       t.references :place
       t.string :descriptions
       t.references :comment, null: true
-      t.string :image_url
+      t.string :image
 
       t.datetime :deleted_at
       t.timestamps

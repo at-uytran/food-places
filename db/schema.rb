@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.bigint "place_id"
     t.string "descriptions"
     t.bigint "comment_id"
-    t.string "image_url"
+    t.string "image"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.float "ship_price", limit: 24
     t.text "coordinates"
     t.integer "status"
-    t.text "image_url"
+    t.string "image"
     t.bigint "place_category_id"
     t.bigint "location_id"
     t.datetime "deleted_at"
@@ -232,7 +232,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.string "address"
     t.string "coordinates"
     t.string "descriptions"
-    t.text "avatar"
+    t.string "avatar"
     t.integer "status", default: 0
     t.string "password_digest"
     t.string "auth_digest"
