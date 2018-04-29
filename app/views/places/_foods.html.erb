@@ -1,50 +1,20 @@
 <section id="availability">
-                <h2><%= t ".food_menu" %></h2>
-
-                <div class="form-reservations">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th><%= t ".food_name" %></th>
-                                <th><%= t ".food_category" %></th>
-                                <th><%= t ".price" %></th>
-                                <th><%= t ".quantity" %></th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <form id="room_1">
-                        <table class="table">
-                            <tbody>
-                                <tr class="room">
-                                    <td class="room-type">
-                                        <a href=""><h3>Double Room</h3><figure class="label label-danger">1 Room Left!</figure></a>
-                                    </td>
-                                    <td class="persons">2<i class="fa fa-user"></i></td>
-                                    <td class="price">$96</td>
-                                    <td class="rooms">
-                                        <select class="framed" name="room_1_nights">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-rounded"><%= t ".add_to_cart" %></button>
-                                        </div>
-                                        <!--end form-group-->
-                                    </td>
-                                </tr>
-                                <!--end tr.room-->
-                            </tbody>
-                        </table>
-                        <!--end table-->
-                    </form>
-
-                </div>
-                <!--end form-reservations-->
-            </section>
+    <h2><%= t ".food_menu" %></h2>
+    <div class="form-reservations">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><%= t ".food_name" %></th>
+                    <th><%= t ".food_category" %></th>
+                    <th><%= t ".price" %></th>
+                    <th><%= t ".quantity" %></th>
+                    <th></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <%= render partial: "food", collection: @foods, as: :food %>
+    </div>
+    <!--end form-reservations-->
+</section>
