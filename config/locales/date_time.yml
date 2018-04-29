@@ -1,0 +1,57 @@
+vi:
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "khoảng 1 tiếng trước"
+        other: "khoảng %{count} tiếng trước"
+      about_x_months:
+        one: "khoảng 1 tháng trước"
+        other: "khoảng %{count} tháng trước"
+      about_x_years:
+        one: "khoảng 1 năm trước"
+        other: "khoảng %{count} năm trước"
+      almost_x_years:
+        one: "gần 1 năm trước"
+        other: "gần %{count} năm trước"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        one: "khoảng 1 phút trước"
+        other: "khoảng %{count} phút trước"
+      less_than_x_seconds:
+        one: "khoảng 1 giây chưa"
+        other: "khoảng %{count} giây chưa"
+      over_x_years:
+        one: "hơn 1 năm trước"
+        other: "hơn %{count} năm trước"
+      x_days:
+        one: "1 ngày"
+        other: "%{count} ngày"
+      x_minutes:
+        one: "1 phút"
+        other: "%{count} phút"
+      x_months:
+        one: "1 tháng"
+        other: "%{count} tháng"
+      x_years:
+        one: "1 năm"
+        other: "%{count} năm"
+      x_seconds:
+        one: "1 giây"
+        other: "%{count} giây"
+  unauthorize: "Bạn không có quyền truy cập vào trang này"
+  unauthorize_action: "Bạn chưa được cấp quyền này"
+  date:
+    formats:
+      show: "dd/mm/yyyy"
+      default: "%d/%m/%Y"
+      date_month_year_concise: "%d-%m-%Y"
+      year_month_date_concise: "%Y-%m-%d"
+  time:
+    pm: "pm"
+    am: "am"
+    formats:
+      12_hours_format: "hh:mm A"
+      show: "%H:%M"
+      default: "%d-%m-%Y %H:%M:%S %z"
+      long: "%d-%m-%Y %H:%M"
+      short: "%d-%m %H:%M"

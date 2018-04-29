@@ -72,16 +72,19 @@ p "fake places"
 20.times do |n|
   place = Place.create! name: "Highland coffee Nguyễn Văn Linh #{n+1}",
     address: "45 Ngô Thì Nhậm",
-    descriptions: FFaker::Lorem.paragraph,
+    descriptions: "Một tách cà phê đậm đà của Highlands Coffee khởi nguồn
+      từ những vườn cà phê trĩu hạt trên vùng cao nguyên màu mỡ của Việt Nam.
+      Sau mỗi vụ thu hoạch, từng hạt cà phê được chúng tôi chọn lựa kỹ càng bằng “tay”.
+      Đội ngũ công nhân của chúng tôi có trách nhiệm đảm bảo chỉ những hạt cà phê nguyên
+      liệu tốt nhất được chuyển về nhà máy của Highlands Coffee. Tại đây, những thợ rang
+      lành nghề với bí quyết rang độc đáo sẽ cho ra những mẻ cà phê hoàn hảo, đậm đà hương vị.",
     owner_id: User.first.id,
     open_time: Time.now.strftime("%I:%M%p"),
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
-    place_category_id: PlaceCategory.first.id,
-    image_url: "https://res.cloudinary.com/uytran113/image/upload/v1523702506/image-01.jpg"
-  place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15],
-    image_url: "https://res.cloudinary.com/uytran113/image/upload/v1523702506/image-01.jpg"
+    place_category_id: PlaceCategory.first.id
+  place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
   place.create_location address: "45 Ngô Thì Nhậm",
     district_id: @quan_lien_chieu.id,
     coordinates: FFaker::Geolocation.lat

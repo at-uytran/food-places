@@ -32,52 +32,7 @@
             <!--end title-->
             <section id="gallery">
                 <div class="gallery-detail">
-                    <div class="one-item-carousel">
-                        <div class="image">
-                            <a href="#reviews" class="review scroll">
-                                <div class="rating">
-                                    <div class="rating-title">
-                                        <figure class="rating">9.8</figure>
-                                        <h4>Very Good Hotel</h4>
-                                    </div>
-                                    <p>Consectetur adipiscing elit. Vivamus nec augue ac dui sodales euismod. Suspendisse
-                                        at dui sit amet felis commodo dictum. Class aptent taciti sociosqu ad litora
-                                        torquent per conubia nostra, per inceptos
-                                    </p>
-                                </div>
-                            </a>
-                            <img src="assets/img/items/01_b.jpg" alt="">
-                        </div>
-                        <div class="image">
-                            <a href="#reviews" class="review scroll">
-                                <div class="rating">
-                                    <div class="rating-title">
-                                        <figure class="rating">9.9</figure>
-                                        <h4>Beautiful Holiday</h4>
-                                    </div>
-                                    <p>Class aptent taciti sociosqu ad litora
-                                        torquent per conubia nostra, per inceptos
-                                    </p>
-                                </div>
-                            </a>
-                            <img src="assets/img/items/02_b.jpg" alt="">
-                        </div>
-                        <div class="image">
-                            <a href="#reviews" class="review scroll">
-                                <div class="rating">
-                                    <div class="rating-title">
-                                        <figure class="rating">9.8</figure>
-                                        <h4>Very Good Hotel</h4>
-                                    </div>
-                                    <p>Consectetur adipiscing elit. Vivamus nec augue ac dui sodales euismod. Suspendisse
-                                        at dui sit amet felis commodo dictum. Class aptent taciti sociosqu ad litora
-                                        torquent per conubia nostra, per inceptos
-                                    </p>
-                                </div>
-                            </a>
-                            <img src="assets/img/items/03_b.jpg" alt="">
-                        </div>
-                    </div>
+                    <%= image_tag @place.image %>
                 </div>
             </section>
             <h2><%= t ".description" %></h2>
@@ -93,40 +48,7 @@
                     </section>
                 </div>
                 <!--end col-md-8-->
-                <div class="col-md-4">
-                    <div class="sidebar">
-                        <aside class="box">
-                            <dl>
-                                <dt>1-Bed Rooms:</dt>
-                                <dd>23</dd>
-                                <dt>2-Bed Rooms:</dt>
-                                <dd>48</dd>
-                                <dt>Apartments:</dt>
-                                <dd>12</dd>
-                                <dt>Parking:</dt>
-                                <dd>Free</dd>
-                                <dt>Swimming:</dt>
-                                <dd>Yes</dd>
-                                <dt>Ski Center:</dt>
-                                <dd>2km</dd>
-                            </dl>
-                        </aside>
-                        <aside>
-                            <h2>Contact</h2>
-                            <address>
-                                <strong>Your Company</strong><br>
-                                4877 Spruce Drive<br>
-                                West Newton, PA 15089<br>
-                                <br>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a><br>
-                                <strong>skype:</strong> your.company
-                            </address>
-                        </aside>
-                    </div>
-                    <!--end sidebar-->
-                </div>
-                <!--end col-md-4-->
+                <%= render "info_box" %>
             </div>
             <!--end row-->
             <%= render partial: "foods", object: @foods %>

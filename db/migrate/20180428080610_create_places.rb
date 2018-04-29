@@ -11,7 +11,7 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.float :ship_price
       t.text :coordinates
       t.integer :status
-      t.text :image_url
+      t.string :image
       t.references :place_category, index: true
       t.references :location, index: true
 

@@ -12,6 +12,7 @@ class Place < ApplicationRecord
   has_many :foods, through: :place_foods
   has_many :collections, through: :collection_places
   belongs_to :owner, class_name: User.name
+  mount_uploader :image, PlaceImageUploader
 
   enum status: {pending: 0, approved: 1}
   delegate :name, :email, to: :owner, prefix: true

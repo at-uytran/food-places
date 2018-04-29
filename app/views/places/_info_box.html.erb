@@ -1,0 +1,27 @@
+<div class="col-md-4">
+    <div class="sidebar">
+        <aside class="box">
+            <dl>
+                <dt><%= t ".open_time" %></dt>
+                <dd><%= locale_time @place.open_time %></dd>
+                <dt><%= t ".close_time" %></dt>
+                <dd><%= locale_time @place.close_time %></dd>
+                <dt><%= t ".ship_price" %></dt>
+                <dd><%= @place.ship_price %></dd>
+            </dl>
+        </aside>
+        <aside>
+            <h2>Contact</h2>
+            <address>
+                <strong><%= @place.name %></strong><br>
+                <%= @place.address %><br>
+                <br>
+                +1 (734) 123-4567<br>
+                <a href="#">hello@example.com</a><br>
+                <strong>skype:</strong> your.company
+            </address>
+        </aside>
+    </div>
+    <!--end sidebar-->
+</div>
+<!--end col-md-4-->

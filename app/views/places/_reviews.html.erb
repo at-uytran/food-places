@@ -1,11 +1,11 @@
 <section id="reviews">
     <div class="title">
-        <h2 class="pull-left">Reviews</h2>
+        <h2 class="pull-left"><%= t ".reviews" %></h2>
         <a href="#write-a-review" class="btn btn-primary btn-rounded pull-right scroll">Write a Review</a>
     </div>
-    <h3>Overall Score</h3>
+    <h3><%= t ".overall" %></h3>
     <ul class="rating-score">
-        <li class="overall"><i class="fa fa-star"></i>9.9</li>
+        <li class="overall"><i class="fa fa-star"></i><%= @place.rate_point %></li>
         <li><span>9.6</span>
             <figure>Cleanliness</figure>
         </li>
@@ -103,7 +103,7 @@
     <!--end reviews-->
 </section>
 <section id="write-a-review">
-    <h2>Write a Review</h2>
+    <h2><%= t ".write_review" %></h2>
     <form  class="labels-uppercase clearfix" id="form_reply_1">
         <div class="alert alert-dark fade in center" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" data-switch="#review-write">

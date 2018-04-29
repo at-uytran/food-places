@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :coordinates
       t.string :descriptions
-      t.text :avatar
+      t.string :avatar
       t.integer :status, default: 0
       t.string :password_digest
       t.string :auth_digest
