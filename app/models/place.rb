@@ -17,4 +17,20 @@ class Place < ApplicationRecord
   delegate :name, :email, to: :owner, prefix: true
 
   scope :created_desc, ->{order name: :desc}
+
+  def rate_point
+    return I18n.t("places.rating_average.n_a") if user_ratings.blank?
+    user_ratings.each do |rating|
+      @points += rating.point
+    end
+    @points / user_ratings.size
+  end
+
+  def total_images
+    place_images.size
+  end
+
+  def total_reviews
+    user_ratings.size
+  end
 end

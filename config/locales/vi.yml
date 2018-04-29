@@ -1,0 +1,13 @@
+vi:
+  title: "Hệ thống chia sẻ và chỉ dẫn ẩm thực"
+  layouts:
+    header:
+      home: "Trang chủ"
+      discover: "Khám phá"
+      places: "Địa điểm"
+      login: "Đăng nhập"
+      logout: "Đăng xuất"
+      register: "Đăng ký"
+      contact_us: "Liên hệ chúng tôi"
+      about_us: "Về chúng tôi"
+      submit_new: "Thêm mới"

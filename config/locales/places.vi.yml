@@ -1,0 +1,33 @@
+vi:
+  places:
+    rating_average:
+      n_a: "Chưa có đánh gía"
+    index:
+      title: "Khám phá các địa điểm"
+    load_place:
+      not_found: "Không tìm thấy địa điểm"
+    show:
+      description: "Mô tả địa điểm"
+      see_on_map: "Xem trên bản đồ"
+      open_time: "giờ mở cửa"
+      close_time: "Giờ đóng"
+      reviews: "Đánh gía"
+      map: "Bản đồ"
+      ship_price: "Phí ship(/5km)"
+      contact: "Liên hệ"
+    foods:
+      food_menu: "Thực đơn"
+      food_name: "Tên món"
+      food_category: "Danh mục"
+      price: "Gía"
+      quantity: "Số lượng"
+      add_to_cart: "+"
+    reviews:
+      overall: "Tổng điểm"
+      write_review: "Viết đánh gía"
+  sesions:
+    params_nil: "Tài khoản và mật khẩu không được để trống"
+    create:
+      invalid: "Tài khoản hoặc mật khẩu không đúng"
+    destroy:
+      success: "Đã đăng xuất"
