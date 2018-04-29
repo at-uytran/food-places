@@ -4,4 +4,6 @@ class Food < ApplicationRecord
   belongs_to :food_category
   has_many :carts, dependent: :nullify
   enum food_type: {food: 0, drink: 1}
+
+  delegate :name, to: :food_category, prefix: true
 end

@@ -586,7 +586,6 @@ ul.half li {
 
 .bg-transfer {
   background-size: cover;
-  /*background-image: url("../img/footer-bg.jpg");*/
   position: absolute;
   top: 0;
   left: 0;
@@ -594,9 +593,6 @@ ul.half li {
   overflow: hidden;
   z-index: -1;
   width: 100%;
-}
-.bg-transfer img {
-  display: none;
 }
 
 .background-color-white {
