@@ -1,8 +1,10 @@
 class PlacesController < ApplicationController
   before_action :load_place, only: %i(show update destroy)
+  before_action :set_json_params, only: %i(index)
 
   def index
-    @places = Place.created_desc
+    @q = Place.search params[:q]
+    @places = @q.result.created_desc.by_categories(@category_ids)
   end
 
   def show
@@ -11,6 +13,10 @@ class PlacesController < ApplicationController
   end
 
   private
+
+  def set_json_params
+    @category_ids = params[:category_ids].present? ? JSON.parse(params[:category_ids]) : []
+  end
 
   def place_params
     params.require(:place).permit :name, :address, :description, :location_id, :owner_id,

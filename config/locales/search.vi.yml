@@ -1,0 +1,9 @@
+vi:
+  places:
+    search_bar:
+      title: "Tìm kiếm"
+      by_name: "Tên địa điểm"
+      by_category: "Theo danh mục"
+      by_province: "Theo tỉnh thành"
+      province: "Tỉnh thành:"
+      district: "Quận huyện:"

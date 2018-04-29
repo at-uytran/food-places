@@ -18,6 +18,7 @@ class Place < ApplicationRecord
   delegate :name, :email, to: :owner, prefix: true
 
   scope :created_desc, ->{order name: :desc}
+  scope :by_categories, ->(ids){where(place_category_id: ids) if ids.present?}
 
   def rate_point
     return I18n.t("places.rating_average.n_a") if user_ratings.blank?
