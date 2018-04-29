@@ -33,10 +33,13 @@ p "fake food categories"
 
 
 p "Fake provinces"
-@da_nang = Province.create! name: "Da Nang",
+@da_nang = Province.create! name: "Đà Nẵng",
   descriptions: "Thành phố du lịch với nhiều bãi biển đẹp và nhiều món ăn ngon"
 
-p "Fake districts"
+@quang_nam = Province.create! name: "Quảng Nam",
+  descriptions: "Quê hương xinh đẹp với nhiều địa điểm du lịch hấp dẫn và những đặc sản nổi tiếng"
+
+p "Fake districts da nang"
 @quan_hai_chau = District.create! name: "Hải Châu",
   descriptions: "Quận Hải Châu",
   province_id: @da_nang.id
@@ -56,6 +59,17 @@ p "Fake districts"
 @quan_thanh_khe = District.create! name: "Thanh Khê",
   descriptions: "Quận Thanh Khê",
   province_id: @da_nang.id
+
+p "fake district quang nam province"
+
+
+@dai_loc = District.create! name: "Đại Lộc",
+  descriptions: "Huyện Đại Lộc với nhiều thắng cảnh đẹp",
+  province_id: @quang_nam.id
+
+@hoi_an = District.create! name: "Hội An",
+  descriptions: "Phố cổ Hội An say đắm lòng người",
+  province_id: @quang_nam.id
 
 # @41_ngo_thi_nham = locations.create! address: "45 Ngô Thì Nhậm", district_id: @quan_lien_chieu.id
 

@@ -1,26 +1,24 @@
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Listing</a></li>
-        <li class="active">Detail</li>
-    </ol>
-    <!--end breadcrumb-->
-    <div class="row">
-        <%= render "search_bar" %>
-        <!--end col-md-3-->
-        <div class="col-md-9" id="results">
-            <div class="main-content">
+<div class="row">
+    <%= render "search_bar" %>
+    <!--end col-md-3-->
+    <div class="col-md-9" id="results">
+        <div class="main-content">
+            <% if @places.any? %>
                 <!--end title-->
                 <div class="row">
                     <%= render @places %>
                 </div>
                 <!--end row-->
                 <div class="center">
-                    <a href="" class="btn btn-default btn-rounded btn-framed">Load More</a>
+                    <%= will_paginate @places %>
                 </div>
                 <!--end center-->
-            </div>
-            <!--end main-content-->
+            <% else %>
+                <div class="center"><strong><%= t ".no_results" %></strong></div>
+            <% end %>
         </div>
-        <!--end col-md-9-->
+        <!--end main-content-->
     </div>
-    <!--end row-->
+    <!--end col-md-9-->
+</div>
+<!--end row-->

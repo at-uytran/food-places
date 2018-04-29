@@ -11,3 +11,11 @@ vi:
       contact_us: "Liên hệ chúng tôi"
       about_us: "Về chúng tôi"
       submit_new: "Thêm mới"
+    footer:
+      home: "Trang chủ"
+      contact: "Liên hệ chúng tôi"
+      about_us: "Về chúng tôi"
+      page_description: "(C) 2018 - Hệ thống chia sẻ và chỉ dẫn ẩm thực"
+  will_paginate:
+    next_label: "Trang sau"
+    previous_label: "Trang trước"
