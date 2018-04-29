@@ -6,4 +6,8 @@ module PlacesHelper
     end
     @points / place.user_ratings.size
   end
+
+  def list_place_categories
+    PlaceCategory.all
+  end
 end
