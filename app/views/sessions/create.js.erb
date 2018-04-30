@@ -1,0 +1,14 @@
+console.log("create");
+<% if flash[:success] %>
+  $('.page-wrapper').append('<%= j render "shared/popup_message" %>')
+  setTimeout(function() {
+    window.location.href = '/';
+  }, 2000);
+<% elsif flash[:danger] %>
+  $('.page-wrapper').append('<%= j render "shared/popup_message" %>')
+<% end %>
+
+$('.close').click(function(){
+  console.log("close")
+  $(this).parent().hide();
+});

@@ -1,0 +1,64 @@
+<div class="modal fade" id="sign-in-register-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-register-modal">
+        <div class="wrapper">
+            <div class="inner">
+                <div class="modal-dialog width-400px" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#tab-sign-in" aria-controls="tab-sign-in" role="tab" data-toggle="tab"><h1><%= t ".login" %></h1></a></li>
+                                <li role="presentation"><a href="#tab-register" aria-controls="tab-register" role="tab" data-toggle="tab"><h1><%= t ".register" %></h1></a></li>
+                            </ul>
+                        </div>
+                        <!--end modal-header-->
+                        <div class="modal-body">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="tab-sign-in">
+                                    <%= render "shared/login" %>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab-register">
+                                    <%= simple_form_for @user = User.new, remote: true do |f| %>
+                                        <div class="form-group">
+                                            <label for="form-register-name"><%= t ".name" %></label>
+                                            <%= f.input :name, label: false, html: {class: "form-control", id: "form-register-name"} %>
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="form-group">
+                                            <label for="form-register-email"><%= t ".enail" %></label>
+                                            <%= f.input :email, label: false, html: {class: "form-control", id: "form-register-email"} %>
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="form-group">
+                                            <label for="form-register-password"><%= t ".password" %></label>
+                                            <%= f.input :password, label: false, html: {class: "form-control", id: "form-register-password"} %>
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="clearfix action">
+                                            <div class="form-group pull-right">
+                                                <button type="submit" class="btn btn-primary btn-rounded"><%= t ".register" %></button>
+                                            </div>
+                                            <div class="form-group pull-left">
+                                                <label><input type="checkbox" name="1"><%= t ".remember" %></label>
+                                            </div>
+                                        </div>
+                                        <!--end action-->
+                                    <% end %>
+                                </div>
+                        </div>
+
+                    </div>
+                    <!--end modal-body-->
+                    <div class="modal-footer">
+                        <div class="center">
+                            <div><%= t ".forget_password" %><a href="#"><%= t ".reset_password" %></a></div>
+                        </div>
+                    </div>
+                    <!--end modal-footer-->
+                </div>
+                <!--end modal-content-->
+            </div>
+            <!--end modal-dialog-->
+        </div>
+    </div>
+</div>

@@ -231,7 +231,7 @@ Headers:		'Lato', sans-serif;
   padding-top: 10px;
   position: absolute;
   top: 100%;
-  margin-top: 5px;
+  margin-top: 1px;
 }
 #page-header .primary-nav nav > ul li .child-nav:hover {
   pointer-events: auto;
@@ -2684,7 +2684,7 @@ ul.half li {
   padding: 20px;
   color: #fff;
   font-size: 12px;
-  z-index: 999;
+  z-index: 99999;
 }
 .message-popup.bottom-left {
   left: 20px;

@@ -11,6 +11,10 @@ vi:
       contact_us: "Liên hệ chúng tôi"
       about_us: "Về chúng tôi"
       submit_new: "Thêm mới"
+      log_out: "Đăng xuất"
+      account: "Tài khoản"
+      sign_in_up: "Đăng nhập/đăng ký"
+      profile: "Thông tin tài khoản"
     footer:
       home: "Trang chủ"
       contact: "Liên hệ chúng tôi"

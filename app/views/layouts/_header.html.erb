@@ -1,3 +1,4 @@
+<%= render "shared/sign_in_up" %>
 <div id="page-header">
         <header>
             <div class="container">
@@ -11,27 +12,12 @@
                             </div>
                             <!--end left-->
                             <div class="right">
-                                <div class="element">
-                                    <select>
-                                        <option>$</option>
-                                        <option>€</option>
-                                    </select>
-                                </div>
-                                <!--end element-->
-                                <div class="element">
-                                    <a href="#tab-sign-in" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal"><%= t ".login" %></a>
-                                </div>
-                                <!--end element-->
-                                <div class="element">
-                                    <a href="#tab-register" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal"><%= t ".register" %></a>
-                                </div>
                                 <!--end element-->
                                 <div class="element">
                                     <select>
+                                        <option>VI</option>
                                         <option>EN</option>
-                                        <option>DE</option>
-                                        <option>RU</option>
-                                        <option>ES</option>
+                                        <option>JP</option>
                                     </select>
                                 </div>
                                 <!--end element-->
@@ -95,6 +81,22 @@
                                     </ul>
                                 </li>
                                 <li><a href="contact-us.html"><%= t ".contact_us" %></a></li>
+                                <% if current_user %>
+                                    <li>
+                                        <a href="#" class="has-child">
+                                        <%= image_tag current_user.avatar, class: "user-mini-avatar" %>
+                                        <%= current_user.name %></a>
+                                        <ul class="child-nav">
+                                            <li><%= link_to t(".profile"), user_path(current_user) %></li>
+                                            <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
+                                        </ul>
+                                    </li>
+                                <% else %>
+                                    <li>
+                                        <a href="#tab-sign-in" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal"><%= t ".sign_in_up" %></a>
+                                    </li>
+
+                                <% end %>
                                 <li class="submit"><a href="submit.html"><span><%= t ".submit_new" %></span><i data-toggle="tooltip" data-placement="top" title="<%= t ".submit_new" %>"><%= image_tag "plus.png" %></i></a></li>
                             </ul>
                         </nav>
