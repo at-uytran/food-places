@@ -1,0 +1,8 @@
+<% if flash.any? %>
+  <div class="message-popup bottom-left featured">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <% flash.each do |message_type, message| %>
+          <p><%= message %></p>
+      <% end %>
+  </div>
+<% end %>

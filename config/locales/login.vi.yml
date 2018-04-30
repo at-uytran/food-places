@@ -1,0 +1,17 @@
+vi:
+  shared:
+    sign_in_up:
+      name: "Họ tên"
+      email: "Email"
+      password: "Mật khẩu"
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      remember: "Tự động đăng nhập"
+      forget_password: "Quên mật khẩu? "
+      reset_password: "Lấy lại mật khẩu"
+  sessions:
+    create:
+      success: "Đăng nhập thành công"
+      failed: "Sai email hoặc mật khẩu"
+    remember_user:
+      success: "Đăng nhập thành công"

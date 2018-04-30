@@ -240,6 +240,8 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.boolean "activated", default: false
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "remember_digest"
+    t.integer "user_type", default: 0
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

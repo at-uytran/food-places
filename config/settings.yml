@@ -1,5 +1,18 @@
 models:
-  course:
+  place:
     image:
       width: 400
       height: 400
+  user:
+    image:
+      width: 400
+      height: 400
+    password:
+      min_len: 6
+    name:
+      max_len: 50
+    email:
+      max_len: 100
+sessions:
+  checked_remember: 1
+  uncheck_remember: 0

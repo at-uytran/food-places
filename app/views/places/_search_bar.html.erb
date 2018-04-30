@@ -41,6 +41,7 @@
                             <div class="form-group">
                                 <label><%= t ".province" %></label>
                                 <select class="form-control framed" id="filter-provinces">
+                                    <option value=""><%= t ".select_province" %></option>
                                     <% list_provinces.each do |province| %>
                                         <option value="<%= province.id %>"><%= province.name %></option>
                                     <% end %>
@@ -49,11 +50,7 @@
                             <div class="form-group">
                                 <label><%= t ".district" %></label>
                                 <select class="form-control framed" id="filter-districts">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                    <option value=""><%= t ".select_district" %></option>
                                 </select>
                             </div>
                         </section>

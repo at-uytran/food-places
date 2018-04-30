@@ -14,6 +14,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.boolean :activated, default: false
       t.string :reset_digest
       t.datetime :reset_sent_at
+      t.string :remember_digest
+      t.integer :user_type, default: 0
 
       t.datetime :deleted_at
       t.timestamps

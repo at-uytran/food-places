@@ -1,0 +1,22 @@
+<%= simple_form_for :session, url: login_path, id: "form-sign", remote: true do |f| %>
+  <div class="form-group">
+    <label for="form-sign-in-email"><%= t ".email" %></label>
+    <%= f.email_field :email, label: false, class: "form-control", id: "form-sign-in-email" %>
+  </div>
+
+  <div class="form-group">
+    <label for="form-sign-in-password"><%= t ".password" %></label>
+    <%= f.password_field :password, class: "form-control", id: "form-sign-in-password" %>
+  </div>
+  <!--end form-group-->
+
+  <div class="clearfix action">
+    <div class="form-group pull-right">
+      <button type="submit" class="btn btn-primary btn-rounded"><%= t ".login" %></button>
+    </div>
+    <div class="form-group pull-left">
+      <label><%= f.check_box :remember_me %><%= t ".remember" %></label>
+    </div>
+  </div>
+  <!--end action-->
+<% end %>

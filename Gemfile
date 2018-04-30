@@ -21,6 +21,7 @@ gem "mini_magick", "4.7.0"
 gem "config"
 gem "jquery-rails"
 gem "jquery-turbolinks"
+gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

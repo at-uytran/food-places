@@ -7,8 +7,7 @@ User.create! name: "admin",
              email: "admin@gmail.com",
              password: "123456",
              address: "41 Ngo Thi Nham",
-             descriptions: "askdjlajsdljal",
-             avatar: "http://res.cloudinary.com/uytran113/image/upload/v1524024623/user-avatar-default.jpg"
+             descriptions: "askdjlajsdljal"
 
 p "create users"
 10.times do |n|
@@ -16,8 +15,7 @@ p "create users"
                email: "email#{n+1}@gmail.com",
                password: "123456",
                address: "41 Ngo Thi Nham",
-               descriptions: "askdjlajsdljal",
-               avatar: "http://res.cloudinary.com/uytran113/image/upload/v1524024623/user-avatar-default.jpg"
+               descriptions: "askdjlajsdljal"
 end
 
 p "fake place categories"
@@ -61,7 +59,6 @@ p "Fake districts da nang"
   province_id: @da_nang.id
 
 p "fake district quang nam province"
-
 
 @dai_loc = District.create! name: "Đại Lộc",
   descriptions: "Huyện Đại Lộc với nhiều thắng cảnh đẹp",

@@ -1,0 +1,5 @@
+vi:
+  users:
+    create:
+      success: "Đăng ký thành công, vui lòng kiểm tra email để kích hoạt tài khoản"
+      failed: "Đăng ký thất bại, email đã được sử dụng"

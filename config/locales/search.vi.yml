@@ -7,3 +7,5 @@ vi:
       by_province: "Theo tỉnh thành"
       province: "Tỉnh thành:"
       district: "Quận huyện:"
+      select_province: "Chọn tỉnh thành"
+      select_district: "Chọn quận huyện"
