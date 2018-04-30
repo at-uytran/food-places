@@ -10,4 +10,8 @@ module PlacesHelper
   def list_place_categories
     PlaceCategory.all
   end
+
+  def list_provinces
+    Province.all.includes(:districts)
+  end
 end

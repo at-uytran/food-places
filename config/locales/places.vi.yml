@@ -4,6 +4,7 @@ vi:
       n_a: "Chưa có đánh gía"
     index:
       title: "Khám phá các địa điểm"
+      no_results: "Không có địa điểm phù hợp"
     load_place:
       not_found: "Không tìm thấy địa điểm"
     show:
