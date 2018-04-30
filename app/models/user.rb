@@ -17,11 +17,11 @@ class User < ApplicationRecord
   has_many :notifications, through: :user_notifications
   has_many :places, dependent: :destroy
 
-  validates :email, presence: true, length: {maximum: EMAIL_MAX_LEN},
+  validates :email, presence: {message: I18n.t("activerecord.errors.blank")}, length: {maximum: EMAIL_MAX_LEN},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: PWD_MIN_LEN}, allow_nil: true
-  validates :name, presence: true, length: {maximum: NAME_MAX_LEN}
+  validates :password, presence: {message: I18n.t("activerecord.errors.blank")}, length: {minimum: PWD_MIN_LEN}, allow_nil: true
+  validates :name, presence: {message: I18n.t("activerecord.errors.blank")}, length: {maximum: NAME_MAX_LEN}
 
   scope :order_by_name, ->{order name: :desc}
   enum user_type: {user: 0, place_owner: 1, admin: 2}

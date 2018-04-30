@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     return if logged_in?
     store_location
-    flash[:danger] = I18n.t "users.edit.require_login"
-    redirect_to login_path
+    flash[:danger] = I18n.t "required_login"
+    redirect_to root_path
   end
 end

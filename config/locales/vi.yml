@@ -1,5 +1,6 @@
 vi:
   title: "Hệ thống chia sẻ và chỉ dẫn ẩm thực"
+  updating: "Đang cập nhật"
   layouts:
     header:
       home: "Trang chủ"
