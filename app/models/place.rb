@@ -23,12 +23,13 @@ class Place < ApplicationRecord
   scope :created_desc, ->{order name: :desc}
   scope :by_categories, ->(ids){where(place_category_id: ids) if ids.present?}
 
-  def rate_point
+  def rate_point_average
     return I18n.t("places.rating_average.n_a") if user_ratings.blank?
+    points = 0
     user_ratings.each do |rating|
-      @points += rating.point
+      points += rating.points
     end
-    @points / user_ratings.size
+    points / user_ratings.size
   end
 
   def total_images

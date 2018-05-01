@@ -1,0 +1,16 @@
+vi:
+  places:
+    form_review:
+      write_review: "Viết đánh gía"
+      require_signin: "Cần có tài khoản để có đánh gía, tạo mới/ đăng nhập ngay?"
+      write_your_reviews: "Viết đánh gía"
+      title: "Đánh gía tổng quan"
+      content: "Nội dung đánh gía"
+      rating: "Điểm đánh gía (/10)"
+      submit: "Gửi đánh gía"
+  user_ratings:
+    create:
+      success: "Đánh gía thành công"
+      failed: "Đánh gía thất bại, vui lòng thử lại!"
+    load_place:
+      not_found: "Không tìm thấy địa điểm này"

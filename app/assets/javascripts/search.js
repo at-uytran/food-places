@@ -11,6 +11,10 @@ var search = {
     $('#filter-districts').change(function() {
       submitForm();
     });
+
+    // $('.filter-category-checkbox').click(function() {
+    //   submitForm();
+    // })
   }
 }
 

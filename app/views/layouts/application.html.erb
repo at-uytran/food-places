@@ -33,11 +33,18 @@
     <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/assets/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="/assets/js/icheck.min.js"></script>
     <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>
     <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="/assets/js/maps.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js"></script>
 
+    <script>
+        var _latitude = 16.031944;
+        var _longitude = 108.220556;
+        var element = "map-item";
+        var useAjax = true;
+        bigMap(_latitude,_longitude, element, useAjax);
+    </script>
     <!--[if lte IE 9]>
     <script src="/assets/js/ie.js"></script>
     <![endif]-->

@@ -212,9 +212,11 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   end
 
   create_table "user_ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
     t.bigint "user_id"
     t.bigint "place_id"
     t.integer "points", default: 0
+    t.text "content"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

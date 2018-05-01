@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#home"
-  resources :places
+  resources :places do
+    resources :user_ratings
+  end
   resources :provinces
   resources :users
   post "/login", to: "sessions#create"
