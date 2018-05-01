@@ -1,0 +1,4 @@
+vi:
+  shared:
+    error_messages:
+      des: "Yêu cầu chứa %{error_count} lỗi."

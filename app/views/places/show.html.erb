@@ -16,7 +16,7 @@
             <div class="title">
                 <div class="left">
                     <h1><%= @place.name %><span class="rating"><i class="fa fa-star"></i><%= @place.rate_point %></span></h1>
-                    <h3><a href="#"><%= @place.address.html_safe %></a> (63 properties)</h3>
+                    <h3><a href="#"><%= place_address(@place).html_safe %></a> (63 properties)</h3>
                 </div>
                 <div class="right">
                     <a href="#map" class="icon scroll"><i class="fa fa-map-marker"></i><%= t ".see_on_map" %></a>
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <section id="description">
-                        <%= @place.descriptions.html_safe %>
+                        <%= place_descriptions(@place).html_safe %>
                     </section>
                     <section id="map">
                         <h2><%= t ".map" %></h2>

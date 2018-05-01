@@ -1,0 +1,178 @@
+<div class="main-content">
+    <div class="title">
+        <h1><%= t ".title" %></h1>
+    </div>
+    <!--end title-->
+    <div class="quick-navigation" data-fixed-after-touch="">
+        <div class="wrapper">
+            <ul>
+                <li><a href="#main-information" class="scroll"><%= t ".main_info" %></a></li>
+                <li><a href="#location" class="scroll"><%= t ".location" %></a></li>
+                <li><a href="#gallery" class="scroll"><%= t ".gallery" %></a></li>
+                <li><a href="#additional-information" class="scroll"><%= t ".addition_info" %></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--end quick-navigation-->
+    <%= simple_form_for @place , class: "form-submit labels-uppercase",  id: "form-submit", enctype: "multipart/form-data" do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <section id="main-information">
+            <div class="title">
+                <h2><%= t ".main_info" %></h2>
+                <aside class="step">1</aside>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="form-submit-title"><%= t ".name" %><em>*</em></label>
+                        <%= f.input :name, label: false, class: "form-control", id: "form-submit-title" %>
+                    </div>
+                    <!--end form-group-->
+                </div>
+                <!--end col-md-7-->
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="object-type"><%= t ".place_type" %></label>
+                        <%= f.input :place_category_id, collection: list_category,
+                            label: false,
+                            as: :select, input_html: {class: "framed width-100"},
+                            include_blank: t("places.place_category.select.blank") %>
+                    </div>
+                    <!--end form-group-->
+                </div>
+                <!--end col-md-5-->
+            </div>
+            <!--end row-->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="form-submit-description"><%= t ".description" %><em>*</em></label>
+                        <%= f.input :descriptions, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-description", rows: "10", name: "description", required: "", placeholder: "Describe your accommodation"} %>
+                    </div>
+                    <!--end form-group-->
+                </div>
+                <div class="col-md-5">
+                    <h3><%= t ".conatain" %><i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Nam quis ipsum ac sem ornare efficitur et vel mauris. Proin nibh arcu, vulputate eget massa sed."></i></h3>
+                    <div class="form-group-inline">
+                        <div class="form-group width-60">
+                            <label><%= t ".table_count" %></label>
+                            <%= f.input :table_count, label: false, as: :numeric, html: {class: "framed width-100"} %>
+                        </div>
+                        <!--end form-group-->
+                    </div>
+                </div>
+                <!--end col-md-5-->
+            </div>
+            <!--end row-->
+        </section>
+        <section id="location">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="title">
+                        <h2><%= t ".location" %></h2>
+                        <aside class="step">2</aside>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-autocomplete"><%= t ".address" %><em>*</em></label>
+                        <%= f.input :address, label: false, input_html: {class: "form-control", id: "address", placeholder: "Accommodation Address", required: ""} %>
+                    </div>
+                    <div class="form-group">
+                        <label><%= t ".place_on_map" %></label>
+                        <div class="map height-300 box" id="map-item"></div>
+                    </div>
+                    <div class="form-group hidden">
+                        <input type="text" class="form-control" id="latitude" name="latitude" hidden="">
+                        <input type="text" class="form-control" id="longitude" name="longitude" hidden="">
+                    </div>
+                    <!--end map-->
+                </div>
+                <!--end col-md-7-->
+                <div class="col-md-5">
+                    <h2><%= t ".contact_info" %></h2>
+                    <div class="form-group">
+                        <label for="form-submit-email"><%= t ".email" %></label>
+                        <%= f.input :email, label: false, input_html: {class: "form-control", id: "form-submit-email", name: "email", placeholder: "hello@example.com"} %>
+                    </div>
+                    <!--end form-group-->
+                    <div class="form-group">
+                        <label for="form-submit-phone"><%= t ".phone" %></label>
+                        <%= f.input :email, label: false, input_html: {class: "form-control", id: "form-submit-phone", name: "address", placeholder: "+1 123456"} %>
+                    </div>
+                    <!--end form-group-->
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="form-submit-facebook"><%= t ".facebook_page" %></label>
+                            <%= f.input :facebook, label: false, input_html: {class: "form-control", id: "form-submit-facebook", name: "facebook", placeholder: "www.facebook.com/yourplace"} %>
+                        </div>
+                        <!--end form-group-->
+                    </div>
+                    <!--end form-group-inline-->
+                </div>
+                <!--end col-md-7-->
+            </div>
+            <!--end row-->
+        </section>
+        <section id="gallery">
+            <div class="title">
+                <h2><%= t ".gallery" %></h2>
+                <aside class="step">3</aside>
+            </div>
+            <div class="file-upload-previews"></div>
+            <div class="file-upload">
+                <%= f.input :image, html: {name: "image", class: "file-upload-input with-preview", multiple: true, title: "Click to add files", maxlength: "10", accept: "gif|jpg|png"} %>
+            </div>
+        </section>
+        <section id="additional-information">
+            <div class="title">
+                <h2><%= t ".addition_info" %></h2>
+                <aside class="step">5</aside>
+            </div>
+            <!--end title-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3><%= t ".open_close_time" %></h3>
+                            <div class="form-group-inline">
+                                <div class="form-group">
+                                    <label for="check-in-from"><%= t ".open_time" %></label>
+                                    <%= f.input :open_time, as: :time, label: false, input_html: {class: "form-control", id: "open-time", name: "open_time", placeholder: "09:00"} %>
+                                </div>
+                                <!--end form-group-->
+                                <div class="form-group">
+                                    <label for="check-in-to"><%= t ".close_time" %></label>
+                                    <%= f.input :close_time, as: :time, label: false, input_html: {class: "form-control", id: "close-time", name: "open_time", placeholder: "20:00"} %>
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end form-group-inline-->
+                        </div>
+                        <!--end col-md-6-->
+                        <div class="col-md-6">
+                            <h3><%= t ".ship_price" %></h3>
+                            <div class="form-group-inline">
+                                <div class="form-group">
+                                    <label for="check-out-from">From</label>
+                                    <%= f.input :ship_price, label: false, as: :numeric, input_html: {class: "form-control", id: "ship-price", placeholder: "5000"} %>
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end form-group-inline-->
+                        </div>
+                        <!--end col-md-6-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end col-md-6-->
+            </div>
+            <!--end row-->
+        </section>
+        <hr>
+        <section>
+            <div class="form-group center">
+                <button type="submit" class="btn btn-primary btn-rounded btn-xlarge"><%= t ".submit" %></button>
+            </div>
+        </section>
+    <% end %>
+    <!--end form-->
+</div>

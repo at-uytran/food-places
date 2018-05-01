@@ -148,6 +148,9 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.string "facebook"
     t.text "descriptions"
     t.bigint "province_id"
     t.bigint "owner_id"
@@ -157,6 +160,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.text "coordinates"
     t.integer "status"
     t.string "image"
+    t.integer "table_count"
     t.bigint "place_category_id"
     t.bigint "location_id"
     t.datetime "deleted_at"

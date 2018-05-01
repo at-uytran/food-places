@@ -1,4 +1,5 @@
 vi:
+  required_login: "Bạn phải đăng nhập trước"
   shared:
     sign_in_up:
       name: "Họ tên"

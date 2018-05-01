@@ -11,8 +11,11 @@ class Place < ApplicationRecord
   belongs_to :place_category
   has_many :foods, through: :place_foods
   has_many :collections, through: :collection_places
-  belongs_to :owner, class_name: User.name
+  belongs_to :owner, class_name: User.name, optional: true
   mount_uploader :image, PlaceImageUploader
+
+  validates :address, presence: {message: I18n.t("activerecord.errors.blank")}
+  validates :name, presence: {message: I18n.t("activerecord.errors.blank")}
 
   enum status: {pending: 0, approved: 1}
   delegate :name, :email, to: :owner, prefix: true

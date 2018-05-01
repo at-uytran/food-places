@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    errors:
+      blank: "không được để trống"
+      models:
+        place:
+          attributes:
+            place_category:
+              required: "được yêu cầu"
