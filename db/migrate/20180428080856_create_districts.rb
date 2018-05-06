@@ -5,6 +5,7 @@ class CreateDistricts < ActiveRecord::Migration[5.1]
       t.references :province
       t.string :descriptions
 
+      t.datetime :deleted_at
       t.timestamps
     end
   end

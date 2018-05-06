@@ -343,32 +343,32 @@ $(document).ready(function($) {
 
 //  Increment/Decrement for Number input -------------------------------------------------------------------------------
 
-    $(function() {
-        var i;
-        var html = "<div class='change-button plus'><i class='fa fa-caret-up'></i></div><div class='change-button minus'><i class='fa fa-caret-down'></i></div>";
-        $("input[type=number]").wrap("<div class='input-number'></div>");
-        $(".input-number").prepend(html);
+    // $(function() {
+    //     var i;
+    //     var html = "<div class='change-button plus'><i class='fa fa-caret-up'></i></div><div class='change-button minus'><i class='fa fa-caret-down'></i></div>";
+    //     $("input[type=number]").wrap("<div class='input-number'></div>");
+    //     $(".input-number").prepend(html);
 
-        $("input[type=number]").parents(".input-number").find(".plus").on("click", function(){
-            var input = $(this).parents(".input-number").find("input[type=number]");
-            i = input.val();
-            if( input.val() == undefined || input.val() == "" ){
-                input.val( i+1 );
-            }
-            else {
-                i++;
-                input.val(i);
-            }
-        });
+    //     $("input[type=number]").parents(".input-number").find(".plus").on("click", function(){
+    //         var input = $(this).parents(".input-number").find("input[type=number]");
+    //         i = input.val();
+    //         if( input.val() == undefined || input.val() == "" ){
+    //             input.val( i+1 );
+    //         }
+    //         else {
+    //             i++;
+    //             input.val(i);
+    //         }
+    //     });
 
-        $("input[type=number]").parents(".input-number").find(".minus").on("click", function(e){
-            var input = $(this).parents(".input-number").find("input[type=number]");
-            i = input.val();
-            if( input.val() >= 2 ){
-                input.val( i-1 );
-            }
-        });
-    });
+    //     $("input[type=number]").parents(".input-number").find(".minus").on("click", function(e){
+    //         var input = $(this).parents(".input-number").find("input[type=number]");
+    //         i = input.val();
+    //         if( input.val() >= 2 ){
+    //             input.val( i-1 );
+    //         }
+    //     });
+    // });
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

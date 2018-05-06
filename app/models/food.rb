@@ -1,4 +1,5 @@
 class Food < ApplicationRecord
+  acts_as_paranoid
   has_many :place_foods, dependent: :destroy
   belongs_to :food_category
   belongs_to :food_category

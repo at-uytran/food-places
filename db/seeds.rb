@@ -107,14 +107,32 @@ p "fake places"
       points: 8)
   end
 
-  11.times do |n|
-    place.foods.create!(name: "Gà nướng",
-      food_type: 0,
-      price: 70000,
-      food_category_id: a_t_mien_nam.id)
-    place.foods.create!(name: "Bia Heineken",
-      food_type: 1,
-      price: 30000,
-      food_category_id: 1)
-  end
+  place.foods.create!(name: "Gà nướng",
+    food_type: 0,
+    price: 70000,
+    food_category_id: a_t_mien_nam.id)
+  place.foods.create!(name: "Vịt quay",
+    food_type: 1,
+    price: 80000,
+    food_category_id: 1)
+  place.foods.create!(name: "Cơm chiên",
+    food_type: 1,
+    price: 30000,
+    food_category_id: 1)
+  place.foods.create!(name: "Ba chỉ nướng",
+    food_type: 1,
+    price: 50000,
+    food_category_id: 1)
+  place.foods.create!(name: "Đậu khuôn chiên",
+    food_type: 1,
+    price: 50000,
+    food_category_id: 1)
+
+end
+
+puts "fake orders for places"
+Place.all.each do |place|
+  order = place.orders.create!(user_id: User.first.id)
+  order.carts.create!(food_id: place.foods.first.id, quantity: 3)
+  order.carts.create!(food_id: place.foods.last.id, quantity: 3)
 end

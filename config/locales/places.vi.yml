@@ -55,6 +55,7 @@ vi:
       price: "Gía"
       quantity: "Số lượng"
       add_to_cart: "+"
+      order: "Đặt"
     reviews:
       reviews: "Đánh gía"
       overall: "Tổng điểm"

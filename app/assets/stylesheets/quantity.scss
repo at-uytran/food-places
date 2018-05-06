@@ -1,0 +1,30 @@
+input[type=number] {
+    height: 30px;
+    line-height: 29px;
+    font-size: 16px;
+    padding: 0 4px;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    cursor:pointer;
+    display:block;
+    width:8px;
+    color: #333;
+    text-align:center;
+    position:relative;
+}
+input[type=number]:hover::-webkit-inner-spin-button {
+    background: #eee url('http://i.stack.imgur.com/YYySO.png') no-repeat 50% 50%;
+    width: 12px;
+    height: 12px;
+    padding: 3px;
+    position: relative;
+    right: 1px;
+    border-radius: 28px;
+}
+
+.pricing-table .width-5 {
+    input {
+        width: 30%;
+    }
+}

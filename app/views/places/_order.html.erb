@@ -1,0 +1,66 @@
+<div class="sidebar ">
+    <section id="order" class="box">
+        <h2><%= t ".order" %></h2>
+        <div class="form-orders">
+            <% if current_user %>
+                <div class="table-responsive pricing-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="section"><%= t ".food_name" %></th>
+                                <th class="section"><%= t ".quantity" %></th>
+                                <th class="section"><%= t ".price" %></th>
+                                <th class="section"><%= t ".delete" %></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if @order %>
+                                <%= form_tag place_user_place_order_path(@place),
+                                    method: :patch do |f| %>
+                                    <% @order.carts.each do |cart| %>
+                                        <tr>
+                                            <td><%= cart.food.name %></td>
+                                            <td class="width-5">
+                                                <%= number_field_tag "user_place_order[#{cart.food.id}]", 1, min: 1 %>
+                                            </td>
+                                            <td><%= cart.food.price %></td>
+                                            <td><a href="javascript:void(0)" class="link icon delete">
+                                                <i class="fa fa-trash"></i>
+                                                <%= t ".delete" %></a>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group center">
+                                                <button type="submit" class="btn btn-primary btn-rounded form-control"><%= t ".submit" %></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            <% else %>
+                                <%= simple_form_for :user_place_order,
+                                    url: place_user_place_order_path(@place), method: :patch  do |f| %>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group center">
+                                                <button type="submit" class="btn btn-primary btn-rounded form-control"><%= t ".submit" %></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            <% else %>
+                <div class="center">
+                    <%= link_to t(".require_login"), "#tab-sign-in", {"data-toggle": "modal",
+                        "data-tab": "true", "data-target": "#sign-in-register-modal"} %>
+                </div>
+            <% end %>
+        </div>
+    </section>
+</div>

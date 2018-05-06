@@ -4,6 +4,7 @@ class CreateUserSettings < ActiveRecord::Migration[5.1]
       t.references :user
       t.text :notification_settings
 
+      t.datetime :deleted_at
       t.timestamps
     end
   end

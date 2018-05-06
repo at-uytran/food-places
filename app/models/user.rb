@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_paranoid
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PWD_MIN_LEN = Settings.models.user.password.min_len
   NAME_MAX_LEN = Settings.models.user.name.max_len

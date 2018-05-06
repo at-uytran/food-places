@@ -6,6 +6,7 @@ class CreateFoods < ActiveRecord::Migration[5.1]
       t.integer :food_type, default: 0
       t.references :food_category, index: true
 
+      t.datetime :deleted_at
       t.timestamps
     end
   end
