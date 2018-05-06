@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
     if @user && @user.authenticate(params[:session][:password])
       remember_user
+      redirect_back fallback_location: root_path
     else
       flash.now[:danger] = t ".failed"
     end

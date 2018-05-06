@@ -24,8 +24,8 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @foods = @place.foods
-    @reviews = @place.user_ratings
+    @foods = @place.foods.limit 9
+    @reviews = @place.user_ratings.includes(:user).limit 9
   end
 
   private

@@ -100,6 +100,13 @@ p "fake places"
     district_id: @quan_lien_chieu.id,
     coordinates: FFaker::Geolocation.lat
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
+  3.times do |n|
+    place.user_ratings.create!(title: "Không gian tuyệt vời",
+      content: "Món ăn khá ngon, không gian thoáng mát",
+      user_id: 1,
+      points: 8)
+  end
+
   11.times do |n|
     place.foods.create!(name: "Gà nướng",
       food_type: 0,

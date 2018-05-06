@@ -1,0 +1,28 @@
+<div class="review">
+    <div class="row">
+        <div class="col-md-3">
+            <aside class="name"><%= review.user.name %></aside>
+            <aside class="date"><%= review.user.created_at %></aside>
+        </div>
+        <!--end col-md-3-->
+        <div class="col-md-9">
+            <div class="comment">
+                <div class="comment-title">
+                    <figure class="rating"><%= review.points %></figure>
+                    <h4><%= review.title %></h4>
+                </div>
+                <!--end title-->
+                <p><%= review.content %></p>
+                <div class="clearfix options">
+                    <span class="pull-left"><a href="" class="btn btn-framed btn-default btn-rounded btn-small icon"><i class="fa fa-thumbs-up font-color-default"></i>10</a>Helpful Review?</span>
+                    <span class="pull-right"><a href="" class="link icon font-color-grey"><i class="fa fa-flag"></i>Report</a></span>
+                </div>
+                <!--end options-->
+            </div>
+            <!--end comment-->
+        </div>
+        <!--end col-md-9-->
+    </div>
+    <!--end row-->
+</div>
+<!--end review-->

@@ -3,7 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var resizeId;
 
-document.addEventListener("turbolinks:load", function($) {
+$(document).ready(function($) {
+
     "use strict";
 
     var date = new Date();
@@ -42,13 +43,13 @@ document.addEventListener("turbolinks:load", function($) {
 
 //  iCheck -------------------------------------------------------------------------------------------------------------
 
-    if ($("input[type=checkbox]").length ) {
-        $("input").iCheck();
-    }
+    // if ($("input[type=checkbox]").length ) {
+    //     $("input").iCheck();
+    // }
 
-    if ($("input[type=radio]").length > 0) {
-        $("input").iCheck();
-    }
+    // if ($("input[type=radio]").length > 0) {
+    //     $("input").iCheck();
+    // }
 
 //  Smooth Scroll ------------------------------------------------------------------------------------------------------
 
