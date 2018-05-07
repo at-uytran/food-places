@@ -4241,7 +4241,7 @@ input[type="number"] {
 }
 .form-reservations table thead tr th:first-child {
   padding-left: 0;
-  width: 50%;
+  width: 25%;
 }
 .form-reservations table thead tr th:last-child {
   padding-right: 0;
@@ -4254,7 +4254,7 @@ input[type="number"] {
 }
 .form-reservations table tbody tr td:first-child {
   padding-left: 0;
-  width: 50%;
+  width: 25%;
 }
 .form-reservations table tbody tr td:last-child {
   text-align: right;

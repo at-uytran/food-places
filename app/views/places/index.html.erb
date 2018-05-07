@@ -10,7 +10,9 @@
                 </div>
                 <!--end row-->
                 <div class="center">
-                    <%= will_paginate @places %>
+                    <div class="pagination">
+                        <%= will_paginate @places %>
+                    </div>
                 </div>
                 <!--end center-->
             <% else %>

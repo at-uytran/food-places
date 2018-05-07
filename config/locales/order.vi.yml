@@ -1,0 +1,10 @@
+vi:
+  places:
+    order:
+      order: "Đặt món"
+      food_name: "Tên món"
+      quantity: "Số lượng"
+      price: "Đơn gía"
+      submit: "Tạo đơn hàng"
+      delete: "xóa"
+      require_login: "Đăng nhập ngay để đặt món"

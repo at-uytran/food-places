@@ -45,10 +45,18 @@
                 <%= render "info_box" %>
             </div>
             <!--end row-->
-            <%= render partial: "foods", object: @foods %>
-            <%= render partial: "reviews", object: @reviews %>
         </div>
         <!--end main-content-->
     </div>
     <!--end col-md-9-->
 </div>
+<div class="row food-order" id="food-order">
+    <!--end col-md-4-->
+    <div class="col-md-8 col-sm-8" id="foods">
+        <%= render partial: "foods", object: @foods %>
+    </div>
+    <div class="col-md-4  col-sm-8" id="order">
+        <%= render "order" %>
+    </div>
+</div>
+<%= render partial: "reviews", object: @reviews %>

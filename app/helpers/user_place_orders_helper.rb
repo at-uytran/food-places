@@ -1,0 +1,2 @@
+module UserPlaceOrdersHelper
+end

@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.string "name"
     t.bigint "province_id"
     t.string "descriptions"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["province_id"], name: "index_districts_on_province_id"
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.float "price", limit: 24
     t.integer "food_type", default: 0
     t.bigint "food_category_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_category_id"], name: "index_foods_on_food_category_id"
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   end
 
   create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -175,6 +178,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   create_table "provinces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "descriptions"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -205,6 +209,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   create_table "user_notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "notification_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["notification_id"], name: "index_user_notifications_on_notification_id"
@@ -227,6 +232,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   create_table "user_settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.text "notification_settings"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_settings_on_user_id"

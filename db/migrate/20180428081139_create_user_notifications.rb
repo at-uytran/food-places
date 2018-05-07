@@ -4,6 +4,7 @@ class CreateUserNotifications < ActiveRecord::Migration[5.1]
       t.references :user
       t.references :notification
 
+      t.datetime :deleted_at
       t.timestamps
     end
   end
