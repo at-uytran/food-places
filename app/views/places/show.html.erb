@@ -1,3 +1,4 @@
+<%= render "confirm_order" %>
 <div class="row">
     <%= render "search_bar" %>
     <!--end col-md-3-->
@@ -56,6 +57,10 @@
         <%= render partial: "foods", object: @foods %>
     </div>
     <div class="col-md-4  col-sm-8" id="order">
+        <a href="#modal-user-settings" data-toggle="modal">
+                                            <i class="fa fa-cog fa-fw pull-right"></i>
+                                            Settings
+                                        </a>
         <%= render "order" %>
     </div>
 </div>
