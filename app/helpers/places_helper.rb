@@ -20,17 +20,17 @@ module PlacesHelper
   end
 
   def place_address place
-    place.address if place.address
+    return place.address if place.address
     t ".places.no_address"
   end
 
   def place_descriptions place
-    place.descriptions if place.descriptions
+    return place.descriptions if place.descriptions
     t ".places.no_descriptions"
   end
 
   def ship_price place
-    place.ship_price if place.ship_price
+    return place.ship_price if place.ship_price
     t "updating"
   end
 end

@@ -34,10 +34,22 @@ var cart = {
                   + '</td>'
                   + '</tr>');
       }
+      updateOrder();
     }
+
+    function updateOrder() {
+      console.log("update");
+      $("#form-cart-order").submit();
+    }
+
+    $('body').delegate('.form-orders .quantity input', 'click', function(event) {
+      console.log('update')
+      updateOrder();
+    });
 
     $('body').delegate('.delete-food', 'click', function(event) {
         $(this).parents('tr').remove();
+        updateOrder();
     });
   }
 }

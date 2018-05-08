@@ -6,3 +6,4 @@
 //= require province.js
 //= require search.js
 //= require add_food.js
+//= require confirm_order.js
