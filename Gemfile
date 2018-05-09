@@ -23,6 +23,7 @@ gem "jquery-rails"
 gem "jquery-turbolinks"
 gem "simple_form"
 gem "paranoia", "~> 2.2"
+gem "geocoder"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

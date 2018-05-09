@@ -96,7 +96,7 @@ p "fake places"
     coordinates: FFaker::Geolocation.lat,
     place_category_id: PlaceCategory.first.id
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
-  place.create_location address: "45 Ngô Thì Nhậm",
+  place.create_location address: "45 Ngô Thì Nhậm, Đà Nẵng",
     district_id: @quan_lien_chieu.id,
     coordinates: FFaker::Geolocation.lat
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)

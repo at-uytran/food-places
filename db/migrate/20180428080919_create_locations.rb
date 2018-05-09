@@ -5,6 +5,8 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.text :coordinates
       t.references :district, null: true
       t.references :place
+      t.float :latitude
+      t.float :longitude
 
       t.datetime :deleted_at
       t.timestamps
