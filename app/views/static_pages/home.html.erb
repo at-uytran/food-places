@@ -1,5 +1,7 @@
 <div class="block">
-    <%= render "nearby_places" %>
+    <% if current_user %>
+        <%= render "nearby_places" %>
+    <% end %>
 </div>
 <!--end block-->
 
