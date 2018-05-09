@@ -6,48 +6,50 @@
                 <div class="table-responsive pricing-table">
                     <% if @order %>
                         <%= form_tag place_user_place_order_path(@place),
-                            method: :patch, class: "form" do %>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="section"><%= t ".food_name" %></th>
-                                    <th class="section"><%= t ".quantity" %></th>
-                                    <th class="section"><%= t ".price" %></th>
-                                    <th class="section"><%= t ".delete" %></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% @order.carts.each do |cart| %>
-                                    <tr id="order-food-<%= cart.food.id %>">
-                                        <td class="order-name"><%= cart.food.name %></td>
-                                        <td class="width-5 quantity">
-                                            <%= number_field_tag "user_place_order[#{cart.food.id}]",
-                                                cart.quantity, min: 1 %>
-                                        </td>
-                                        <td class="order-price"><%= cart.food.price %></td>
-                                        <td><a href="javascript:void(0)"
-                                            class="link icon delete-food"
-                                            id="delete-food-<%= cart.food.id %>">
-                                            <i class="fa fa-trash"></i>
-                                            <%= t ".delete" %></a>
+                            method: :patch, id: "form-cart-order" do %>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="section"><%= t ".food_name" %></th>
+                                        <th class="section"><%= t ".quantity" %></th>
+                                        <th class="section"><%= t ".price" %></th>
+                                        <th class="section"><%= t ".delete" %></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @order.carts.each do |cart| %>
+                                        <tr id="order-food-<%= cart.food.id %>">
+                                            <td class="order-name"><%= cart.food.name %></td>
+                                            <td class="width-5 quantity">
+                                                <%= number_field_tag "user_place_order[#{cart.food.id}]",
+                                                    cart.quantity, min: 1 %>
+                                            </td>
+                                            <td class="order-price"><%= cart.food.price %></td>
+                                            <td><a href="javascript:void(0)"
+                                                class="link icon delete-food"
+                                                id="delete-food-<%= cart.food.id %>">
+                                                <i class="fa fa-trash"></i>
+                                                <%= t ".delete" %></a>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                    <tr></tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group center">
+                                                <a href="#modal-confirm-order" class="btn btn-primary btn-rounded form-control show-modal-confirm" data-toggle="modal">
+                                                    <%= t ".submit" %>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
-                                <% end %>
-                                <tr></tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <div class="form-group center">
-                                            <button type="submit" class="btn btn-primary btn-rounded form-control"><%= t ".submit" %></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                         <% end %>
                     <% else %>
-                        <%= simple_form_for :user_place_order,
-                            url: place_user_place_order_path(@place), method: :patch  do |f| %>
+                        <%= form_tag place_user_place_order_path(@place),
+                            method: :patch, id: "form-cart-order" do %>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -62,7 +64,9 @@
                                         <td></td>
                                         <td>
                                             <div class="form-group center">
-                                                <button type="submit" class="btn btn-primary btn-rounded form-control"><%= t ".submit" %></button>
+                                                <a href="#modal-confirm-order" class="btn btn-primary btn-rounded form-control show-modal-confirm" data-toggle="modal">
+                                                    <%= t ".submit" %>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
