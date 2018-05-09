@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.text "coordinates"
     t.bigint "district_id"
     t.bigint "place_id"
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

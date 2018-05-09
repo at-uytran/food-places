@@ -24,6 +24,11 @@ class PlacesController < ApplicationController
   end
 
   def show
+    if request.xhr?
+      render json: {
+        addresses: @place.location
+      }
+    end
     @foods = @place.foods.limit 9
     @reviews = @place.user_ratings.includes(:user).limit 9
     @order = current_user.orders.find_by place_id: @place.id if current_user
