@@ -66,42 +66,42 @@ $(document).ready(function($) {
 
 //  Tab in Modal -------------------------------------------------------------------------------------------------------
 
-    $("a[data-toggle=modal]").on('click',function (e) {
-        var _this = $(this);
-        if( _this.attr("data-tab")  ){
-            var tab = _this.attr("href");
-        }
-        else {
-            tab = false;
-        }
-        var target = _this.attr("data-target");
-        e.preventDefault();
-        $.ajax({
-            url: "assets/external/modal.php",
-            data: { tab: tab },
-            method: "POST",
-            success: function(data){
-                $("body").append(data);
-                $(target).on('show.bs.modal', function () {
-                    $(tab).addClass("active");
-                    $(target).find('a[href="' + tab + '"]').tab('show');
-                    $("input").iCheck();
-                });
-                $(target).on('hidden.bs.modal', function () {
-                    if( _this.attr("data-tab")  ){
-                        $(target).remove();
-                    }
-                });
-                $(target).modal();
-            },
-            error : function () {
-                console.log("error");
-            }
-        });
-        /*
+    // $("a[data-toggle=modal]").on('click',function (e) {
+    //     var _this = $(this);
+    //     if( _this.attr("data-tab")  ){
+    //         var tab = _this.attr("href");
+    //     }
+    //     else {
+    //         tab = false;
+    //     }
+    //     var target = _this.attr("data-target");
+    //     e.preventDefault();
+    //     $.ajax({
+    //         url: "assets/external/modal.php",
+    //         data: { tab: tab },
+    //         method: "POST",
+    //         success: function(data){
+    //             $("body").append(data);
+    //             $(target).on('show.bs.modal', function () {
+    //                 $(tab).addClass("active");
+    //                 $(target).find('a[href="' + tab + '"]').tab('show');
+    //                 $("input").iCheck();
+    //             });
+    //             $(target).on('hidden.bs.modal', function () {
+    //                 if( _this.attr("data-tab")  ){
+    //                     $(target).remove();
+    //                 }
+    //             });
+    //             $(target).modal();
+    //         },
+    //         error : function () {
+    //             console.log("error");
+    //         }
+    //     });
+    //     /*
 
-        */
-    });
+    //     */
+    // });
 /*
     $("[data-ajax-action]").on('click',function (e) {
         e.preventDefault();

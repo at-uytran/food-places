@@ -1,0 +1,29 @@
+<div class="row">
+    <%= render "places/search_bar" %>
+    <!--end col-md-3-->
+    <div class="col-md-9" id="results">
+        <div class="main-content">
+            <div class="title">
+                <div class="center"><strong><%= t ".nearby_places" %></strong></div>
+            </div>
+            <% if @locations.any? %>
+                <!--end title-->
+                <div class="row">
+                    <%= render partial: "place", collection: @locations, as: :location %>
+                </div>
+                <!--end row-->
+                <div class="center">
+                    <div class="pagination">
+                        <%= will_paginate @locations %>
+                    </div>
+                </div>
+                <!--end center-->
+            <% else %>
+                <div class="center"><strong><%= t ".no_results" %></strong></div>
+            <% end %>
+        </div>
+        <!--end main-content-->
+    </div>
+    <!--end col-md-9-->
+</div>
+<!--end row-->

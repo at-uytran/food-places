@@ -1,5 +1,27 @@
 vi:
   users:
+    common:
+      update_phone: "Cập nhật số điện thoại"
+      update_desciptions: "Cập nhật một vài thông tin giới thiệu bản thân"
     create:
       success: "Đăng ký thành công, vui lòng kiểm tra email để kích hoạt tài khoản"
       failed: "Đăng ký thất bại, email đã được sử dụng"
+    show:
+      avatar: "Ảnh đại diện"
+      click_to_upload: "Click để tải hình lên"
+      personal_info: "Thông tin cá nhân"
+      name: "Tên"
+      email: "Email"
+      phone: "Điện thoại"
+      change_password: "Thay đổi mật khẩu"
+      current_password: "Mật khẩu hiện tại"
+      new_password: "Mật khẩu mới"
+      confirm_new_password: "Xác nhận mật khẩu mói"
+      submit_change_password: "Thay đổi mật khẩu"
+      address: "Địa chỉ"
+      province: "Tỉnh thành"
+      district: "Quận huyện"
+      street: "số nhà"
+      about_me: "Về bản thân"
+      submit_changes: "Lưu thay đổi"
+

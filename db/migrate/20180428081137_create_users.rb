@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :name
       t.string :email
+      t.text :phone
       t.string :address
       t.string :coordinates
       t.string :descriptions
@@ -16,6 +17,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :reset_sent_at
       t.string :remember_digest
       t.integer :user_type, default: 0
+      t.references :user_location, index: true, null: true
 
       t.datetime :deleted_at
       t.timestamps

@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="title">
+        <h2><%= t ".title" %></h2>
+    </div>
+    <div class="row">
+        <%= render partial: "nearby_place", collection: @nearby_locations, as: :nearby_location %>
+    </div>
+    <!--end row-->
+</div>
+<!--end container-->

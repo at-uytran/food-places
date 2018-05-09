@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_one :user_settings, dependent: :destroy
   has_many :notifications, through: :user_notifications
   has_many :places, dependent: :destroy
+  has_one :user_location, dependent: :destroy
 
   validates :email, presence: {message: I18n.t("activerecord.errors.blank")}, length: {maximum: EMAIL_MAX_LEN},
     format: {with: VALID_EMAIL_REGEX},
