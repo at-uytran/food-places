@@ -17,7 +17,7 @@
    draw_map: function(lat, lng) {
      var companyLatlng = new google.maps.LatLng(lat, lng);
      var mapOptions = {
-       zoom: 15,
+       zoom: 17,
        center: companyLatlng,
        mapTypeId: google.maps.MapTypeId.ROADMAP
      }

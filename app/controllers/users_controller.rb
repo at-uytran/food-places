@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, except: %i(index create)
+  before_action :load_user, except: %i(index create show)
 
   def index
     @users = User.order_by_name
@@ -25,6 +25,14 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = t ".failed"
       render :edit
+    end
+  end
+
+  def show
+    @user = current_user
+    respond_to do |format|
+      format.html
+      format.json{render json: {address: @user.user_location}}
     end
   end
 

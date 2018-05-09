@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428081142) do
+ActiveRecord::Schema.define(version: 20180509114922) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "order_id"
@@ -208,6 +208,20 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.index ["user_id"], name: "index_user_collections_on_user_id"
   end
 
+  create_table "user_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "address"
+    t.text "coordinates"
+    t.bigint "district_id"
+    t.bigint "user_id"
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_user_locations_on_district_id"
+    t.index ["user_id"], name: "index_user_locations_on_user_id"
+  end
+
   create_table "user_notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "notification_id"
@@ -243,6 +257,7 @@ ActiveRecord::Schema.define(version: 20180428081142) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
+    t.text "phone"
     t.string "address"
     t.string "coordinates"
     t.string "descriptions"
@@ -256,9 +271,11 @@ ActiveRecord::Schema.define(version: 20180428081142) do
     t.datetime "reset_sent_at"
     t.string "remember_digest"
     t.integer "user_type", default: 0
+    t.bigint "user_location_id"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_location_id"], name: "index_users_on_user_location_id"
   end
 
 end

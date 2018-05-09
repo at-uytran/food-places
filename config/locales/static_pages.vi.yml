@@ -1,0 +1,9 @@
+vi:
+  static_pages:
+    home:
+    allow_order_places:
+      title: "Địa điểm có dịch vụ ship đồ"
+    nearby_places:
+      title: "Địa điểm quanh đây"
+    top_order_places:
+      title: "Top các địa điểm được ưa thích"

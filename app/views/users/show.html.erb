@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-md-9">
+        <form id="form-profile" class="labels-uppercase" method="post" action="?" enctype="multipart/form-data">
+            <div class="row">
+                <!--Profile Picture-->
+                <div class="col-md-3 col-sm-3">
+                    <section>
+                        <h3><%= t ".avatar" %></h3>
+                        <div id="profile-picture" class="profile-picture single-file-preview">
+                            <%= image_tag @user.avatar %>
+                            <div class="input">
+                                <input name="file" type="file" class="">
+                                <span><%= t ".click_to_upload" %></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!--end col-md-3-->
+
+                <!--Contact Info-->
+                <div class="col-md-9 col-sm-9">
+                    <section>
+                        <h3><%= t ".personal_info" %></h3>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label for="name"><%= t ".name" %></label>
+                                    <input type="text" class="form-control" id="name"
+                                        name="name" value="<%= @user.name %>">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end col-md-3-->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label for="email"><%= t ".email" %></label>
+                                    <input type="email" class="form-control" id="email" name="email" value="<%= @user.email %>">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end col-md-3-->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label for="mobile"><%= t ".phone" %></label>
+                                    <input type="text" class="form-control" id="mobile" name="mobile"
+                                        pattern="\d*" value="<%= user_phone @user %>">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end col-md-3-->
+                        </div>
+                    </section>
+                    <section>
+                        <h3><%= t ".address" %></h3>
+                        <div class="form-group">
+                            <label for="state"><%= t ".province" %></label>
+                            <input type="text" class="form-control" id="state" name="state" value="Ohio">
+                        </div>
+                        <!--end form-group-->
+                        <div class="form-group">
+                            <label for="city"><%= t ".district" %></label>
+                            <input type="text" class="form-control" id="city" name="city" value="Georgetown">
+                        </div>
+                        <!--end form-group-->
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="form-group">
+                                    <label for="street"><%= t ".street" %></label>
+                                    <input type="text" class="form-control" id="street" name="street" value="<%= @user.address %>">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                        </div>
+                        <!--end col-md-3-->
+                    </section>
+                    <section>
+                        <h3>About Me</h3>
+                        <div class="form-group">
+                            <label for="about-me"><%= t ".about_me" %></label>
+                            <div class="form-group">
+                                <textarea class="form-control" id="about-me" rows="3" name="descriptions"
+                                    required><%= show_form_descriptions @user %></textarea>
+                            </div>
+                            <!--end form-group-->
+                        </div>
+                        <!--end form-group-->
+                    </section>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-large btn-primary btn-rounded" id="submit"><%= t ".submit_changes" %></button>
+                    </div>
+                    <!-- end form-group -->
+                </div>
+                <!--end col-md-6-->
+            </div>
+        </form>
+    </div>
+    <!--Password-->
+    <div class="col-md-3 col-sm-9">
+        <form class="labels-uppercase" id="form-password" method="post" action="?">
+            <h3><%= t ".change_password" %></h3>
+            <div class="form-group">
+                <label for="current-password"><%= t ".current_password" %></label>
+                <input type="password" class="form-control" id="current-password" name="current-password">
+            </div>
+            <!--end form-group-->
+            <div class="form-group">
+                <label for="new-password"><%= t ".new_password" %></label>
+                <input type="password" class="form-control" id="new-password" name="new-password">
+            </div>
+            <!--end form-group-->
+            <div class="form-group">
+                <label for="confirm-new-password"><%= t ".confirm_new_password" %></label>
+                <input type="password" class="form-control" id="confirm-new-password" name="confirm-new-password">
+            </div>
+            <!--end form-group-->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-rounded btn-framed"><%= t ".submit_change_password" %></button>
+            </div>
+            <!-- end form-group -->
+        </form>
+    </div>
+    <!-- end col-md-3-->
+</div>

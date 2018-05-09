@@ -5,6 +5,7 @@ vi:
     header:
       home: "Trang chủ"
       discover: "Khám phá"
+      nearby_places: "Địa điểm quanh đây"
       places: "Địa điểm"
       login: "Đăng nhập"
       logout: "Đăng xuất"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :user_place_orders
   end
+  resources :nearby_places
   resources :provinces
   resources :users
   post "/login", to: "sessions#create"
