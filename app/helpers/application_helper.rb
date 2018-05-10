@@ -17,7 +17,7 @@ module ApplicationHelper
     if current_user && current_user.user_location.address
       geo_data = Geocoder.search(current_user.user_location.address)
     else
-      geo_data = Geocoder.search(request.remote_ip)
+      geo_data = Geocoder.search("116.110.21.32")
     end
     geo_data[0]
   end
