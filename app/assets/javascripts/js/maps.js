@@ -15,22 +15,22 @@
    },
 
    draw_map: function(lat, lng) {
-     var companyLatlng = new google.maps.LatLng(lat, lng);
+     var placeLatlng = new google.maps.LatLng(lat, lng);
      var mapOptions = {
        zoom: 17,
-       center: companyLatlng,
+       center: placeLatlng,
        mapTypeId: google.maps.MapTypeId.ROADMAP
      }
      var map = new google.maps.Map(document.getElementById('map-item'), mapOptions);
      var marker = new google.maps.Marker({
-       position: companyLatlng,
+       position: placeLatlng,
        map: map
      });
    }
 }
+
 $(document).on('turbolinks:load', function(){
   $(function() {
      getLocation.initialize();
    });
 });
-

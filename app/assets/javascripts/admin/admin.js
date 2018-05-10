@@ -17,3 +17,5 @@
 //= require admin/js/plugins.js
 //= require admin/js/app.js
 //= require cable.js
+//= require sweetalert/sweetalert.min.js
+//= require admin/confirm_delete.js

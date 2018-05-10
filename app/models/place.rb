@@ -1,6 +1,10 @@
 class Place < ApplicationRecord
   acts_as_paranoid
+
   after_create :create_setting
+  after_create :create_location
+  after_save :change_location
+
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :user_collections, dependent: :destroy
@@ -15,12 +19,13 @@ class Place < ApplicationRecord
   has_many :foods, through: :place_foods
   has_many :collections, through: :collection_places
   belongs_to :owner, class_name: User.name, optional: true
+
   mount_uploader :image, PlaceImageUploader
 
   validates :address, presence: {message: I18n.t("activerecord.errors.blank")}
   validates :name, presence: {message: I18n.t("activerecord.errors.blank")}
 
-  enum status: {pending: 0, approved: 1, blocked: 2}
+  enum status: {pending: 0, approved: 1, discard: 2, blocked: 3}
   delegate :name, :email, to: :owner, prefix: true
 
   scope :created_desc, ->{order name: :desc}
@@ -36,6 +41,10 @@ class Place < ApplicationRecord
     points / user_ratings.size
   end
 
+  def allow_order?
+    place_setting.allow_order
+  end
+
   def total_images
     place_images.size
   end
@@ -45,6 +54,15 @@ class Place < ApplicationRecord
   end
 
   private
+
+  def create_location
+    create_location! address: address
+  end
+
+  def change_location
+    location.address = address if address_changed?
+    location.save
+  end
 
   def create_setting
     create_place_setting! allow_order: false, enable: true

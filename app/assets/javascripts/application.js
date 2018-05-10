@@ -7,3 +7,4 @@
 //= require search.js
 //= require add_food.js
 //= require confirm_order.js
+//= require sweetalert/sweetalert.min.js

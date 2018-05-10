@@ -664,4 +664,9 @@ var App = function() {
 }();
 
 /* Initialize app when page loads */
-$(function(){ App.init(); });
+$(document).on('turbolinks:load', function() {
+    $(function(){
+        App.init();
+    });
+
+})

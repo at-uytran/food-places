@@ -19,11 +19,12 @@ vi:
       account: "Tài khoản"
       sign_in_up: "Đăng nhập/đăng ký"
       profile: "Thông tin tài khoản"
+      admin_dashboard: "Quản lý"
     footer:
       home: "Trang chủ"
       contact: "Liên hệ chúng tôi"
       about_us: "Về chúng tôi"
       page_description: "(C) 2018 - Hệ thống chia sẻ và chỉ dẫn ẩm thực"
   will_paginate:
-    next_label: "Trang sau"
-    previous_label: "Trang trước"
+    previous_label: '<i class="arrow_left"></i>'
+    next_label: '<i class="arrow_right"></i>'

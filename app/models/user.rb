@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  after_create :create_user_location
+  after_save :change_user_location
+
   has_secure_password
   has_many :user_ratings, dependent: :destroy
   has_many :subscribe_places, dependent: :destroy
@@ -72,6 +75,15 @@ class User < ApplicationRecord
   end
 
   private
+
+  def create_user_location
+    create_user_location! address: address
+  end
+
+  def change_user_location
+    user_location.address = address if address_changed?
+    user_location.save
+  end
 
   def downcase_email
     self.email = email.downcase

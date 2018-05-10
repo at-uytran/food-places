@@ -1,5 +1,6 @@
 vi:
   short_title: "Quản lý hệ thống"
+  verify_admin: "Bạn không có quyền truy câp trang này."
   admin:
     layouts:
       header:
