@@ -1,6 +1,6 @@
 Geocoder.configure(
-  :units => :km,
-  :timeout => 10,
+  units: :km,
+  timeout: 10,
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
   # lookup: :google,            # name of geocoding service (symbol)
