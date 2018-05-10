@@ -3,7 +3,9 @@ vi:
     home:
     allow_order_places:
       title: "Địa điểm có dịch vụ ship đồ"
+      no_allow_order_places: "Không có địa điểm nào nhận ship đồ"
     nearby_places:
+      no_nearby_places: "Không có địa điểm nào quanh đây"
       title: "Địa điểm quanh đây"
     top_order_places:
       title: "Top các địa điểm được ưa thích"

@@ -61,6 +61,7 @@ vi:
       overall: "Tổng điểm"
       write_review: "Viết đánh gía"
     info_box:
+      distance_from_here: "Khoảng cách: "
       open_time: "Giờ mở cửa:"
       close_time: "Giờ đóng cửa:"
       ship_price: "Phí ship:"

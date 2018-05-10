@@ -5,7 +5,8 @@ class PlacesController < ApplicationController
 
   def index
     @q = Place.search params[:q]
-    @places = @q.result.created_desc.by_categories(@category_ids).page(params[:page]).per_page(9)
+    @places = @q.result.created_desc.includes(:place_category)
+      .by_categories(@category_ids).page(params[:page]).per_page(9)
   end
 
   def create

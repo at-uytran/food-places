@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @allow_order_places = Place.allow_order.includes(:place_category).limit 10
     if current_user && current_user.user_location
       @nearby_locations = Location.near([current_user.user_location.latitude, current_user.user_location.longitude],
         5, units: :km).created_desc
