@@ -1,0 +1,49 @@
+<header class="navbar navbar-default">
+  <ul class="nav navbar-nav-custom">
+    <li>
+      <%= link_to "javascript:void(0)", onclick: "App.sidebar('toggle-sidebar');" do %>
+        <i class="fa fa-bars fa-fw"></i>
+      <% end %>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav-custom pull-right">
+    <li class="dropdown mega-dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-bell-o fa-notification"></i>
+
+      </a>
+    </li>
+    <li class="dropdown">
+      <%= link_to "javascript:void(0)", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+        <%= image_tag current_user.avatar %>
+        <i class="fa fa-angle-down"></i>
+      <% end %>
+      <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+        <li class="dropdown-header text-center"><%= t ".account" %></li>
+        <li>
+          <%= link_to root_path do %>
+            <i class="fa fa-home fa-fw pull-right"></i>
+            <%= t ".homepage" %>
+          <% end %>
+          <%= link_to root_path do %>
+            <i class="fa fa-user fa-fw pull-right"></i>
+            <%= t ".profile" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "#modal-user-settings", "data-toggle": "modal" do %>
+            <i class="fa fa-cog fa-fw pull-right"></i>
+            <%= t ".settings" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to root_path, method: :delete do %>
+            <i class="fa fa-ban fa-fw pull-right"></i> <%= t ".logout" %></a>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>

@@ -1,0 +1,54 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'colors';
+@font-face{
+  font-family:'Glyphicons Regular';
+  src:font-url('glyphicons.pro/glyphicons-regular.eot');
+  src:font-url('glyphicons.pro/glyphicons-regular.eot?#iefix') format('embedded-opentype'),
+    font-url('glyphicons.pro/glyphicons-regular.woff') format('woff'),
+    font-url('glyphicons.pro/glyphicons-regular.ttf') format('truetype'),
+    font-url('glyphicons.pro/glyphicons-regular.svg#glyphiconsregular') format('svg')
+}
+@font-face{
+    font-family:'Glyphicons Halflings Regular';
+    src:font-url('glyphicons.halflings.pro/glyphicons-halflings-regular.eot');
+    src:font-url('glyphicons.halflings.pro/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+      font-url('glyphicons.halflings.pro/glyphicons-halflings-regular.woff') format('woff'),
+      font-url('glyphicons.halflings.pro/glyphicons-halflings-regular.ttf') format('truetype'),
+      font-url('glyphicons.halflings.pro/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
+}
+@font-face{
+    font-family:'Glyphicons Social Regular';
+    src:font-url('glyphicons.social.pro/glyphicons-social-regular.eot');
+    src:font-url('glyphicons.social.pro/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'),
+      font-url('glyphicons.social.pro/glyphicons-social-regular.woff') format('woff'),
+      font-url('glyphicons.social.pro/glyphicons-social-regular.ttf') format('truetype'),
+      font-url('glyphicons.social.pro/glyphicons-social-regular.svg#glyphicons_socialregular') format('svg')
+}
+@font-face{
+    font-family:'Glyphicons Filetypes Regular';
+    src:font-url('glyphicons.filetypes.pro/glyphicons-filetypes-regular.eot');
+    src:font-url('glyphicons.filetypes.pro/glyphicons-filetypes-regular.eot?#iefix') format('embedded-opentype'),
+      font-url('glyphicons.filetypes.pro/glyphicons-filetypes-regular.woff') format('woff'),
+      font-url('glyphicons.filetypes.pro/glyphicons-filetypes-regular.ttf') format('truetype'),
+      font-url('glyphicons.filetypes.pro/glyphicons-filetypes-regular.svg#glyphicons_filetypesregular') format('svg')
+}
+.select-select2{
+  width: 100%;
+}
+
+#new_schedule {
+  .button-wrapper {
+    text-align: right;
+    padding-top: 20px;
+  }
+}
+
+.fc-day.disabled {
+  background-color: $gallery;
+}
+.fc-day.disabled.fc-today {
+  background-color: $alto;
+}
