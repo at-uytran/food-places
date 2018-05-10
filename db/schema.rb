@@ -172,7 +172,7 @@ ActiveRecord::Schema.define(version: 20180510055716) do
     t.time "close_time"
     t.float "ship_price", limit: 24
     t.text "coordinates"
-    t.integer "status"
+    t.integer "status", default: 0
     t.string "image"
     t.integer "table_count"
     t.bigint "place_category_id"

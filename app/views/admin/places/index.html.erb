@@ -1,0 +1,52 @@
+<div class="content-header">
+  <div class="header-section">
+    <h1>
+      <i class="fa fa-book"></i></i><%= t ".manage_places" %><br><small><%= t ".describe" %></small>
+    </h1>
+  </div>
+</div>
+<div class="block full">
+  <div class="block-title">
+    <h2><strong><%= t ".table_title" %></strong></h2>
+  </div>
+  <div id="modal-trainer-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  </div>
+  <div class="table-responsive">
+    <div id="example-datatable_wrapper" class="dataTables_wrapper">
+      <div class="row">
+        <div class="col-sm-2 col-xs-3">
+          <%= link_to "<i class='fa fa-plus'></i> #{t ".new_place"}".html_safe,
+            new_admin_place_path, class: "btn btn-primary" %>
+        </div>
+        <div class="input-group">
+          <%= text_field_tag "owner_name_or_title_cont", "", class: "form-control", placeholder: t("search"),
+            id: "admin_course_name" %>
+          <div class="input-group-btn">
+            <%= button_tag(name: nil, class: "btn btn-primary", id: "admin_course_search") do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t ".id" %></th>
+            <th class="text-center"><i class="fa fa-user"></i></th>
+            <th><%= t ".place" %></th>
+            <th><%= t ".status" %></th>
+            <th class="text-center"><%= t ".create_date" %></th>
+            <th class="text-center"><%= t ".action" %></th>
+            <th class="text-center"><%= t ".option" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "place", collection: @places, as: :place %>
+        </tbody>
+      </table>
+    </div>
+    <div id="pagination">
+      <%= will_paginate @places %>
+    </div>
+  </div>
+</div>

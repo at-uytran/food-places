@@ -1,0 +1,20 @@
+vi:
+  admin:
+    places:
+      index:
+        table_title: "Dữ liệu"
+        manage_places: Quản lý địa điểm
+        describe: Trang quản lý địa điểm
+        new_place: Tạo mới địa điểm
+        place: Địa điểm
+        status: Trạng thái
+        create_date: "Ngày tạo"
+        action: "Hành động"
+        option: "Tùy chọn"
+      place:
+        status_pending: "Đang chờ phê duyệt"
+        status_approved: "Đã được chấp nhận"
+        status_blocked: "Bị khóa"
+        delete: "Xóa"
+        approve: "Chấp nhận"
+        discard: "Từ chối"
