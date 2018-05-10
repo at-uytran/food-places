@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source "https://rails-assets.org"
 
 gem "rails", "~> 5.1.6"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
@@ -9,6 +10,8 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bootstrap-sass", "3.3.7"
+gem "font-awesome-rails"
+gem "font-awesome-sass"
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem "bcrypt"
@@ -24,6 +27,8 @@ gem "jquery-turbolinks"
 gem "simple_form"
 gem "paranoia", "~> 2.2"
 gem "geocoder"
+gem "twitter-bootstrap-rails"
+gem "bootstrap-glyphicons"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

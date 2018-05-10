@@ -1,0 +1,88 @@
+@import 'colors';
+
+.mini-avatar {
+  max-width: 64px;
+  max-height: 64px
+}
+
+/* form button */
+form.btn-group {
+  margin-left: 5px;
+}
+
+.mlr-4-2 {
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+.add {
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 992px) {
+  .change-width{
+    text-align: left;
+  }
+}
+
+.table-fixed {
+  thead {
+    width: 97%;
+  }
+
+  tbody {
+    height: 500px;
+    overflow-y: auto;
+    width: 100%;
+  }
+}
+
+.table-fixed {
+  thead, tbody, tr, td, th {
+    display: block;
+  }
+}
+
+.table-fixed {
+  tbody td, thead > tr > th {
+    float: left;
+    border-bottom-width: 0;
+  }
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 573px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  position: fixed;
+  right: 9000px;
+  + .label-text:before {
+    content: "\f096";
+    font-family: "FontAwesome";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  &:checked + .label-text:before {
+    content: "\f14a";
+    color: $mariner;
+    animation: effect 250ms ease-in;
+  }
+  &:disabled + .label-text {
+    color: $silver-chalice;
+    &:before {
+      content: "\f0c8";
+      color: $silver-color;
+    }
+  }
+}

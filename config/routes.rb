@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :orders
     resources :user_place_orders
   end
+  namespace :admin do
+    root "static_pages#home"
+    resources :places
+  end
   resources :nearby_places
   resources :provinces
   resources :users

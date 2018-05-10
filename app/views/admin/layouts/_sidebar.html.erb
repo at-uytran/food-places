@@ -1,0 +1,57 @@
+<div id="sidebar">
+  <div id="sidebar-scroll">
+    <div class="sidebar-content">
+      <%= link_to admin_root_path, class: "sidebar-brand" do %>
+        <span class="sidebar-nav-mini-hide"><%= image_tag "favicon.png" %><%= t "short_title" %></span>
+      <% end %>
+      <ul class="sidebar-nav">
+        <li>
+          <%= link_to admin_root_path, class: active_class?(admin_root_path) do %>
+            <i class="fa fa-tachometer sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".dashboard" %></span>
+          <% end %>
+        </li>
+        <li class="sidebar-header">
+          <span class="sidebar-header-title"><%= t ".management" %></span>
+        </li>
+        <li>
+          <%= link_to root_path, class: active_class?(root_path) do %>
+            <i class="fa fa-map-marker sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".places" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path, class: active_class?(root_path) do %>
+            <i class="fa fa-user sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".users" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "" do %>
+            <i class="fa fa-book sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".categories" %></span>
+          <% end %>
+        </li>
+        <%= link_to root_path, class: active_class?(root_path) do %>
+          <i class="fa fa-comment sidebar-nav-icon"></i>
+          <span class="sidebar-nav-mini-hide"><%= t ".comments" %></span>
+        <% end %>
+        <li class="sidebar-header">
+          <span class="sidebar-header-title"><%= t ".statistics" %></span>
+        </li>
+        <li>
+          <%= link_to "" do %>
+            <i class="fa fa-map-pin sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".places_statistic" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "" do %>
+            <i class="fa fa-users sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide"><%= t ".users_statistic" %></span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

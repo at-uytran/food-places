@@ -1,0 +1,23 @@
+vi:
+  short_title: "Quản lý hệ thống"
+  admin:
+    layouts:
+      header:
+        account: "Tài khoản"
+        homepage: "Về trang chủ"
+        profile: "Thông tin tài khoản"
+        settings: "Cài đặt"
+        logout: "Đăng xuất"
+      footer:
+        footer_heading: "Quản lý hệ thống chia sẻ & chỉ dẫn ẩm thực"
+      sidebar:
+        users: "Quản lý người dùng"
+        places: "Quản lý địa điểm"
+        comments: "Quản lý đánh gía"
+        categories: "Quản lý danh mục"
+        dashboard: "Bảng điều khiển"
+        places_statistic: "Thống kê địa điểm"
+        users_statistic: "Thống kê người dùng"
+        short_title: "Quản lý hệ thống"
+        management: "Quản lý"
+        statistics: "Thống kê"
