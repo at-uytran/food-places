@@ -1,0 +1,28 @@
+<div class="col-md-3 col-sm-6">
+    <%= link_to allow_order_place, class:"item small" do %>
+        <div class="image">
+            <div class="info">
+                <figure class="label label-info"><%= allow_order_place.place_category.name %></figure>
+                <aside>
+                    <h3><%= allow_order_place.name %></h3>
+                    <figure class="location"><%= allow_order_place.address %></figure>
+                </aside>
+            </div>
+            <div class="wrapper">
+                <div class="gallery">
+                    <%= image_tag allow_order_place.image %>
+                </div>
+            </div>
+        </div>
+        <!--end image-->
+        <div class="description">
+            <div class="meta">
+                <span><i class="fa fa-star"></i><%= allow_order_place.rate_point_average %></span>
+                <span><i class="fa fa-image"></i><%= allow_order_place.total_images %></span>
+            </div>
+        </div>
+        <!--end description-->
+    <% end %>
+    <!--end item-->
+</div>
+<!--end col-md-3-->

@@ -33,4 +33,9 @@ module PlacesHelper
     return place.ship_price if place.ship_price
     t "updating"
   end
+
+  def distance_from_here place
+    return "#{place.location.distance_from([current_location.latitude, current_location.longitude]).round(2)} km" if place.location
+    t "updating_location"
+  end
 end

@@ -26,7 +26,7 @@
                     <%= link_to place_path(place) do %>
                         <h3><%= place.name %></h3>
                     <% end %>
-                    <figure class="location">Montenegro</figure>
+                    <figure class="location"><%= place.location.address %></figure>
                 </div>
             </div>
             <!--end description-->
