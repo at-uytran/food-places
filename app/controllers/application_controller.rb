@@ -2,6 +2,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
+  def current_location
+    if Rails.env.development?
+      geo_data = Geocoder.search("116.110.21.32")
+    else
+      geo_data = Geocoder.search(request.remote_ip)
+    end
+    geo_data[0]
+  end
+
   private
 
   def logged_in_user

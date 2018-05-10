@@ -15,7 +15,7 @@
       <%= render "shared/popup_message" %>
       <div id="page-content">
         <div class="container">
-          <%= render "shared/bread_crumb" %>
+          <%= render "shared/bread_crumb" if request.path != root_path %>
           <%= yield %>
         </div>
       </div>
@@ -33,7 +33,6 @@
     <script type="text/javascript" src="/assets/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>
     <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="/assets/js/maps.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
 
     <!--[if lte IE 9]>

@@ -42,9 +42,8 @@
                     <div class="right" >
                         <nav id="primary-nav">
                             <ul>
-                                <li class="active"><%= link_to t(".home"), root_path %></li>
-                                <li><a href="about-us.html"><%= t ".about_us" %></a></li>
-                                <li>
+                                <li class="<%= active_class? root_path %>"><%= link_to t(".home"), root_path %></li>
+                                <li class="<%= active_class? places_path %> <%= active_class? nearby_places_path %>">
                                     <a href="javascript:void(0)" class="has-child"><%= t ".discover" %></a>
                                     <ul class="child-nav">
                                         <li><%= link_to t(".places"), places_path %></li>
@@ -81,9 +80,8 @@
                                         <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html"><%= t ".contact_us" %></a></li>
                                 <% if current_user %>
-                                    <li>
+                                    <li class="<%= active_class? user_path(current_user) %>">
                                         <a href="javascript:void(0)" class="has-child">
                                         <%= image_tag current_user.avatar, class: "user-mini-avatar" %>
                                         <%= current_user.name %></a>
