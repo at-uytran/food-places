@@ -1,0 +1,22 @@
+<tr>
+  <td class="text-center"><%= place.id %></td>
+  <td><%= image_tag place.image, class: "mini-avatar" %>
+  </td>
+  <td><%= link_to place.name, admin_place_path(place) %></td>
+  <td><span class="label label-<%= place.status %>"><%= t ".status_#{place.status}" %></span></td>
+  <td class="text-center"><%= locale_date place.created_at %></td>
+  <td class="text-center">
+    <div class="btn-group btn-group-xs">
+        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="<%= t ".approve" %>"><i class="fa fa-check"></i></a>
+        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="<%= t ".discard" %>"><i class="fa fa-times"></i></a>
+    </div>
+  </td>
+  <td class="text-center">
+    <div class="btn-group option">
+        <%= button_tag class: "btn btn-xs btn-danger confirm_delete_place button",
+          title: t(".delete"), id: place.id do %>
+          <i class="fa fa-trash icon"></i>
+        <% end %>
+      </div>
+  </td>
+</tr>

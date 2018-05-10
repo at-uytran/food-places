@@ -1,0 +1,82 @@
+@import 'admin_colors';
+
+/* Labels, Badges */
+.label,
+.badge {
+  font-weight: normal;
+  font-size: 90%;
+}
+
+.label {
+  padding: 1px 4px;
+}
+
+.label-pending {
+  background-color: $pending_color;
+}
+
+.label-pending[href]:hover,
+.label-pending[href]:focus {
+  background-color: $pending_color;
+}
+
+.label-approve {
+  background-color: $approved_color;
+}
+
+.label-approve[href]:hover,
+.label-approve[href]:focus {
+  background-color: $approved_color;
+}
+
+.label-block {
+  background-color: $canceled_color;
+}
+
+.label-block[href]:hover,
+.label-block[href]:focus {
+  background-color: $canceled_color;
+}
+
+.label-discard {
+  background-color: $discard_color;
+}
+
+.label-discard[href]:hover,
+.label-discard[href]:focus {
+  background-color: $discard_color;
+}
+
+.label-inprogress {
+  background-color: $inprogress_color;
+}
+
+.label-inprogress[href]:hover,
+.label-inprogress[href]:focus {
+  background-color: $inprogress_color;
+}
+
+.label-canceled {
+  background-color: $canceled_color;
+}
+
+.label-canceled[href]:hover,
+.label-canceled[href]:focus {
+  background-color: $canceled_color;
+}
+
+/* button */
+.btn-4 {
+  background-color: $canceled_color;
+  color: $white;
+}
+
+.btn-2 {
+  background-color: $discard_color;
+  color: $white;
+}
+
+.btn-1 {
+  background-color: $approved_color;
+  color: $white;
+}

@@ -13,7 +13,7 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.time :close_time
       t.float :ship_price
       t.text :coordinates
-      t.integer :status
+      t.integer :status, default: 0
       t.string :image
       t.integer :table_count
       t.references :place_category, index: true

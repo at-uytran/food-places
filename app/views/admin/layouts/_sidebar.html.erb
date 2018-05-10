@@ -15,7 +15,7 @@
           <span class="sidebar-header-title"><%= t ".management" %></span>
         </li>
         <li>
-          <%= link_to root_path, class: active_class?(root_path) do %>
+          <%= link_to admin_places_path, class: active_class?(admin_places_path) do %>
             <i class="fa fa-map-marker sidebar-nav-icon"></i>
             <span class="sidebar-nav-mini-hide"><%= t ".places" %></span>
           <% end %>
