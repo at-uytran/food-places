@@ -18,15 +18,35 @@
           <%= link_to "<i class='fa fa-plus'></i> #{t ".new_place"}".html_safe,
             new_admin_place_path, class: "btn btn-primary" %>
         </div>
-        <div class="input-group">
-          <%= text_field_tag "owner_name_or_title_cont", "", class: "form-control", placeholder: t("search"),
-            id: "admin_course_name" %>
-          <div class="input-group-btn">
-            <%= button_tag(name: nil, class: "btn btn-primary", id: "admin_course_search") do %>
-              <i class="fa fa-search"></i>
-            <% end %>
+        <%= search_form_for(@q, url: admin_places_path, class: "form-horizontal") do |f| %>
+          <div class="col-sm-3 col-xs-3">
+            <div class="dataTables_length" id="example-datatable_length">
+              <div class="form-group push-bit">
+                <div class="col-sm-9 admin-workspace-search">
+                  <%= f.select :status_eq, options_for_select(list_status_ransack, selected_status),
+                    {include_blank: t("manage_courses.sidebar.status")}, class: "form-control",  id: "admin-select-status" %>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="dataTables_length" id="example-datatable_length">
+              <div class="form-group push-bit">
+                <div class="col-sm-8">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <%= f.search_field :name_cont, class: "form-control" %>
+            <div class="input-group-btn">
+              <%= button_tag(name: nil, class: "btn btn-primary", id: "admin_course_search") do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
       <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
         <thead>

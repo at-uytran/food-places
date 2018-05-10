@@ -87,6 +87,9 @@
                                         <%= current_user.name %></a>
                                         <ul class="child-nav">
                                             <li><%= link_to t(".profile"), user_path(current_user) %></li>
+                                            <% if admin_user? current_user %>
+                                                <li><%= link_to t(".admin_dashboard"), admin_root_path %></li>
+                                            <% end %>
                                             <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
                                         </ul>
                                     </li>

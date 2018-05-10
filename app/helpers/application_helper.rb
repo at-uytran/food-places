@@ -14,11 +14,15 @@ module ApplicationHelper
   end
 
   def current_location
-    if Rails.env.development?
-      geo_data = Geocoder.search("116.110.21.32")
+    if current_user && current_user.user_location.address
+      geo_data = Geocoder.search(current_user.user_location.address)
     else
       geo_data = Geocoder.search(request.remote_ip)
     end
     geo_data[0]
+  end
+
+  def admin_user? user
+    user.admin?
   end
 end

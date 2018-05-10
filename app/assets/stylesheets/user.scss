@@ -3,3 +3,10 @@
   width: 25px;
   height: 25px;
 }
+.paginate_button.previous:before {
+  content: '← ';
+}
+
+.paginate_button.next:after {
+  content: ' →';
+}

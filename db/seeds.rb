@@ -6,9 +6,14 @@ p "create admin"
 admin = User.create! name: "admin",
   email: "admin@gmail.com",
   password: "123456",
-  address: "41 Ngo Thi Nham",
+  address: "41 Ngô Thì Nhậm, Đà Nẵng",
   descriptions: "askdjlajsdljal",
-  phone: "01648447158"
+  phone: "01648447158",
+  user_type: 2
+
+# admin.create_user_location! address: "41 Ngô Thì Nhậm, Đà Nẵng",
+#   district_id: @quan_lien_chieu.id,
+#   coordinates: FFaker::Geolocation.lat
 
 p "fake place categories"
 @an_vat = PlaceCategory.create! name: "Ăn vặt"
@@ -99,8 +104,8 @@ a_t_mien_nam = FoodCategory.create!(name: "Đóng chai",
 
 p "fake places"
 20.times do |n|
-  place = Place.create! name: "Highland coffee Nguyễn Văn Linh #{n+1}",
-    address: "45 Ngô Thì Nhậm",
+  place = Place.create! name: "Highland coffee big C #{n+1}",
+    address: "255 Hùng Vương, Đà Nẵng",
     descriptions: "Một tách cà phê đậm đà của Highlands Coffee khởi nguồn
       từ những vườn cà phê trĩu hạt trên vùng cao nguyên màu mỡ của Việt Nam.
       Sau mỗi vụ thu hoạch, từng hạt cà phê được chúng tôi chọn lựa kỹ càng bằng “tay”.
@@ -112,11 +117,8 @@ p "fake places"
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
-    place_category_id: PlaceCategory.first.id
+    place_category_id: @cafe.id
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
-  place.create_location! address: "45 Ngô Quyền, Đà Nẵng",
-    district_id: @quan_lien_chieu.id,
-    coordinates: FFaker::Geolocation.lat
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
   3.times do |n|
     place.user_ratings.create!(title: "Không gian tuyệt vời",
@@ -124,6 +126,8 @@ p "fake places"
       user_id: 1,
       points: 8)
   end
+
+  # place.place_setting.update_attributes allow_order: false
 
   puts "food for place"
   place.foods.create!(name: "Gà nướng",
@@ -162,11 +166,9 @@ cafe_gold = Place.create! name: "Gold Coffee",
   close_time: 8.hours.from_now.strftime("%I:%M%p"),
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
-  place_category_id: PlaceCategory.first.id
+  place_category_id: @cafe.id
 
-cafe_gold.create_location! address: "48 Trần Văn Kỷ, Đà Nẵng",
-  district_id: @quan_lien_chieu.id,
-  coordinates: FFaker::Geolocation.lat
+cafe_gold.place_setting.update_attributes allow_order: true
 
 puts "food for place"
 cafe_gold.foods.create!(name: "Cà phê sữa",
@@ -199,11 +201,9 @@ myquang_bich = Place.create! name: "Mỳ quảng Bích",
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
-    place_category_id: PlaceCategory.first.id
+    place_category_id: @quan_an.id
 
-myquang_bich.create_location! address: "3 Đặng Dung, Đà Nẵng",
-  district_id: @quan_lien_chieu.id,
-  coordinates: FFaker::Geolocation.lat
+myquang_bich.place_setting.update_attributes allow_order: true
 
 puts "food for myquang_bich"
 myquang_bich.foods.create!(name: "Mỳ quảng bò",
@@ -237,11 +237,9 @@ banh_canh_ruong = Place.create! name: "Bánh canh Ruộng Phương",
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
-    place_category_id: PlaceCategory.first.id
+    place_category_id: @quan_an.id
 
-banh_canh_ruong.create_location! address: "05 Hà Thị Thân, Đà Nẵng",
-  district_id: @quan_son_tra.id,
-  coordinates: FFaker::Geolocation.lat
+banh_canh_ruong.place_setting.update_attributes allow_order: true
 
 puts "food for banh_canh_ruong"
 banh_canh_ruong.foods.create!(name: "Bánh canh xương chả",
@@ -260,7 +258,6 @@ banh_canh_ruong.foods.create!(name: "Bánh canh cá",
   food_type: 1,
   price: 25000,
   food_category_id: amthuc.id)
-
 puts "end create banh_canh_ruong"
 
 puts "fake orders for places"

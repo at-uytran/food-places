@@ -1,5 +1,5 @@
 vi:
   nearby_places:
     index:
-      nearby_places: "Hiển thị những địa điểm gần bạn, trong bán kính 5km"
+      nearby_places: "Địa điểm trong bán kính 5km"
       no_results: "Không tìm thấy địa điểm nào phù hợp"
