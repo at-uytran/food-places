@@ -6,7 +6,7 @@
             <div class="title">
                 <div class="center"><strong><%= t ".nearby_places" %></strong></div>
             </div>
-            <% if current_user && @locations.any? %>
+            <% if @locations.any? %>
                 <!--end title-->
                 <div class="row">
                     <%= render partial: "place", collection: @locations, as: :location %>

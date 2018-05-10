@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def active_class? path
+    return "active" if request.path == path
+  end
+
   def locale_time time
     return l time, format: :show if time
     t "updating"
