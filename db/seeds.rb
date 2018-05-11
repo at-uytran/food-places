@@ -261,8 +261,11 @@ banh_canh_ruong.foods.create!(name: "Bánh canh cá",
 puts "end create banh_canh_ruong"
 
 puts "fake orders for places"
-Place.all.each do |place|
+Place.limit(3).each do |place|
   order = place.orders.create!(user_id: User.first.id)
   order.carts.create!(food_id: place.foods.first.id, quantity: 3)
   order.carts.create!(food_id: place.foods.last.id, quantity: 3)
 end
+
+order = banh_canh_ruong.orders.create!(user_id: User.last.id)
+order.carts.create!(food_id: banh_canh_ruong.foods.first.id, quantity: 2)

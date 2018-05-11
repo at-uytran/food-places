@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :user_place_orders
   end
+  resources :maps, only: %i(show)
   namespace :admin do
     root "static_pages#home"
     resources :places

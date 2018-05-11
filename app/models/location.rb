@@ -6,4 +6,5 @@ class Location < ApplicationRecord
   belongs_to :district, optional: true
   belongs_to :place
   scope :created_desc, ->{order created_at: :desc}
+  scope :with_approve_place, ->{joins(:place).where("places.status = ?", 1)}
 end

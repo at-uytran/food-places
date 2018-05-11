@@ -31,6 +31,11 @@ class Place < ApplicationRecord
   scope :created_desc, ->{order name: :desc}
   scope :by_categories, ->(ids){where(place_category_id: ids) if ids.present?}
   scope :allow_order, ->{joins(:place_setting).where place_settings: {allow_order: true}}
+  scope :orders_desc, ->{joins(:orders).select("places.*, COUNT(orders.id) as order_count").group("orders.id")}
+
+  def success_orders_size
+    # orders.where()
+  end
 
   def rate_point_average
     return I18n.t("places.rating_average.n_a") if user_ratings.blank?

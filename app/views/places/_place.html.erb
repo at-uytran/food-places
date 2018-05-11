@@ -2,7 +2,7 @@
     <div class="item big equal-height" data-map-latitude="16.031944" data-map-longitude="108.220556" data-id="1">
         <div class="item-wrapper">
             <div class="image">
-                <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="<%= place_descriptions place %>"></i></div>
+                <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="<%= place_descriptions(place).html_safe %>"></i></div>
                 <div class="mark-circle map" data-toggle="tooltip" data-placement="right" title="Show on map"><i class="fa fa-map-marker"></i></div>
                 <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
                 <%= link_to place_path(place), class: "wrapper" do %>

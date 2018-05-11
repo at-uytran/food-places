@@ -29,6 +29,15 @@
   background-color: $approved_color;
 }
 
+.label-approved {
+  background-color: $approved_color;
+}
+
+.label-approved[href]:hover,
+.label-approved[href]:focus {
+  background-color: $approved_color;
+}
+
 .label-block {
   background-color: $canceled_color;
 }
