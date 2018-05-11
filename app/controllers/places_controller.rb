@@ -2,16 +2,18 @@ class PlacesController < ApplicationController
   before_action :load_place, only: %i(show update destroy)
   before_action :set_json_params, only: %i(index)
   before_action :logged_in_user, only: %i(new create destroy update)
+  before_action :check_district_params, only: :create
 
   def index
     @q = Place.search params[:q]
-    @places = @q.result.created_desc.includes(:place_category)
+    @places = @q.result.approved.created_desc.includes(:place_category)
       .by_categories(@category_ids).page(params[:page]).per_page(9)
   end
 
   def create
     @place = Place.new place_params
     if @place.save
+      @place.create_location! district_id: params[:location][:district_id], address: params[:place][:address]
       flash[:success] = t ".success"
       redirect_to root_path
     else
@@ -35,6 +37,12 @@ class PlacesController < ApplicationController
   end
 
   private
+
+  def check_district_params
+    return if params[:location][:district_id].present?
+    flash[:danger] = t "places.check_district_params.require_district"
+    redirect_back fallback_location: places_path
+  end
 
   def set_json_params
     @category_ids = params[:category_ids].present? ? JSON.parse(params[:category_ids]) : []

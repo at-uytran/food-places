@@ -1,6 +1,5 @@
 module Admin
   class StaticPagesController < AdminBaseController
-    def home
-    end
+    def home; end
   end
 end

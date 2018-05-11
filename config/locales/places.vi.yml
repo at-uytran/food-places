@@ -2,6 +2,8 @@ vi:
   places:
     no_descriptions: "Không có mô tả nào"
     no_address: "Địa chỉ đang cập nhật"
+    check_district_params:
+      require_district: "Vui lòng chọn quận huyện"
     place_category:
       select:
         blank: "Chọn danh mục"

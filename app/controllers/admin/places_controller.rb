@@ -10,7 +10,6 @@ module Admin
     end
 
     def update
-      debugger
       if @place.update_attributes place_params
         flash[:success] = t ".success"
       else
