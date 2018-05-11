@@ -25,11 +25,11 @@
                         <!--end title-->
                         <div class="form-group">
                             <label for="form_reply_1-name"><%= t ".title" %><em>*</em></label>
-                            <%= f.input :title, label: false, input_html: {class:"form-control", id:"form_reply_1-name", name:"name", placeholder:"Beautiful holiday!", required:""} %>
+                            <%= f.input :title, label: false, input_html: {class: "form-control", id:"form_reply_1-name", placeholder:"Cảm nhận địa điểm", required:""} %>
                         </div>
                         <div class="form-group">
                             <label for="form_reply_1-message"><%= t ".content" %><em>*</em></label>
-                            <%= f.input :content, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-content", rows: "8", required: "", placeholder: "Describe your feeling about place"} %>
+                            <%= f.input :content, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-content", rows: "8", required: "", placeholder: "Mô tả vài điều về địa điểm này ", required:""} %>
                         </div>
                         <!--end form-group-->
                         <div class="form-group pull-right">
@@ -44,20 +44,17 @@
                         </div>
                         <!--end title-->
                         <dl class="visitor-rating">
-                            <dt><%= t ".total" %></dt>
-                            <dd class="star-rating active" data-name="total">
-                            <dt>Cleanliness</dt>
-                            <dd class="star-rating active" data-name="cleanliness"></dd>
-                            <dt>Comfort</dt>
-                            <dd class="star-rating active" data-name="comfort"></dd>
-                            <dt>Location</dt>
+                            <dt><%= t ".location" %></dt>
                             <dd class="star-rating active" data-name="location"></dd>
-                            <dt>Facilities</dt>
-                            <dd class="star-rating active" data-name="facilities"></dd>
-                            <dt>Staff</dt>
-                            <dd class="star-rating active" data-name="staff"></dd>
-                            <dt>Value for money</dt>
-                            <dd class="star-rating active" data-name="value"></dd>
+                            <dt><%= t ".prices" %></dt>
+                            <dd class="star-rating active" data-name="price"></dd>
+                            <dt><%= t ".quality" %></dt>
+                            <dd class="star-rating active" data-name="quality"></dd>
+                            <dt><%= t ".serve" %></dt>
+                            <dd class="star-rating active" data-name="serve"></dd>
+                            <dt><%= t ".space" %></dt>
+                            <dd class="star-rating active" data-name="space"></dd>
+
                         </dl>
                     </div>
                     <!--end col-md-4-->
@@ -68,8 +65,4 @@
         </div>
         <!--end review-->
     <% end %>
-
-    <form  class="labels-uppercase clearfix" id="form_reply_1">
-    </form>
-    <!--end form-->
 </section>

@@ -103,7 +103,7 @@ a_t_mien_nam = FoodCategory.create!(name: "Đóng chai",
   parent_id: do_uong.id)
 
 p "fake places"
-20.times do |n|
+10.times do |n|
   place = Place.create! name: "Highland coffee big C #{n+1}",
     address: "255 Hùng Vương, Đà Nẵng",
     descriptions: "Một tách cà phê đậm đà của Highlands Coffee khởi nguồn
@@ -117,7 +117,8 @@ p "fake places"
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
-    place_category_id: @cafe.id
+    place_category_id: @cafe.id,
+    status: 1
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
   3.times do |n|
@@ -166,7 +167,8 @@ cafe_gold = Place.create! name: "Gold Coffee",
   close_time: 8.hours.from_now.strftime("%I:%M%p"),
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
-  place_category_id: @cafe.id
+  place_category_id: @cafe.id,
+  status: 1
 
 cafe_gold.place_setting.update_attributes allow_order: true
 
@@ -192,16 +194,17 @@ puts "end create gold coffee"
 
 puts "create my quang bich"
 myquang_bich = Place.create! name: "Mỳ quảng Bích",
-    address: "05 Đặng Dung, Đà Nẵng",
-    descriptions: "Mì quảng Bích nổi danh. Được cái gần nhà, nên nhà mà có khách,
-      muốn thưởng thức là triển qua liền.
-      Quán bán cũng tầm vài chục năm, lúc còn nhỏ mình đã từng ăn ở đây.",
-    owner_id: User.first.id,
-    open_time: Time.now.strftime("%I:%M%p"),
-    close_time: 8.hours.from_now.strftime("%I:%M%p"),
-    ship_price: 6,
-    coordinates: FFaker::Geolocation.lat,
-    place_category_id: @quan_an.id
+  address: "05 Đặng Dung, Đà Nẵng",
+  descriptions: "Mì quảng Bích nổi danh. Được cái gần nhà, nên nhà mà có khách,
+    muốn thưởng thức là triển qua liền.
+    Quán bán cũng tầm vài chục năm, lúc còn nhỏ mình đã từng ăn ở đây.",
+  owner_id: User.first.id,
+  open_time: Time.now.strftime("%I:%M%p"),
+  close_time: 8.hours.from_now.strftime("%I:%M%p"),
+  ship_price: 6,
+  coordinates: FFaker::Geolocation.lat,
+  place_category_id: @quan_an.id,
+  status: 1
 
 myquang_bich.place_setting.update_attributes allow_order: true
 
@@ -227,17 +230,18 @@ puts "end create myquang_bich"
 
 puts "create banh canh tuong phuong"
 banh_canh_ruong = Place.create! name: "Bánh canh Ruộng Phương",
-    address: "05 Hà Thị Thân, Đà Nẵng",
-    descriptions: "Quán đối diện trường chuyên Lê Quý Đôn, bán cả ngày.
-      Mình gọi tô chả trứng thì họ đem luôn quẩy vs ram. Nước lèo vị hơi nhạt xíu,
-      tô này chắc tô nhỏ, có chả, trứng, 1 ít cá. Ăn cũng được, cũng bình thường.
-      2 người ăn hết 52k, ko gọi nước uống",
-    owner_id: User.first.id,
-    open_time: Time.now.strftime("%I:%M%p"),
-    close_time: 8.hours.from_now.strftime("%I:%M%p"),
-    ship_price: 6,
-    coordinates: FFaker::Geolocation.lat,
-    place_category_id: @quan_an.id
+  address: "05 Hà Thị Thân, Đà Nẵng",
+  descriptions: "Quán đối diện trường chuyên Lê Quý Đôn, bán cả ngày.
+    Mình gọi tô chả trứng thì họ đem luôn quẩy vs ram. Nước lèo vị hơi nhạt xíu,
+    tô này chắc tô nhỏ, có chả, trứng, 1 ít cá. Ăn cũng được, cũng bình thường.
+    2 người ăn hết 52k, ko gọi nước uống",
+  owner_id: User.first.id,
+  open_time: Time.now.strftime("%I:%M%p"),
+  close_time: 8.hours.from_now.strftime("%I:%M%p"),
+  ship_price: 6,
+  coordinates: FFaker::Geolocation.lat,
+  place_category_id: @quan_an.id,
+  status: 1
 
 banh_canh_ruong.place_setting.update_attributes allow_order: true
 
