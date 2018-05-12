@@ -33,22 +33,18 @@
                             <%= f.input :content, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-content", rows: "8", required: "", placeholder: t(".about_place"), required:""} %>
                         </div>
                         <!--end form-group-->
-
-
-
                         <section id="gallery">
-                        <div class="title">
-                            <h2>Gallery</h2>
-                            <aside class="step">3</aside>
-                        </div>
-                        <div class="file-upload-previews"></div>
-                        <div class="file-upload">
-                            <div class="MultiFile-wrap" id="MultiFile1">
-                                <input type="file" name="user_rating_images[images][]" class="file-upload-input with-preview MultiFile-applied MultiFile" multiple="" title="Click to add files" maxlength="10" accept="gif|jpg|png" id="MultiFile1_F2" value="">
+                            <div class="title">
+                                <h2>Gallery</h2>
                             </div>
-                            <span>Click to add images</span>
-                        </div>
-                    </section>
+                            <div class="file-upload-previews"></div>
+                            <div class="file-upload">
+                                <div class="MultiFile-wrap" id="MultiFile1">
+                                    <input type="file" name="user_rating_images[images][]" class="file-upload-input with-preview MultiFile-applied MultiFile" multiple="" title="Click to add files" maxlength="4" accept="gif|jpg|png" id="MultiFile1_F2" value="">
+                                </div>
+                                <span>Click to add images</span>
+                            </div>
+                        </section>
 
                         <div class="form-group pull-right">
                             <button type="submit" class="btn btn-primary btn-rounded"><%= t ".submit" %></button>

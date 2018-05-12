@@ -8,3 +8,4 @@
 //= require add_food.js
 //= require confirm_order.js
 //= require sweetalert/sweetalert.min.js
+//= require lightbox.js
