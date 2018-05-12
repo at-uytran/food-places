@@ -43,7 +43,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.average_points.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def quality_point
@@ -52,7 +52,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.score_quality.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def location_point
@@ -61,7 +61,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.score_location.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def space_point
@@ -70,7 +70,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.score_space.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def serve_point
@@ -79,7 +79,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.score_serve.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def price_point
@@ -88,7 +88,7 @@ class Place < ApplicationRecord
     user_ratings.each do |rating|
       points += rating.score_price.to_f
     end
-    points / user_ratings.size
+    (points / user_ratings.size).round(2)
   end
 
   def allow_order?
