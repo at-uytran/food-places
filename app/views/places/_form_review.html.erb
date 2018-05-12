@@ -1,6 +1,7 @@
-<section id="write-a-review">
+<section id="write-a-review" class="box">
     <h2><%= t ".write_review" %></h2>
-    <%= simple_form_for [@place, UserRating.new], html: {class: "labels-uppercase clearfix"} do |f| %>
+    <%= simple_form_for [@place, @user_rating = UserRating.new],
+        html: {class: "labels-uppercase clearfix form-submit labels-uppercase", id: "form-submit", enctype: "multipart/form-data"} do |f| %>
         <% unless current_user %>
             <div class="alert alert-dark fade in center" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" data-switch="#review-write">
@@ -25,13 +26,30 @@
                         <!--end title-->
                         <div class="form-group">
                             <label for="form_reply_1-name"><%= t ".title" %><em>*</em></label>
-                            <%= f.input :title, label: false, input_html: {class: "form-control", id:"form_reply_1-name", placeholder:"Cảm nhận địa điểm", required:""} %>
+                            <%= f.input :title, label: false, input_html: {class: "form-control", id:"form_reply_1-name", placeholder:t(".feel_about"), required:""} %>
                         </div>
                         <div class="form-group">
                             <label for="form_reply_1-message"><%= t ".content" %><em>*</em></label>
-                            <%= f.input :content, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-content", rows: "8", required: "", placeholder: "Mô tả vài điều về địa điểm này ", required:""} %>
+                            <%= f.input :content, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-content", rows: "8", required: "", placeholder: t(".about_place"), required:""} %>
                         </div>
                         <!--end form-group-->
+
+
+
+                        <section id="gallery">
+                        <div class="title">
+                            <h2>Gallery</h2>
+                            <aside class="step">3</aside>
+                        </div>
+                        <div class="file-upload-previews"></div>
+                        <div class="file-upload">
+                            <div class="MultiFile-wrap" id="MultiFile1">
+                                <input type="file" name="user_rating_images[images][]" class="file-upload-input with-preview MultiFile-applied MultiFile" multiple="" title="Click to add files" maxlength="10" accept="gif|jpg|png" id="MultiFile1_F2" value="">
+                            </div>
+                            <span>Click to add images</span>
+                        </div>
+                    </section>
+
                         <div class="form-group pull-right">
                             <button type="submit" class="btn btn-primary btn-rounded"><%= t ".submit" %></button>
                         </div>

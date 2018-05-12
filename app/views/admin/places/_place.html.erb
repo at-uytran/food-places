@@ -9,13 +9,13 @@
     <div class="btn-group btn-group-xs">
         <%= form_for [:admin, place] do |f| %>
           <%=  f.hidden_field :status, value: "approved" %>
-          <%= button_tag"", class: "btn btn-success", "data-original-title": t(".approve") do %>
+          <%= button_tag"", class: "btn btn-xs btn-1 button", "data-original-title": t(".approve") do %>
             <i class="fa fa-check"></i>
           <% end %>
         <% end %>
         <%= form_for [:admin, place] do |f| %>
           <%=  f.hidden_field :status, value: "pending" %>
-          <%= button_tag"", class: "btn btn-danger", "data-original-title": t(".discard") do %>
+          <%= button_tag"", class: "btn btn-xs btn-danger button", "data-original-title": t(".discard") do %>
             <i class="fa fa-times"></i>
           <% end %>
         <% end %>

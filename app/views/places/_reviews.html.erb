@@ -1,4 +1,4 @@
-<section id="reviews">
+<section id="reviews" class="box">
     <div class="title">
         <h2 class="pull-left"><%= t ".reviews" %></h2>
         <a href="#write-a-review" class="btn btn-primary btn-rounded pull-right scroll"><%= t ".write_review" %></a>
@@ -6,31 +6,28 @@
     <h3><%= t ".overall" %></h3>
     <ul class="rating-score">
         <li class="overall"><i class="fa fa-star"></i><%= @place.rate_point_average %></li>
-        <li><span>9.6</span>
-            <figure>Cleanliness</figure>
+        <li><span><%= @place.quality_point %></span>
+            <figure><%= t ".quality" %></figure>
         </li>
-        <li><span>10</span>
-            <figure>Comfort</figure>
+        <li><span><%= @place.space_point %></span>
+            <figure><%= t ".space" %></figure>
         </li>
-        <li><span>9.4</span>
-            <figure>Location</figure>
+        <li><span><%= @place.serve_point %></span>
+            <figure><%= t ".serve" %></figure>
         </li>
-        <li><span>9.8</span>
-            <figure>Facilities</figure>
+        <li><span><%= @place.price_point %></span>
+            <figure><%= t ".price" %></figure>
         </li>
-        <li><span>10</span>
-            <figure>Staff</figure>
-        </li>
-        <li><span>10</span>
-            <figure>Value for money</figure>
+        <li><span><%= @place.location_point %></span>
+            <figure><%= t ".location" %></figure>
         </li>
     </ul>
     <div class="reviews">
         <%= render partial: "review", collection: @reviews, as: :review %>
     </div>
     <!--end reviews-->
+    <div class="center">
+        <a href="" class="btn btn-default btn-rounded btn-framed"><%= t "load_more" %></a>
+    </div>
 </section>
-<div class="center">
-    <a href="" class="btn btn-default btn-rounded btn-framed">Load More</a>
-</div>
 <%= render "form_review" %>

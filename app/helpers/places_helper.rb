@@ -38,4 +38,14 @@ module PlacesHelper
     return "#{place.location.distance_from([current_location.latitude, current_location.longitude]).round(2)} km" if place.location
     t "updating_location"
   end
+
+  def show_phone place
+    return place.phone if place.phone
+    t "updating"
+  end
+
+  def show_email place
+    return place.email if place.email
+    t "updating"
+  end
 end

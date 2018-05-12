@@ -25,7 +25,9 @@
                 <div class="col-md-7">
                     <div class="form-group">
                         <label for="form-submit-title"><%= t ".name" %><em>*</em></label>
-                        <%= f.input :name, label: false, class: "form-control", id: "form-submit-title" %>
+                        <%= f.input :name, label: false,
+                            input_html: {class: "form-control", id: "form-submit-title",
+                            placeholder: t(".name")} %>
                     </div>
                     <!--end form-group-->
                 </div>
@@ -47,7 +49,9 @@
                 <div class="col-md-7">
                     <div class="form-group">
                         <label for="form-submit-description"><%= t ".description" %><em>*</em></label>
-                        <%= f.input :descriptions, as: :text, label: false, input_html: {class: "form-control", id: "form-submit-description", rows: "10", name: "description", required: "", placeholder: "Describe your accommodation"} %>
+                        <%= f.input :descriptions, as: :text, label: false,
+                            input_html: {class: "form-control", id: "form-submit-description",
+                            rows: "10", required: "", placeholder: t(".description")} %>
                     </div>
                     <!--end form-group-->
                 </div>
@@ -74,7 +78,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address-autocomplete"><%= t ".address" %><em>*</em></label>
-                        <%= f.input :address, label: false, input_html: {class: "form-control", id: "address", placeholder: "Accommodation Address", required: ""} %>
+                        <%= f.input :address, label: false, input_html: {class: "form-control", id: "address", placeholder: t(".address_placeholder"), required: ""} %>
                     </div>
                     <div class="form-group">
                         <label><%= t ".place_on_map" %></label>

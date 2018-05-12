@@ -13,14 +13,13 @@
             </dl>
         </aside>
         <aside>
-            <h2>Contact</h2>
+            <h2><%= t ".contact" %></h2>
             <address>
                 <strong><%= @place.name %></strong><br>
                 <%= @place.address %><br>
                 <br>
-                +1 (734) 123-4567<br>
-                <a href="#">hello@example.com</a><br>
-                <strong>skype:</strong> your.company
+                <%= t ".phone" %> <%= show_phone @place %><br>
+                <%= t ".email" %> <a href="#"><%= show_email @place %></a><br>
             </address>
         </aside>
     </div>
