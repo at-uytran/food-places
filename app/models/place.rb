@@ -41,7 +41,52 @@ class Place < ApplicationRecord
     return I18n.t("places.rating_average.n_a") if user_ratings.blank?
     points = 0
     user_ratings.each do |rating|
-      points += rating.points
+      points += rating.average_points.to_f
+    end
+    points / user_ratings.size
+  end
+
+  def quality_point
+    return I18n.t("n_a") if user_ratings.blank?
+    points = 0
+    user_ratings.each do |rating|
+      points += rating.score_quality.to_f
+    end
+    points / user_ratings.size
+  end
+
+  def location_point
+    return I18n.t("n_a") if user_ratings.blank?
+    points = 0
+    user_ratings.each do |rating|
+      points += rating.score_location.to_f
+    end
+    points / user_ratings.size
+  end
+
+  def space_point
+    return I18n.t("n_a") if user_ratings.blank?
+    points = 0
+    user_ratings.each do |rating|
+      points += rating.score_space.to_f
+    end
+    points / user_ratings.size
+  end
+
+  def serve_point
+    return I18n.t("n_a") if user_ratings.blank?
+    points = 0
+    user_ratings.each do |rating|
+      points += rating.score_serve.to_f
+    end
+    points / user_ratings.size
+  end
+
+  def price_point
+    return I18n.t("n_a") if user_ratings.blank?
+    points = 0
+    user_ratings.each do |rating|
+      points += rating.score_price.to_f
     end
     points / user_ratings.size
   end

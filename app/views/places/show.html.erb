@@ -21,7 +21,7 @@
                 </div>
                 <div class="right">
                     <a href="#map" class="icon scroll"><i class="fa fa-map-marker"></i><%= t ".see_on_map" %></a>
-                    <a href="#availability" class="btn btn-primary btn-rounded scroll">Reserve Today</a>
+                    <a href="#availability" class="btn btn-primary btn-rounded scroll"><%= t ".food_menu" %></a>
                 </div>
             </div>
             <!--end title-->
@@ -60,5 +60,9 @@
         <%= render "order" %>
     </div>
 </div>
-<%= render partial: "reviews", object: @reviews %>
+<div class="sidebar">
+    <div class="col-md-8 col-sm-8">
+        <%= render partial: "reviews", object: @reviews %>
+    </div>
+</div>
 <%= javascript_include_tag "js/maps", "data-turbolinks-track": ["load"] %>

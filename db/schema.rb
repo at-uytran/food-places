@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510055716) do
+ActiveRecord::Schema.define(version: 20180512050217) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "order_id"
@@ -239,6 +239,15 @@ ActiveRecord::Schema.define(version: 20180510055716) do
     t.datetime "updated_at", null: false
     t.index ["notification_id"], name: "index_user_notifications_on_notification_id"
     t.index ["user_id"], name: "index_user_notifications_on_user_id"
+  end
+
+  create_table "user_rating_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image"
+    t.string "descriptions"
+    t.bigint "user_rating_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_rating_id"], name: "index_user_rating_images_on_user_rating_id"
   end
 
   create_table "user_ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

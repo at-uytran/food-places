@@ -2,9 +2,11 @@ class UserRatingsController < ApplicationController
   before_action :load_place, only: :create
 
   def create
-    debugger
     @user_rating = @place.user_ratings.new user_rating_params
     if @user_rating.save
+      params[:user_rating_images]['images'].each do |a|
+        @user_rating.user_rating_images.create!(:image => a)
+      end
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".failed"
@@ -18,7 +20,6 @@ class UserRatingsController < ApplicationController
   private
 
   def load_place
-    debugger
     @place = Place.find_by id: params[:place_id]
     return if @place
     flash[:danger] = t ".not_found"
@@ -26,6 +27,7 @@ class UserRatingsController < ApplicationController
   end
 
   def user_rating_params
-    params.require(:user_rating).permit :user_id, :place_id, :content, :points, :title, :score_price, :score_location, :score_serve, :score_quality, :score_space
+    params.require(:user_rating).permit :user_id, :place_id, :content, :points, :title, :score_price, :score_location,
+      :score_serve, :score_quality, :score_space, user_rating_images_attributes: [:user_rating_id, :image, :descriptions]
   end
 end
