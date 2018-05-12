@@ -13,11 +13,17 @@
                 </div>
                 <!--end title-->
                 <p><%= review.content %></p>
-                <div class="clearfix options">
-                    <span class="pull-left"><a href="" class="btn btn-framed btn-default btn-rounded btn-small icon"><i class="fa fa-thumbs-up font-color-default"></i>10</a>Helpful Review?</span>
-                    <span class="pull-right"><a href="" class="link icon font-color-grey"><i class="fa fa-flag"></i>Report</a></span>
-                </div>
-                <!--end options-->
+                <% if review.user_rating_images.present? %>
+                    <div class="image-row">
+                        <div class="image-set">
+                            <% review.user_rating_images.each do |image| %>
+                                <%= link_to image_path(image.image), "data-lightbox": "roadtrip", class: "example-image-link" do %>
+                                    <%= image_tag image.image, class: "example-image" %>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
             <!--end comment-->
         </div>
