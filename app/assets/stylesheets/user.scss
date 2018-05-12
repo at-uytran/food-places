@@ -3,6 +3,14 @@
   width: 25px;
   height: 25px;
 }
+
+.user-thumb-avatar {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+
 .paginate_button.previous:before {
   content: '← ';
 }
