@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <aside class="name"><%= review.user.name %></aside>
-            <aside class="date"><%= review.user.created_at %></aside>
+            <aside class="date"><%= image_tag review.user.avatar, class: "user-thumb-avatar" %></aside>
         </div>
         <!--end col-md-3-->
         <div class="col-md-9">
