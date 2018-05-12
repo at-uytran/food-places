@@ -520,7 +520,7 @@ function rating(element){
     $.each( $(element + ' .star-rating'), function(i) {
         $(this).append(ratingElement);
         if( $(this).hasClass('active') ){
-            $(this).append('<input readonly hidden="" name="score_' + $(this).attr('data-name') +'" id="score_' + $(this).attr('data-name') +'">');
+            $(this).append('<input readonly hidden="" name="user_rating[score_' + $(this).attr('data-name') +']" id="score_' + $(this).attr('data-name') +'">');
         }
         // If rating exists
         var rating = $(this).attr('data-rating');

@@ -26,6 +26,6 @@ class UserRatingsController < ApplicationController
   end
 
   def user_rating_params
-    params.require(:user_rating).permit :user_id, :place_id, :content, :points, :title
+    params.require(:user_rating).permit :user_id, :place_id, :content, :points, :title, :score_price, :score_location, :score_serve, :score_quality, :score_space
   end
 end

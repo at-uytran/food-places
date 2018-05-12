@@ -247,6 +247,12 @@ ActiveRecord::Schema.define(version: 20180510055716) do
     t.bigint "place_id"
     t.integer "points", default: 0
     t.text "content"
+    t.integer "score_price"
+    t.integer "score_location"
+    t.integer "score_quality"
+    t.integer "score_serve"
+    t.integer "score_space"
+    t.boolean "turn_back"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

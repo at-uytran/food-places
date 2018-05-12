@@ -8,6 +8,12 @@ vi:
       content: "Nội dung đánh gía"
       rating: "Điểm đánh gía (/10)"
       submit: "Gửi đánh gía"
+      location: "Địa điểm"
+      total: "Tổng điểm"
+      prices: "Gía cả"
+      quality: "Chất lượng"
+      space: "Không gian"
+      serve: "Phục vụ"
   user_ratings:
     create:
       success: "Đánh gía thành công"
