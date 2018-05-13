@@ -9,12 +9,3 @@
   width: 55px;
   height: 55px;
 }
-
-
-.paginate_button.previous:before {
-  content: '← ';
-}
-
-.paginate_button.next:after {
-  content: ' →';
-}
