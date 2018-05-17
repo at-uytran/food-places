@@ -51,18 +51,20 @@
     </div>
     <!--end col-md-9-->
 </div>
-<div class="row food-order" id="food-order">
-    <!--end col-md-4-->
-    <div class="col-md-8 col-sm-8" id="foods">
-        <%= render partial: "foods", object: @foods %>
+<div class="order-and-reviews">
+    <div class="row food-order" id="food-order">
+        <!--end col-md-4-->
+        <div class="col-md-8 col-sm-8" id="foods">
+            <%= render partial: "foods", object: @foods %>
+        </div>
+        <div class="col-md-4  col-sm-8" id="order">
+            <%= render "order" %>
+        </div>
     </div>
-    <div class="col-md-4  col-sm-8" id="order">
-        <%= render "order" %>
+    <div class="sidebar reviews-sidebar">
+        <div class="col-md-8 col-sm-8">
+            <%= render partial: "reviews", object: @reviews %>
+        </div>
     </div>
 </div>
-<div class="sidebar">
-    <div class="col-md-8 col-sm-8">
-        <%= render partial: "reviews", object: @reviews %>
-    </div>
-</div>
-<%= javascript_include_tag "js/maps", "data-turbolinks-track": ["load"] %>
+<%= javascript_include_tag "js/maps", "data-turbolinks-track": ["load", "reload"] %>

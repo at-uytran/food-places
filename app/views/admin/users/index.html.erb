@@ -1,0 +1,56 @@
+<div class="content-header">
+  <div class="header-section">
+    <h1>
+      <i class="fa fa-users"></i></i><%= t ".manage_users" %><br><small><%= t ".describe" %></small>
+    </h1>
+  </div>
+</div>
+<div class="block full">
+  <div class="block-title">
+    <h2><strong><%= t ".table" %></strong></h2>
+  </div>
+  <div class="table-responsive">
+    <div id="example-datatable_wrapper" class="dataTables_wrapper">
+      <div class="row">
+        <div class="input-group col-sm-12 col-xs-0 text-right">
+          <div class="col-sm-6 col-xs-5">
+            <div class="col-sm-2 col-xs-3">
+              <%= link_to "<i class='fa fa-plus'></i> #{t ".new_user"}".html_safe,
+                new_admin_user_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-5">
+            <%= search_form_for [:admin, @search], class: "form-title col-sm-5 col-xs-7 pull-right" do |f| %>
+              <div class="input-group">
+                <%= f.text_field :name_cont, class: "form-control", placeholder: t(".input_form") %>
+                <div class="input-group-btn">
+                  <%= f.button(name: nil, type: "submit", class: "btn btn-primary") do %>
+                    <i class="fa fa-search"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t ".index" %></th>
+            <th class="text-center"><%= t ".name" %></th>
+            <th class="text-center"><%= t ".email" %></th>
+            <th class="text-center"><%= t ".address" %></th>
+            <th class="text-center"><%= t ".status" %></th>
+            <th class="text-center"><%= t ".option" %></th>
+          </tr>
+        </thead>
+        <tbody class="users-info">
+          <% @users.each_with_index do |value, index| %>
+            <%= render "user", user: value, index: index %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <%= will_paginate @pending_users %>
+  </div>
+</div>

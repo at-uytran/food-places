@@ -2,6 +2,14 @@
   Rake::Task[task].invoke
 end
 
+p "Fake provinces"
+@da_nang = Province.create! name: "Đà Nẵng",
+  descriptions: "Thành phố du lịch với nhiều bãi biển đẹp và nhiều món ăn ngon"
+
+@quan_lien_chieu = District.create! name: "Liên Chiểu",
+  descriptions: "Quận Liên Chiểu",
+  province_id: @da_nang.id
+
 p "create admin"
 admin = User.create! name: "admin",
   email: "admin@gmail.com",
@@ -9,7 +17,8 @@ admin = User.create! name: "admin",
   address: "41 Ngô Thì Nhậm, Đà Nẵng",
   descriptions: "askdjlajsdljal",
   phone: "01648447158",
-  user_type: 2
+  user_type: 2,
+  district_id: @quan_lien_chieu.id
 
 # admin.create_user_location! address: "41 Ngô Thì Nhậm, Đà Nẵng",
 #   district_id: @quan_lien_chieu.id,
@@ -26,10 +35,6 @@ p "fake food categories"
 @am_thuc_mien_nam = FoodCategory.create! name: "Miền nam"
 @am_thuc_mien_bac = FoodCategory.create! name: "Miền bắc"
 
-p "Fake provinces"
-@da_nang = Province.create! name: "Đà Nẵng",
-  descriptions: "Thành phố du lịch với nhiều bãi biển đẹp và nhiều món ăn ngon"
-
 @quang_nam = Province.create! name: "Quảng Nam",
   descriptions: "Quê hương xinh đẹp với nhiều địa điểm du lịch hấp dẫn và những đặc sản nổi tiếng"
 
@@ -44,10 +49,6 @@ p "Fake districts da nang"
 
 @quan_cam_le = District.create! name: "Cẩm Lệ",
   descriptions: "Quận Cẩm Lệ",
-  province_id: @da_nang.id
-
-@quan_lien_chieu = District.create! name: "Liên Chiểu",
-  descriptions: "Quận Liên Chiểu",
   province_id: @da_nang.id
 
 @quan_thanh_khe = District.create! name: "Thanh Khê",
@@ -76,12 +77,9 @@ p "create users"
     email: "email#{n+1}@gmail.com",
     password: "123456",
     address: "05 Ngô Văn Sở, Đà Nẵng",
-    descriptions: "askdjlajsdljal",
-    phone: "01648447158"
-
-  user.create_user_location! address: "45 Ngô Thì Nhậm, Đà Nẵng",
-    district_id: @quan_lien_chieu.id,
-    coordinates: FFaker::Geolocation.lat
+    descriptions: "khong mo ta gi",
+    phone: "01648447158",
+    district_id: @quan_lien_chieu.id
 end
 
 amthuc = FoodCategory.create!(name: "Âm thực")
@@ -103,8 +101,8 @@ a_t_mien_nam = FoodCategory.create!(name: "Đóng chai",
   parent_id: do_uong.id)
 
 p "fake places"
-10.times do |n|
-  place = Place.create! name: "Highland coffee big C #{n+1}",
+5.times do |n|
+  place = Place.create! name: "Highland coffee #{n+1}",
     address: "255 Hùng Vương, Đà Nẵng",
     descriptions: "Một tách cà phê đậm đà của Highlands Coffee khởi nguồn
       từ những vườn cà phê trĩu hạt trên vùng cao nguyên màu mỡ của Việt Nam.
@@ -118,7 +116,59 @@ p "fake places"
     ship_price: 6,
     coordinates: FFaker::Geolocation.lat,
     place_category_id: @cafe.id,
-    status: 1
+    status: 1,
+    district_id: @quan_lien_chieu.id
+
+  place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
+  place.comments.create!(content: "Commented Commented Commented", user_id: 1)
+  3.times do |n|
+    place.user_ratings.create!(title: "Không gian tuyệt vời",
+      content: "Món ăn khá ngon, không gian thoáng mát",
+      user_id: 1,
+      points: 8)
+  end
+  # place.place_setting.update_attributes allow_order: false
+
+  puts "food for place"
+  place.foods.create!(name: "Gà nướng",
+    food_type: 0,
+    price: 70000,
+    food_category_id: a_t_mien_nam.id)
+  place.foods.create!(name: "Vịt quay",
+    food_type: 1,
+    price: 80000,
+    food_category_id: 1)
+  place.foods.create!(name: "Cơm chiên",
+    food_type: 1,
+    price: 30000,
+    food_category_id: 1)
+  place.foods.create!(name: "Ba chỉ nướng",
+    food_type: 1,
+    price: 50000,
+    food_category_id: 1)
+  place.foods.create!(name: "Đậu khuôn chiên",
+    food_type: 1,
+    price: 50000,
+    food_category_id: 1)
+end
+
+p "fake places"
+5.times do |n|
+  place = Place.create! name: "Mỳ quảng bà Mua #{n+1}",
+    address: "259 Hồ Nghinh, Đà Nẵng",
+    descriptions: "Mỳ Quảng Bà Mua tại Hồ Nghinh, chi nhánh nơi đây cũng mới khai trương
+    và nổi tiếng tại Đà Nẵng, có nhiều cơ sở tại nhiều vị trí tuyến đường khác nhau.
+    Nhìn chung cơ sở nào cũng nấu ngon và hợp vệ sinh,
+    điều được khách hàng quan tâm nhiều nhất vẫn là giá cả. Giá cả cơ sở nào cũng như nhau",
+    owner_id: User.first.id,
+    open_time: Time.now.strftime("%I:%M%p"),
+    close_time: 8.hours.from_now.strftime("%I:%M%p"),
+    ship_price: 6,
+    coordinates: FFaker::Geolocation.lat,
+    place_category_id: @quan_an.id,
+    status: 1,
+    district_id: @quan_lien_chieu.id
+
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
   3.times do |n|
@@ -168,7 +218,8 @@ cafe_gold = Place.create! name: "Gold Coffee",
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @cafe.id,
-  status: 1
+  status: 1,
+  district_id: @quan_lien_chieu.id
 
 cafe_gold.place_setting.update_attributes allow_order: true
 
@@ -204,7 +255,8 @@ myquang_bich = Place.create! name: "Mỳ quảng Bích",
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @quan_an.id,
-  status: 1
+  status: 1,
+  district_id: @quan_lien_chieu.id
 
 myquang_bich.place_setting.update_attributes allow_order: true
 
@@ -241,7 +293,8 @@ banh_canh_ruong = Place.create! name: "Bánh canh Ruộng Phương",
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @quan_an.id,
-  status: 1
+  status: 1,
+  district_id: @quan_lien_chieu.id
 
 banh_canh_ruong.place_setting.update_attributes allow_order: true
 

@@ -1,0 +1,27 @@
+<tr>
+  <td class="text-left"><%= user.id %></td>
+  <td><a href="javascript:void(0)"><%= link_to user.name, user %></a></td>
+  <td><%= user.email %></td>
+  <td><%= user.address if user.address %></td>
+  <td>
+    <span class="label label-<%= user.status %>"><%= t ".status_#{user.status}" %></span>
+  </td>
+  <td class="text-center">
+      <div class="btn-group option">
+        <%= render "admin/shared/button/user/action_button" %>
+      </div>
+      <div class="btn-group option">
+        <%= link_to edit_admin_user_path(user), class: "btn btn-xs btn-primary button",
+          title: t(".edit"), id: user.id do %>
+          <i class="fa fa-pencil icon"></i>
+        <% end %>
+      </div>
+    <div class="btn-group option">
+      <% unless current_user == user %>
+        <%= button_tag id: "#{user.id}_#{params[:page]}", class: "btn btn-xs btn-danger button confirm_delete_user", title: t(".del") do %>
+          <i class="fa fa-trash icon"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </td>
+</tr>

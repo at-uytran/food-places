@@ -6,15 +6,15 @@
             <div class="title">
                 <div class="center"><strong><%= t ".nearby_places" %></strong></div>
             </div>
-            <% if @locations.any? %>
+            <% if @nearby_places.any? %>
                 <!--end title-->
                 <div class="row">
-                    <%= render partial: "place", collection: @locations, as: :location %>
+                    <%= render partial: "place", collection: @nearby_places, as: :nearby_place %>
                 </div>
                 <!--end row-->
                 <div class="center">
                     <div class="pagination">
-                        <%= will_paginate @locations %>
+                        <%= will_paginate @nearby_places %>
                     </div>
                 </div>
                 <!--end center-->

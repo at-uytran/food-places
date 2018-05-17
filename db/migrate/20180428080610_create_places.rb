@@ -7,7 +7,9 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :facebook
       t.text :descriptions
-      t.references :province
+      t.references :district, index: true
+      t.float :latitude
+      t.float :longitude
       t.references :owner, index: true, null: true
       t.time :open_time
       t.time :close_time
@@ -17,7 +19,6 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.string :image
       t.integer :table_count
       t.references :place_category, index: true
-      t.references :location, index: true, null: true
 
       t.datetime :deleted_at
       t.timestamps

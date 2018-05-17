@@ -7,9 +7,6 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  after_create :create_user_location
-  after_save :change_user_location
-
   has_secure_password
   has_many :user_ratings, dependent: :destroy
   has_many :subscribe_places, dependent: :destroy
@@ -17,10 +14,14 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :user_notifications, dependent: :destroy
-  has_one :user_settings, dependent: :destroy
   has_many :notifications, through: :user_notifications
   has_many :places, dependent: :destroy
-  has_one :user_location, dependent: :destroy
+  has_one :user_settings, dependent: :destroy
+  belongs_to :district
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+  after_save :geocode, if: :address_changed?
 
   validates :email, presence: {message: I18n.t("activerecord.errors.blank")}, length: {maximum: EMAIL_MAX_LEN},
     format: {with: VALID_EMAIL_REGEX},
@@ -28,10 +29,11 @@ class User < ApplicationRecord
   validates :password, presence: {message: I18n.t("activerecord.errors.blank")}, length: {minimum: PWD_MIN_LEN}, allow_nil: true
   validates :name, presence: {message: I18n.t("activerecord.errors.blank")}, length: {maximum: NAME_MAX_LEN}
 
-  scope :order_by_name, ->{order name: :desc}
   enum user_type: {user: 0, place_owner: 1, admin: 2}
   enum status: {active: 0, blocked: 1}
   mount_uploader :avatar, UserImageUploader
+
+  scope :order_by_name, ->{order name: :desc}
 
   def update_auth_token
     self.auth_token = SecureRandom.urlsafe_base64
@@ -75,15 +77,6 @@ class User < ApplicationRecord
   end
 
   private
-
-  def create_user_location
-    create_user_location! address: address
-  end
-
-  def change_user_location
-    user_location.address = address if address_changed?
-    user_location.save
-  end
 
   def downcase_email
     self.email = email.downcase

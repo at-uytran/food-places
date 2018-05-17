@@ -35,7 +35,7 @@ module PlacesHelper
   end
 
   def distance_from_here place
-    return "#{place.location.distance_from([current_location.latitude, current_location.longitude]).round(2)} km" if place.location
+    return "#{place.distance_from([current_location.latitude, current_location.longitude]).round(2)} km" if place.address
     t "updating_location"
   end
 

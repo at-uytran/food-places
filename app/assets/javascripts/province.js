@@ -14,6 +14,7 @@ function getProvinceDistricts() {
     dataType: "json",
     success: function(res) {
       $('#filter-districts').children().remove();
+      $('#filter-districts').append('<option value="">Chọn quận huyện</option>');
       $.each(res.data.districts, function(i, item) {
         $('#filter-districts').append(`<option value="${res.data.districts[i].id}">${res.data.districts[i].name}</option>`);
         submitForm();

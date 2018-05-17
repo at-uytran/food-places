@@ -2,8 +2,6 @@ class Place < ApplicationRecord
   acts_as_paranoid
 
   after_create :create_setting
-  after_create :create_location
-  after_save :change_location
 
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -13,12 +11,16 @@ class Place < ApplicationRecord
   has_many :place_foods, dependent: :destroy
   has_many :collection_places, dependent: :destroy
   has_many :place_images, dependent: :destroy
-  has_one :location, dependent: :destroy
-  has_one :place_setting, dependent: :destroy
-  belongs_to :place_category
   has_many :foods, through: :place_foods
   has_many :collections, through: :collection_places
+  has_one :place_setting, dependent: :destroy
+  belongs_to :place_category
+  belongs_to :district
   belongs_to :owner, class_name: User.name, optional: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+  after_save :geocode, if: :address_changed?
 
   mount_uploader :image, PlaceImageUploader
 
@@ -104,15 +106,6 @@ class Place < ApplicationRecord
   end
 
   private
-
-  def create_location
-    create_location! address: address
-  end
-
-  def change_location
-    location.address = address if address_changed?
-    location.save
-  end
 
   def create_setting
     create_place_setting! allow_order: false, enable: true

@@ -3,8 +3,8 @@
         <h2><%= t ".title" %></h2>
     </div>
     <div class="row">
-        <% if @nearby_locations %>
-          <%= render partial: "nearby_place", collection: @nearby_locations, as: :nearby_location %>
+        <% if @nearby_places %>
+          <%= render partial: "nearby_place", collection: @nearby_places, as: :nearby_place %>
         <% else %>
           <div class="center"><%= t ".no_nearby_places" %></div>
         <% end %>
