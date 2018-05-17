@@ -1,0 +1,12 @@
+<%= form_for [:admin, course], html: {class: "action"} do |f| %>
+  <%= f.hidden_field :status, value: status %>
+  <% if status == 2 %>
+    <%= f.button type: "submit", class: "btn btn-xs btn-danger button", title: t(".#{status}") do %>
+      <i class="fa tus icon fa-<%= t ".fa_#{status}" %>"></i>
+    <% end %>
+  <% else %>
+    <%= f.button type: "submit", class: "btn btn-xs btn-#{status} button", title: t(".#{status}") do %>
+      <i class="fa tus icon fa-<%= t ".fa_#{status}" %>"></i>
+    <% end %>
+  <% end %>
+<% end %>

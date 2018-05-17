@@ -32,7 +32,7 @@ class PlacesController < ApplicationController
     @order = current_user.orders.find_by place_id: @place.id if current_user
     respond_to do |format|
       format.html
-      format.json{render json: {addresses: @place.location}}
+      format.json{render json: {addresses: @place}}
     end
   end
 

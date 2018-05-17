@@ -85,20 +85,6 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.index ["food_category_id"], name: "index_foods_on_food_category_id"
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "address"
-    t.text "coordinates"
-    t.bigint "district_id"
-    t.bigint "place_id"
-    t.float "latitude", limit: 24
-    t.float "longitude", limit: 24
-    t.datetime "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["district_id"], name: "index_locations_on_district_id"
-    t.index ["place_id"], name: "index_locations_on_place_id"
-  end
-
   create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
@@ -166,7 +152,9 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.string "email"
     t.string "facebook"
     t.text "descriptions"
-    t.bigint "province_id"
+    t.bigint "district_id"
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
     t.bigint "owner_id"
     t.time "open_time"
     t.time "close_time"
@@ -176,14 +164,12 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.string "image"
     t.integer "table_count"
     t.bigint "place_category_id"
-    t.bigint "location_id"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_places_on_location_id"
+    t.index ["district_id"], name: "index_places_on_district_id"
     t.index ["owner_id"], name: "index_places_on_owner_id"
     t.index ["place_category_id"], name: "index_places_on_place_category_id"
-    t.index ["province_id"], name: "index_places_on_province_id"
   end
 
   create_table "provinces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -217,20 +203,6 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.index ["user_id"], name: "index_user_collections_on_user_id"
   end
 
-  create_table "user_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "address"
-    t.text "coordinates"
-    t.bigint "district_id"
-    t.bigint "user_id"
-    t.float "latitude", limit: 24
-    t.float "longitude", limit: 24
-    t.datetime "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["district_id"], name: "index_user_locations_on_district_id"
-    t.index ["user_id"], name: "index_user_locations_on_user_id"
-  end
-
   create_table "user_notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "notification_id"
@@ -245,6 +217,7 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.string "image"
     t.string "descriptions"
     t.bigint "user_rating_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_rating_id"], name: "index_user_rating_images_on_user_rating_id"
@@ -283,6 +256,9 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.string "email"
     t.text "phone"
     t.string "address"
+    t.bigint "district_id"
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
     t.string "coordinates"
     t.string "descriptions"
     t.string "avatar"
@@ -295,11 +271,10 @@ ActiveRecord::Schema.define(version: 20180512050217) do
     t.datetime "reset_sent_at"
     t.string "remember_digest"
     t.integer "user_type", default: 0
-    t.bigint "user_location_id"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_location_id"], name: "index_users_on_user_location_id"
+    t.index ["district_id"], name: "index_users_on_district_id"
   end
 
 end

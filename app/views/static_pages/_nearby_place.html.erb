@@ -2,12 +2,10 @@
     <div class="item big equal-height" data-map-latitude="16.031944" data-map-longitude="108.220556" data-id="1">
         <div class="item-wrapper">
             <div class="image">
-                <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="<%= place_descriptions nearby_location.place %>"><i class="fa fa-question"></i></div>
-                <div class="mark-circle map" data-toggle="tooltip" data-placement="right" title="Show on map"><i class="fa fa-map-marker"></i></div>
-                <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
-                <%= link_to place_path(nearby_location.place), class: "wrapper" do %>
+                <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="<%= place_descriptions nearby_place %>"><i class="fa fa-question"></i></div>
+                <%= link_to place_path(nearby_place), class: "wrapper" do %>
                     <div class="gallery">
-                        <%= image_tag nearby_location.place.image %>
+                        <%= image_tag nearby_place.image %>
                         <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">
                         <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">
                     </div>
@@ -18,15 +16,15 @@
             <!--end image-->
             <div class="description">
                 <div class="meta">
-                    <span><i class="fa fa-star"></i><%= nearby_location.place.rate_point_average %></span>
-                    <span><i class="fa fa-image"></i><%= nearby_location.place.total_images %></span>
+                    <span><i class="fa fa-star"></i><%= nearby_place.rate_point_average %></span>
+                    <span><i class="fa fa-image"></i><%= nearby_place.total_images %></span>
                 </div>
                 <div class="info">
-                    <figure class="label label-info"><%= nearby_location.place.place_category.name %></figure>
-                    <%= link_to place_path(nearby_location.place) do %>
-                        <h3><%= nearby_location.place.name %></h3>
+                    <figure class="label label-info"><%= nearby_place.place_category.name %></figure>
+                    <%= link_to place_path(nearby_place) do %>
+                        <h3><%= nearby_place.name %></h3>
                     <% end %>
-                    <figure class="location"><%= nearby_location.place.address %></figure>
+                    <figure class="location"><%= nearby_place.address %></figure>
                 </div>
             </div>
             <!--end description-->

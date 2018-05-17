@@ -1,0 +1,19 @@
+vi:
+  admin:
+    users:
+      index:
+        input_form: "Tìm theo tên"
+        index: "Id"
+        name: "Họ tên"
+        email: "Email"
+        address: "ĐỊa chỉ"
+        status: "Trạng thái"
+        option: "Tùy chọn"
+        manage_users: "Quản lý người dùng"
+        describe: "Trang quản lý ngưòi dùng"
+        table: "Người dùng"
+        new_user: "Thêm người dùng"
+      user:
+        status_active: "Đang hoạt động"
+        edit: "Chỉnh sửa"
+        del: "Xóa"

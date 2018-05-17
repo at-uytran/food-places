@@ -5,6 +5,7 @@ class CreateUserRatingImages < ActiveRecord::Migration[5.1]
       t.string :descriptions
       t.references :user_rating
 
+      t.datetime :deleted_at
       t.timestamps
     end
   end

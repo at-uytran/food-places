@@ -16,3 +16,7 @@ models:
 sessions:
   checked_remember: 1
   uncheck_remember: 0
+show_limit:
+  show_15: 15
+  show_9: 9
+  show_6: 6

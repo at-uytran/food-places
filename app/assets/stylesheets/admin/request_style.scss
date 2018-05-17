@@ -74,6 +74,27 @@
   background-color: $canceled_color;
 }
 
+
+.label-active {
+  background-color: $approved_color;
+}
+
+.label-active[href]:hover,
+.label-active[href]:focus {
+  background-color: $approved_color;
+}
+
+.label-blocked {
+  background-color: $canceled_color;
+}
+
+.label-blocked[href]:hover,
+.label-blocked[href]:focus {
+  background-color: $canceled_color;
+}
+
+
+
 /* button */
 .btn-4 {
   background-color: $canceled_color;
