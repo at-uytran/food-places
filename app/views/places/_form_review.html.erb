@@ -4,9 +4,6 @@
         html: {class: "labels-uppercase clearfix form-submit labels-uppercase", id: "form-submit", enctype: "multipart/form-data"} do |f| %>
         <% unless current_user %>
             <div class="alert alert-dark fade in center" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" data-switch="#review-write">
-                    <span aria-hidden="true">&times;</span>
-                </button>
                 <span class="sr-only">Error:</span>
                 <a href="#tab-sign-in" data-toggle="modal"
                     data-tab="true" data-target="#sign-in-register-modal">

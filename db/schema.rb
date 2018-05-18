@@ -94,10 +94,12 @@ ActiveRecord::Schema.define(version: 20180512050217) do
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "place_id"
     t.bigint "user_id"
-    t.integer "status"
+    t.integer "status", default: 0
+    t.integer "payment_status", default: 0
     t.string "address"
     t.float "ship_price", limit: 24
     t.float "total_price", limit: 24
+    t.float "distance", limit: 24
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

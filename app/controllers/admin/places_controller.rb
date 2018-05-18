@@ -1,6 +1,6 @@
 module Admin
   class PlacesController < AdminBaseController
-    before_action :load_place, except: %i(index create)
+    before_action :load_place, except: %i(index create new)
 
     def create; end
 
@@ -16,6 +16,10 @@ module Admin
         flash[:danger] = t ".failed"
       end
       redirect_back fallback_location: admin_root_path
+    end
+
+    def new
+      @place = Place.new
     end
 
     def destroy

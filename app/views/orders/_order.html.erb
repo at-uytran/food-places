@@ -1,0 +1,11 @@
+<tr class="reservation">
+    <td><%= order.id %></td>
+    <td><%= order.place.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.ship_price %></td>
+    <td><%= order.distance %></td>
+    <td><%= order.total_price %></td>
+    <td><%= t ".#{order.status}" %></td>
+    <td><%= t ".#{order.payment_status}" %></td>
+    <td><%= link_to t(".order"), order %></td>
+</tr>
