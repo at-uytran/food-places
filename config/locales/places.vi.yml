@@ -15,6 +15,7 @@ vi:
     load_place:
       not_found: "Không tìm thấy địa điểm"
     show:
+      show_direction: "Chỉ đường đến địa điểm"
       description: "Mô tả địa điểm"
       see_on_map: "Xem trên bản đồ"
       open_time: "giờ mở cửa"

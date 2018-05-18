@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :user_ratings
     resources :orders
     resources :user_place_orders
+    resources :request_owners
   end
   resources :maps, only: %i(show)
   namespace :admin do

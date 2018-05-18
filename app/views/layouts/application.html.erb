@@ -4,6 +4,7 @@
     <title><%= t "title" %></title>
     <%= favicon_link_tag "favicon.png" %>
     <%= csrf_meta_tags %>
+    <%= include_gon %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
@@ -35,8 +36,8 @@
     <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="/assets/js/table-fixed-header.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
-    <script type="text/javascript" src="/assets/init_map.js"></script>
     <%= javascript_include_tag "js/maps", "data-turbolinks-track": ["load", "reload"] %>
+    <script type="text/javascript" src="/assets/direction_map.js"></script>
 
     <!--[if lte IE 9]>
     <script src="/assets/js/ie.js"></script>

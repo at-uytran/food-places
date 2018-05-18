@@ -1,13 +1,16 @@
 vi:
   required_login: "Bạn phải đăng nhập trước"
   shared:
+    login:
+      login: "Đăng nhập"
+      remember: "Tự động đăng nhập"
     sign_in_up:
+      remember: "Tự động đăng nhập"
       name: "Họ tên"
       email: "Email"
       password: "Mật khẩu"
       login: "Đăng nhập"
       register: "Đăng ký"
-      remember: "Tự động đăng nhập"
       forget_password: "Quên mật khẩu? "
       reset_password: "Lấy lại mật khẩu"
   sessions:

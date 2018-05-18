@@ -16,6 +16,10 @@ class OrdersController < ApplicationController
 
   private
 
+  def update_values
+    # @order.distance =
+  end
+
   def load_order
     @order = Order.find_by id: params[:id]
   end

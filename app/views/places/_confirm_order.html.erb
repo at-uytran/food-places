@@ -6,9 +6,6 @@
                 <div class="modal-header text-center">
                     <h2 class="modal-title"><i class="fa fa-pencil"></i> <%= t ".title" %></h2>
                 </div>
-                <!-- END Modal Header -->
-
-                <!-- Modal Body -->
                 <div class="modal-body">
                     <form action="#" method="post" class="form-horizontal form-bordered">
                         <fieldset>
@@ -74,12 +71,14 @@
                             </div>
                         </fieldset>
                         <div class="form-group form-actions">
+                            <% if @order %>
                                 <%= form_for @order, html: {id: "form-confirm-order"} do |f| %>
                                     <%= f.hidden_field :status, value: "pending" %>
                                     <%= f.hidden_field :address, value: "" %>
                                     <%= f.hidden_field :total_price, value: "" %>
                                     <%= f.hidden_field :phone, value: "" %>
                                 <% end %>
+                            <% end %>
                             <div class="col-xs-12 text-right">
                                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><%= t ".close" %></button>
                                 <button type="submit" class="btn btn-sm btn-primary"

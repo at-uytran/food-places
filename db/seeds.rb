@@ -117,7 +117,7 @@ p "fake places"
     coordinates: FFaker::Geolocation.lat,
     place_category_id: @cafe.id,
     status: 1,
-    district_id: @quan_lien_chieu.id
+    district_id: @quan_hai_chau.id
 
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
@@ -167,7 +167,7 @@ p "fake places"
     coordinates: FFaker::Geolocation.lat,
     place_category_id: @quan_an.id,
     status: 1,
-    district_id: @quan_lien_chieu.id
+    district_id: @quan_son_tra.id
 
   place.place_images.create! descriptions: FFaker::Lorem.paragraph[0..15]
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
@@ -294,7 +294,7 @@ banh_canh_ruong = Place.create! name: "Bánh canh Ruộng Phương",
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @quan_an.id,
   status: 1,
-  district_id: @quan_lien_chieu.id
+  district_id: @quan_son_tra.id
 
 banh_canh_ruong.place_setting.update_attributes allow_order: true
 

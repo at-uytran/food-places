@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :notifications, through: :user_notifications
   has_many :places, dependent: :destroy
   has_one :user_settings, dependent: :destroy
-  belongs_to :district
+  belongs_to :district, optional: true
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

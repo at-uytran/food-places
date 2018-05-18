@@ -26,7 +26,7 @@
                     <span><i class="fa fa-image"></i><%= nearby_place.total_images %></span>
                 </div>
                 <div class="info">
-                    <figure class="label label-info"><%= nearby_place.place_category.name %></figure>
+                    <figure class="label label-success"><%= nearby_place.place_category.name %></figure>
                     <%= link_to place_path(nearby_place) do %>
                         <h3><%= nearby_place.name %></h3>
                     <% end %>
