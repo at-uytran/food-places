@@ -3,7 +3,17 @@ var confirmOrder = {
     $('body').delegate('.show-modal-confirm', 'click', function(event) {
       updateModal();
     });
+    $('body').delegate('#submit-confirm-order', 'click', function(event) {
+      submitOrder();
+    });
   }
+}
+
+function submitOrder() {
+  $('#order_address').val($('#user-address').val());
+  $('#order_phone').val($('#user-phone').val());
+  var formOrder = $('#form-confirm-order');
+  formOrder.submit();
 }
 
 function updateModal() {

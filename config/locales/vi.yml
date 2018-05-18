@@ -5,6 +5,7 @@ vi:
   search: "Tìm kiếm"
   layouts:
     header:
+      orders: "Lịch sử đặt hàng"
       home: "Trang chủ"
       discover: "Khám phá"
       nearby_places: "Địa điểm quanh đây"

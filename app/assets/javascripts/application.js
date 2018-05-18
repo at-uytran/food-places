@@ -9,3 +9,4 @@
 //= require confirm_order.js
 //= require sweetalert/sweetalert.min.js
 //= require lightbox.js
+//= require js/table-fixed-header.js

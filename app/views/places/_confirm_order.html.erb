@@ -47,7 +47,6 @@
                                                     <th class="section"><%= t ".food_name" %></th>
                                                     <th class="section"><%= t ".quantity" %></th>
                                                     <th class="section"><%= t ".price" %></th>
-                                                    <th class="section"><%= t ".delete" %></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -55,23 +54,16 @@
                                                     <tr id="order-food-<%= cart.food.id %>">
                                                         <td class="order-name"><%= cart.food.name %></td>
                                                         <td class="width-5 quantity">
-                                                            <%= number_field_tag "user_place_order[#{cart.food.id}]",
-                                                                cart.quantity, min: 1 %>
+                                                            <%= cart.quantity %>
                                                         </td>
                                                         <td class="order-price"><%= cart.food.price %></td>
-                                                        <td><a href="javascript:void(0)"
-                                                            class="link icon delete-food"
-                                                            id="delete-food-<%= cart.food.id %>">
-                                                            <i class="fa fa-trash"></i>
-                                                            <%= t ".delete" %></a>
-                                                        </td>
                                                     </tr>
                                                 <% end %>
                                                 <tr></tr>
                                                 <tr>
                                                     <td><%= t ".total" %></td>
-                                                    <td class="order-total-quantity" id="order-total-quantity">...</td>
-                                                    <td class="total-price" id="order-total-price">...</td>
+                                                    <td class="order-total-quantity" id="order-total-quantity"><%= @order.total_quantity %> (<%= t "piece" %>)</td>
+                                                    <td class="total-price" id="order-total-price"><%= @order.total_price %> (<%= t "vnd" %>)</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -82,10 +74,16 @@
                             </div>
                         </fieldset>
                         <div class="form-group form-actions">
+                                <%= form_for @order, html: {id: "form-confirm-order"} do |f| %>
+                                    <%= f.hidden_field :status, value: "pending" %>
+                                    <%= f.hidden_field :address, value: "" %>
+                                    <%= f.hidden_field :total_price, value: "" %>
+                                    <%= f.hidden_field :phone, value: "" %>
+                                <% end %>
                             <div class="col-xs-12 text-right">
                                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><%= t ".close" %></button>
                                 <button type="submit" class="btn btn-sm btn-primary"
-                                    id="submit-order"><%= t ".submit" %></button>
+                                    id="submit-confirm-order"><%= t ".submit" %></button>
                             </div>
                         </div>
                     </form>

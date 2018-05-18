@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :nearby_places
   resources :provinces
   resources :users
+  resources :orders
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 end
