@@ -20,14 +20,18 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="timeline-list-food">
                         <%= render partial: "food", collection: @foods, as: :food %>
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="center">
-            <a href="" class="btn btn-default btn-rounded btn-framed"><%= t "load_more" %></a>
+            <div class="load_more_button">
+                <%= button_to t("load_more"),
+                    {controller: "places", action: "foods_timeline", offset: Settings.show_limit.show_5, place_id: @place.id},
+                    remote: true, method: :get, class: "btn btn-default btn-rounded btn-framed" %>
+            </div>
         </div>
         <!--end form-reservations-->
     </section>

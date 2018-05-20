@@ -1,4 +1,7 @@
 <%= simple_form_for :session, url: login_path, id: "form-sign", remote: true do |f| %>
+  <div class="form-alert error-login">
+    <%= f.error_notification id: "err-notification" %>
+  </div>
   <div class="form-group">
     <label for="form-sign-in-email"><%= t ".email" %></label>
     <%= f.email_field :email, label: false, class: "form-control", id: "form-sign-in-email" %>

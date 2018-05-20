@@ -2,9 +2,13 @@ class PlacesController < ApplicationController
   before_action :load_place, only: %i(show update destroy)
   before_action :set_json_params, only: %i(index)
   before_action :logged_in_user, only: %i(new create destroy update)
-  before_action :check_district_params, only: :create
+  before_action :load_place_timeline, only: %i(reviews_time_line foods_timeline)
+
+  add_breadcrumb I18n.t("bread_crumb.home"), "/"
 
   def index
+    add_breadcrumb t("bread_crumb.places"), places_path
+
     @q = Place.search params[:q]
     @places = @q.result.approved.created_desc.includes(:place_category)
       .by_categories(@category_ids).page(params[:page]).per_page(9)
@@ -13,7 +17,6 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new place_params
     if @place.save
-      @place.create_location! district_id: params[:location][:district_id], address: params[:place][:address]
       flash[:success] = t ".success"
       redirect_to root_path
     else
@@ -27,6 +30,9 @@ class PlacesController < ApplicationController
   end
 
   def show
+    add_breadcrumb t("bread_crumb.places"), places_path
+    add_breadcrumb t("bread_crumb.detail"), place_path(@place)
+
     @foods = @place.foods.limit 9
     @reviews = @place.user_ratings.includes(:user).limit 9
     @order = current_user.orders.find_by place_id: @place.id if current_user
@@ -36,6 +42,15 @@ class PlacesController < ApplicationController
       format.html
       format.json{render json: {addresses: @place}}
     end
+  end
+
+  def reviews_time_line
+
+  end
+
+  def foods_timeline
+    @foods = @place.foods.offset(params[:offset])
+      .limit Settings.show_limit.show_5
   end
 
   private
@@ -51,8 +66,16 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit :name, :address, :description, :location_id, :owner_id,
+    params.require(:place).permit :name, :address, :description, :district_id, :owner_id,
       :image, :open_time, :close_time, :ship_price, :coordinates, :status, :place_category_id, :table_count
+  end
+
+  def load_place_timeline
+    # debugger
+    @place = Place.find_by id: params[:place_id]
+    return if @place
+    flash[:danger] = t "places.load_place.not_found"
+    redirect_to root_path
   end
 
   def load_place

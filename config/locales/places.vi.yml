@@ -26,7 +26,7 @@ vi:
       ship_price: "Phí ship(/5km)"
       contact: "Liên hệ"
     create:
-      success: "Tạo địa điểm thành công"
+      success: "Tạo địa điểm thành công, địa điểm sẽ được duyệt trong thời gian sớm nhất"
       failed: "Không thể tạo mới địa điểm"
     new:
       by_province: "Bởi tỉnh/ thành phố: "

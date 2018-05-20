@@ -14,4 +14,9 @@ vi:
     top_rate_places:
       title: "Top các địa điểm được ưa thích"
       no_top_rate_places: "Không có địa điểm ưa thích nào"
-
+    favorite_places:
+      title: "Điểm đến được ưa thích"
+    reviews:
+      title: "Đánh gía từ thành viên"
+    review:
+      full_review: "Xem đầy đủ"

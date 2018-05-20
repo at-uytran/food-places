@@ -30,7 +30,7 @@ class Place < ApplicationRecord
   enum status: {pending: 0, approved: 1, discard: 2, blocked: 3}
   delegate :name, :email, to: :owner, prefix: true
 
-  scope :created_desc, ->{order name: :desc}
+  scope :created_desc, ->{order created_at: :desc}
   scope :by_categories, ->(ids){where(place_category_id: ids) if ids.present?}
   scope :allow_order, ->{joins(:place_setting).where place_settings: {allow_order: true}}
   scope :orders_desc, ->{joins(:orders).select("places.*, COUNT(orders.id) as order_count").group("orders.id")}
@@ -98,7 +98,11 @@ class Place < ApplicationRecord
   end
 
   def total_images
-    place_images.size
+    size = 0
+    user_ratings.each do |user_rating|
+      size += user_rating.images_size
+    end
+    place_images.size + size
   end
 
   def total_reviews

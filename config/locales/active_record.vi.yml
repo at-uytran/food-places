@@ -7,3 +7,209 @@ vi:
           attributes:
             place_category:
               required: "được yêu cầu"
+vi:
+  activerecord:
+    attributes:
+      answers:
+        content: "Nội dung đáp án"
+      user:
+        name: "Họ tên"
+        email: "Email"
+        gender: "Giới tính"
+        birthday: "Ngày sinh"
+        phone: "Số điện thoại"
+        position_name: "Vị trí"
+        experience: "Kinh nghiệm"
+        gender_list:
+          female: "Nữ"
+          male: "Nam"
+          others: "Khác"
+      course:
+        title: "Tiêu đề"
+        category_id: "Danh mục"
+        workspace_id: "Văn phòng"
+        description: "Mô tả"
+        content: "Nội dung"
+        duration: "Thời lượng"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        status: "Trạng thái"
+        maximum_persons: "Số người tối đa"
+        minimum_persons: "Số người tối thiểu"
+        duration_type: "Loại thời lượng"
+        image: "Hình ảnh"
+        position_filter: "Vị trí"
+        group_filter: "Nhóm"
+        workspace_filter: "Văn phòng"
+        gender_filter: "Giới tính"
+        nationality_filter: "Quốc tịch"
+        company: "Công ty"
+        objective: "Mục đích"
+        language_id: "Ngôn ngữ"
+        prerequisites: "Điều kiện tiên quyết"
+        tool: "Công cụ"
+        duration_list:
+          hour: "Giờ"
+          day: "Ngày"
+          week: "Tuần"
+          month: "Tháng"
+        status_list:
+          pending: "Đang đợi phê duyệt"
+          approve: "Đã được phê duyệt"
+          discard: "Bị từ chối"
+          inprogress: "Đang hoạt động"
+          finish: "Đã hoàn thành"
+          canceled: "Đã hủy"
+          draft: "Nháp"
+      question:
+        answer: "Đáp án"
+        category_id: "Danh mục"
+        content: "Nội dung"
+        question_folder_id: "Thư mục"
+        question_type: "Loại câu hỏi"
+        question_type_list:
+          single_choice: "Một đáp án"
+          multiple_choices: "Nhiều đáp án"
+          text_answer: "Tự luận"
+      certification:
+        name: "Tên"
+        description: "Mô tả"
+        organization: "Tổ chức"
+      schedule:
+        description: "Mô tả"
+        end_time: "Giờ kết thúc"
+        schedule_date: "Ngày"
+        start_time: "Giờ bắt đầu"
+      user_certification:
+        certification_id: "Chứng chỉ"
+        image: "Hình ảnh"
+        year: "Năm"
+      attendance:
+        status_list:
+          absence: "Vắng mặt"
+          attend: "Tham gia"
+      assessment:
+        status_list:
+          passed: "Đạt"
+          failed: "Chưa đạt"
+      course_setting:
+        option_assess_list:
+          manual: "Thủ công"
+          automatic: "Tự động"
+      exam:
+        description: "Mô tả"
+        result_pass: "Số câu cần đạt"
+        duration: "Thời gian test"
+        can_pause: "Dừng khi test"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        start_time: "Thời gian bắt đầu"
+        end_time: "Thời gian kết thúc"
+    errors:
+      blank: "không được trống"
+      models:
+        attendance:
+          attributes:
+            user_id: "Người dùng không được để trống"
+            schedule_id: "Lịch biểu không được để trống"
+        answer:
+          attributes:
+            content:
+              blank: "không được bỏ trống"
+        role_group:
+          attributes:
+            name:
+              blank: "Vai trò không được để trống"
+              taken: "Vai trò đã tồn tại"
+        user:
+          attributes:
+            experience:
+              too_long: "Quá dài.Tối đa %{count} ký tự"
+          attributes:
+            email:
+              taken: "đã được sử dụng!"
+            password:
+              too_short: "quá ngắn"
+        course:
+          invalid: "không hợp lệ"
+          attributes:
+            title:
+              too_short: "quá ngắn. Tối thiểu %{count} ký tự"
+              too_long: "qúa dài.Tối đa %{count} ký tự"
+            category_id:
+              required: "không hợp lệ"
+            workspace_id:
+              required: "không hợp lệ"
+            duration:
+              not_a_number: "không phải là số"
+            start_date:
+              invalid_date_now: "phải lớn hơn ngày hôm nay"
+            end_date:
+              invalid_date_now: "phải lớn hơn ngày hôm nay"
+              greater_start_date: "phải lớn hơn hoặc bằng ngày bắt đầu"
+            end_time:
+              greater_start_time: "phải lớn hơn giờ bắt đầu nếu cùng ngày"
+            minimum_persons:
+              greater_than: "phải lớn hơn 0"
+              less_than_or_equal_to: "phải nhỏ hơn hoặc bằng số người tối đa"
+            maximum_persons:
+              greater_than: "phải lớn hơn 0"
+              greater_than_or_equal_to: "phải lớn hơn hoặc bằng số người tối thiểu"
+            duration:
+              greater_than: "phải lớn hơn 0"
+            position_filter:
+              invalid: "có vị trí không hợp lệ"
+            group_filter:
+              invalid: "có nhóm không hợp lệ"
+            workspace_filter:
+              invalid: "có văn phòng không hợp lệ"
+              workspace_invalid: "khóa học phải thuộc một văn phòng nào đó trước"
+            gender_filter:
+              invalid: "có giới tính không hợp lệ"
+            nationality_filter:
+              invalid: "có quốc tịch không hợp lệ"
+        question:
+          attributes:
+            answers:
+              at_least_one_answer_required: "Phải có ít nhất 1 đáp án"
+              at_least_two_choices_required: "Phải có ít nhất 2 lựa chọn"
+              at_least_one_correct_required: "Phải có ít nhất 1 đáp án đúng"
+            content:
+              blank: "không được bỏ trống"
+        schedule:
+          attributes:
+            end_time:
+              greater_start_time: "phải lớn hơn giờ bắt đầu nếu cùng ngày"
+            overlaps_time:
+              current_course_overlaps: "Khóa học này đã tồn tại lịch học trong cùng khung giờ"
+              trained_course_overlaps: "Trùng với lịch học của khóa học %{course} (Ngày %{date} từ %{start} đến %{end})"
+              training_course_overlaps: "Trùng với lịch dạy của khóa học %{course} (Ngày %{date} từ %{start} đến %{end})"
+            schedule_date:
+              between_valid_range: "phải nằm trong khoảng ngày bắt đầu và ngày kết thúc khóa học"
+        user_certification:
+          attributes:
+            certification_id:
+              blank: "không được trống"
+              taken: "Chứng chỉ đã tồn tại"
+        certification:
+          attributes:
+            name:
+              blank: "Tên không được trống"
+              taken: "Chứng chỉ đã tồn tại"
+        permission:
+          attributes:
+            optional:
+              blank: "không được trống"
+              invalid: "không hợp lệ"
+        exam:
+          attributes:
+            course_id:
+              blank: "không được trống"
+            result_pass:
+              blank: "không được trống"
+            duration:
+              blank: "không được trống"
+            question_source:
+              blank: "không được trống"

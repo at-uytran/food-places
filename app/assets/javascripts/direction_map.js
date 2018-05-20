@@ -37,7 +37,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }
 
 $(document).on('turbolinks:load', function() {
-  var data = gon.current_location.data
   $('#show-direction-map').click(function() {
     initMap();
   });

@@ -80,10 +80,7 @@
                         <label for="address-autocomplete"><%= t ".address" %><em>*</em></label>
                         <%= f.input :address, label: false, input_html: {class: "form-control", id: "address", placeholder: t(".address_placeholder"), required: ""} %>
                     </div>
-                    <div class="form-group">
-                        <label><%= t ".place_on_map" %></label>
-                        <div class="map height-300 box" id="map-item"></div>
-                    </div>
+
                     <div class="form-group hidden">
                         <input type="text" class="form-control" id="latitude" name="latitude" hidden="">
                         <input type="text" class="form-control" id="longitude" name="longitude" hidden="">
@@ -107,7 +104,7 @@
                         <h3><%= t ".by_province" %></h3>
                         <div class="form-group">
                             <label><%= t ".province" %></label>
-                            <select class="form-control framed" id="filter-provinces">
+                            <select class="form-control framed" id="filter-provinces-user-place">
                                 <option value=""><%= t ".select_province" %></option>
                                 <% list_provinces.each do |province| %>
                                     <option value="<%= province.id %>"><%= province.name %></option>
@@ -116,8 +113,8 @@
                         </div>
                         <div class="form-group">
                             <label><%= t ".district" %></label>
-                            <select class="form-control framed" id="filter-districts"
-                                name="[location][district_id]">
+                            <select class="form-control framed" id="filter-districts-user-place"
+                                name="place[district_id]">
                                 <option value=""><%= t ".select_district" %></option>
                             </select>
                         </div>

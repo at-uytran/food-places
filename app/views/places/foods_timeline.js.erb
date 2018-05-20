@@ -1,0 +1,7 @@
+$('.timeline-list-food').append('<%= j render partial: "food", collection: @foods, as: :food %>');
+console.log("saaasdaaa")
+<% if params[:offset].to_i + Settings.show_limit.show_5 - 1 < @place.foods.size %>
+  $('.load_more_button .button_to').attr('action', '/places/<%= @place.id %>/foods_timeline?offset='+$('.timeline-list-food').length)
+<% else %>
+  $('.load_more_button').html("")
+<% end %>

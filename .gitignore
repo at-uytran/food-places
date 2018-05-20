@@ -42,7 +42,6 @@ config/initializers/secret_token.rb
 
 /test/*
 /db/*.sqlite3
-config/database.yml
 config/application.yml
 yarn-error.log
 

@@ -5,7 +5,7 @@ vi:
       update_desciptions: "Cập nhật một vài thông tin giới thiệu bản thân"
     create:
       success: "Đăng ký thành công, vui lòng kiểm tra email để kích hoạt tài khoản"
-      failed: "Đăng ký thất bại, email đã được sử dụng"
+      failed: "Đăng ký thất bại, đã xảy ra lỗi!"
     show:
       avatar: "Ảnh đại diện"
       click_to_upload: "Click để tải hình lên"
@@ -21,7 +21,13 @@ vi:
       address: "Địa chỉ"
       province: "Tỉnh thành"
       district: "Quận huyện"
+      select_province: "Chọn tỉnh thành"
+      select_district: "Chọn quận huyện"
       street: "số nhà"
       about_me: "Về bản thân"
       submit_changes: "Lưu thay đổi"
-
+    update:
+      failed: "Cập nhật thất bại"
+      success: "Cập nhật thành công"
+    load_user:
+      not_found: "Không tìm thấy người dùng này"

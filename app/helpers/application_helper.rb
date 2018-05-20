@@ -16,8 +16,10 @@ module ApplicationHelper
   def current_location
     if current_user && current_user.address
       geo_data = Geocoder.search(current_user.address)
+    elsif Rails.env.development?
+      geo_data = Geocoder.search("Đà Nẵng")
     else
-      geo_data = Geocoder.search("116.110.21.32")
+      geo_data = Geocoder.search(request.remote_ip)
     end
     geo_data[0]
   end
@@ -29,5 +31,9 @@ module ApplicationHelper
   def create_index params_page, index, per_page
     params_page = 1 if params_page.nil?
     (params_page.to_i - 1) * per_page.to_i + index.to_i + 1
+  end
+
+  def total_item_per_category place_category
+    place_category.places.approved.size
   end
 end

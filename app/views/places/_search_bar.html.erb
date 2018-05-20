@@ -18,7 +18,7 @@
                                         <label>
                                             <%= check_box_tag "",
                                                 category.id, false, class: "filter-category-place" %>
-                                                 <%= category.name %><span>(67)</span>
+                                                 <%= category.name %><span>(<%= total_item_per_category category %>)</span>
                                         </label>
                                     </li>
                                 <% end %>
@@ -61,7 +61,7 @@
                 </div>
                 <!--end collapse-->
                 <div class="form-group center">
-                    <button type="submit" class="btn btn-primary btn-rounded form-control">Search</button>
+                    <button type="submit" class="btn btn-primary btn-rounded form-control"><%= t "search" %></button>
                 </div>
             <!--end form-filter-->
         </div>

@@ -10,5 +10,6 @@ class StaticPagesController < ApplicationController
     @nearby_places = Place.near(coordinates,
       5, units: :km).created_desc.approved
       .limit 4
+    @reviews = UserRating.created_desc.limit 4
   end
 end

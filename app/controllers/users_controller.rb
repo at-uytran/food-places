@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, except: %i(index create show)
+  add_breadcrumb I18n.t("bread_crumb.home"), "/"
 
   def index
     @users = User.order_by_name
@@ -7,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if @user.save!
+    if @user.save
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".failed"
@@ -20,16 +21,18 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash.now[:success] = t ".success"
+      flash[:success] = t ".success"
       redirect_back fallback_location: root_path
     else
-      flash.now[:danger] = t ".failed"
-      render :edit
+      flash[:danger] = t ".failed"
+      render :show
     end
   end
 
   def show
     @user = current_user
+    add_breadcrumb t("bread_crumb.users"), users_path
+    add_breadcrumb t("bread_crumb.detail"), user_path(@user)
     respond_to do |format|
       format.html
       format.json{render json: {address: @user.user_location}}
@@ -48,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit :name, :email, :password,
-      :password_confirmation, :address, :avatar, :coordinates, :descriptions
+    params.require(:user).permit :name, :email, :password, :phone, :district_id,
+      :password_confirmation, :address, :avatar, :descriptions
   end
 end
