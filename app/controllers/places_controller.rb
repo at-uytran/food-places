@@ -30,6 +30,8 @@ class PlacesController < ApplicationController
     @foods = @place.foods.limit 9
     @reviews = @place.user_ratings.includes(:user).limit 9
     @order = current_user.orders.find_by place_id: @place.id if current_user
+    gon.current_location = current_location
+    gon.place_location = @place
     respond_to do |format|
       format.html
       format.json{render json: {addresses: @place}}

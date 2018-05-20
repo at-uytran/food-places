@@ -4,8 +4,10 @@ class UserRatingsController < ApplicationController
   def create
     @user_rating = @place.user_ratings.new user_rating_params
     if @user_rating.save
-      params[:user_rating_images]['images'].each do |a|
-        @user_rating.user_rating_images.create!(:image => a)
+      if params[:user_rating_images].present?
+        params[:user_rating_images]["images"].each do |a|
+          @user_rating.user_rating_images.create! image: a
+        end
       end
       flash[:success] = t ".success"
     else

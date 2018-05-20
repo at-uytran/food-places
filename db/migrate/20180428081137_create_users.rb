@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :email
       t.text :phone
       t.string :address
-      t.references :district, index: true
+      t.references :district, index: true, null: true
       t.float :latitude
       t.float :longitude
       t.string :coordinates

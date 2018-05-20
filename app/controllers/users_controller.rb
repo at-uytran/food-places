@@ -7,10 +7,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if @user.save
-      flash.now[:success] = t ".success"
+    if @user.save!
+      flash[:success] = t ".success"
     else
-      flash.now[:danger] = t ".failed"
+      flash[:danger] = t ".failed"
     end
     respond_to do |format|
       format.html{redirect_back fallback_location: root_path}

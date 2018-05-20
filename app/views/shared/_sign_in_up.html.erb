@@ -25,13 +25,14 @@
                                         </div>
                                         <!--end form-group-->
                                         <div class="form-group">
-                                            <label for="form-register-email"><%= t ".enail" %></label>
+                                            <label for="form-register-email"><%= t ".email" %></label>
                                             <%= f.input :email, label: false, html: {class: "form-control", id: "form-register-email"} %>
                                         </div>
                                         <!--end form-group-->
                                         <div class="form-group">
                                             <label for="form-register-password"><%= t ".password" %></label>
-                                            <%= f.input :password, label: false, html: {class: "form-control", id: "form-register-password"} %>
+                                            <%= f.input :password, as: :password, label: false,
+                                                html: {class: "form-control", id: "form-register-password"} %>
                                         </div>
                                         <!--end form-group-->
                                         <div class="clearfix action">

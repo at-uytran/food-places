@@ -4,6 +4,7 @@ var confirmOrder = {
       updateModal();
     });
     $('body').delegate('#submit-confirm-order', 'click', function(event) {
+      console.log("dat hang")
       submitOrder();
     });
   }
