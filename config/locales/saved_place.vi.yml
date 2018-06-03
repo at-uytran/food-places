@@ -1,0 +1,13 @@
+vi:
+  saved_places:
+    index:
+      title: "Địa điểm đã lưu"
+      place_name: "Địa điểm"
+      place_address: "ĐỊa chỉ"
+      receive_address: "Địa chỉ nhận"
+      distance: "Khoảng cách"
+      ship_price: "Phí ship"
+      total_price: "Tổng tiền"
+      status: "Trạng thái"
+      payment_status: "Trạng thái thanh toán"
+      action: "Hành động"

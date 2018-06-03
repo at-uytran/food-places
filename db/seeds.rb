@@ -20,10 +20,6 @@ admin = User.create! name: "admin",
   user_type: 2,
   district_id: @quan_lien_chieu.id
 
-# admin.create_user_location! address: "41 Ngô Thì Nhậm, Đà Nẵng",
-#   district_id: @quan_lien_chieu.id,
-#   coordinates: FFaker::Geolocation.lat
-
 p "fake place categories"
 @an_vat = PlaceCategory.create! name: "Ăn vặt"
 @cafe = PlaceCategory.create! name: "Cà phê"
@@ -69,8 +65,6 @@ p "fake district quang nam province"
   descriptions: "Phố cổ Hội An say đắm lòng người",
   province_id: @quang_nam.id
 
-# @41_ngo_thi_nham = locations.create! address: "45 Ngô Thì Nhậm", district_id: @quan_lien_chieu.id
-
 p "create users"
 10.times do |n|
   user = User.create! name: FFaker::NameVN.name,
@@ -114,6 +108,7 @@ p "fake places"
     open_time: Time.now.strftime("%I:%M%p"),
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
+    image: Rails.root.join("public/uploads/place/image/fake/highland-coffee.jpg").open,
     coordinates: FFaker::Geolocation.lat,
     place_category_id: @cafe.id,
     status: 1,
@@ -123,9 +118,14 @@ p "fake places"
   place.comments.create!(content: "Commented Commented Commented", user_id: 1)
   3.times do |n|
     place.user_ratings.create!(title: "Không gian tuyệt vời",
-      content: "Món ăn khá ngon, không gian thoáng mát",
+      content: "Đồ uống ngon, nhân viên thân thiện, không gian thoáng mát",
       user_id: 1,
-      points: 8)
+      score_quality: 9,
+      score_location: 9,
+      score_serve: 8,
+      score_space: 9,
+      score_price: 9
+    )
   end
   # place.place_setting.update_attributes allow_order: false
 
@@ -164,6 +164,7 @@ p "fake places"
     open_time: Time.now.strftime("%I:%M%p"),
     close_time: 8.hours.from_now.strftime("%I:%M%p"),
     ship_price: 6,
+    image: Rails.root.join("public/uploads/place/image/fake/my-quang-ba-mua.jpg").open,
     coordinates: FFaker::Geolocation.lat,
     place_category_id: @quan_an.id,
     status: 1,
@@ -175,7 +176,12 @@ p "fake places"
     place.user_ratings.create!(title: "Không gian tuyệt vời",
       content: "Món ăn khá ngon, không gian thoáng mát",
       user_id: 1,
-      points: 8)
+      score_quality: 9,
+      score_location: 9,
+      score_serve: 8,
+      score_space: 9,
+      score_price: 8
+    )
   end
 
   # place.place_setting.update_attributes allow_order: false
@@ -216,10 +222,23 @@ cafe_gold = Place.create! name: "Gold Coffee",
   open_time: Time.now.strftime("%I:%M%p"),
   close_time: 8.hours.from_now.strftime("%I:%M%p"),
   ship_price: 6,
+  image:  Rails.root.join("public/uploads/place/image/fake/gold-coffee.jpg").open,
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @cafe.id,
   status: 1,
   district_id: @quan_lien_chieu.id
+
+3.times do |n|
+  cafe_gold.user_ratings.create!(title: "Không gian tuyệt vời",
+    content: "Đồ uống ngon, không gian thoáng mát",
+    user_id: 1,
+    score_quality: 7,
+    score_location: 8,
+    score_serve: 8,
+    score_space: 9,
+    score_price: 7
+  )
+end
 
 cafe_gold.place_setting.update_attributes allow_order: true
 
@@ -254,6 +273,7 @@ myquang_bich = Place.create! name: "Mỳ quảng Bích",
   close_time: 8.hours.from_now.strftime("%I:%M%p"),
   ship_price: 6,
   coordinates: FFaker::Geolocation.lat,
+  image:  Rails.root.join("public/uploads/place/image/fake/my-quang-bich.jpg").open,
   place_category_id: @quan_an.id,
   status: 1,
   district_id: @quan_lien_chieu.id
@@ -291,6 +311,7 @@ banh_canh_ruong = Place.create! name: "Bánh canh Ruộng Phương",
   open_time: Time.now.strftime("%I:%M%p"),
   close_time: 8.hours.from_now.strftime("%I:%M%p"),
   ship_price: 6,
+  image:  Rails.root.join("public/uploads/place/image/fake/banh-canh-ruong.jpg").open,
   coordinates: FFaker::Geolocation.lat,
   place_category_id: @quan_an.id,
   status: 1,

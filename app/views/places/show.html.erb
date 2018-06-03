@@ -1,4 +1,4 @@
-<%= render "confirm_order" %>
+<%= render "confirm_order" if @place.allow_order? %>
 <div class="row">
     <%= render "search_bar" %>
     <!--end col-md-3-->
@@ -22,6 +22,13 @@
                 <div class="right">
                     <a href="#map" class="icon scroll"><i class="fa fa-map-marker"></i><%= t ".see_on_map" %></a>
                     <a href="#availability" class="btn btn-primary btn-rounded scroll"><%= t ".food_menu" %></a>
+                    <div class="button-save-action">
+                        <% if @place_saved %>
+                          <%= render partial: "places/unsave_place" %>
+                        <% else %>
+                          <%= render partial: "places/save_place" %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
             <!--end title-->

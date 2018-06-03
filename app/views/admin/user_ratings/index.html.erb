@@ -1,0 +1,37 @@
+<div class="content-header">
+  <div class="header-section">
+    <h1>
+      <i class="fa fa-map-marker"></i><%= t ".manage_places" %><br><small><%= t ".describe" %></small>
+    </h1>
+  </div>
+</div>
+<div class="block full">
+  <div class="block-title">
+    <h2><strong><%= t ".table_title" %></strong></h2>
+  </div>
+  <div id="modal-trainer-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  </div>
+  <div class="table-responsive">
+    <div id="example-datatable_wrapper" class="dataTables_wrapper">
+      <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t ".id" %></th>
+            <th class="text-center"><i class="fa fa-user"></i></th>
+            <th><%= t ".avatar" %></th>
+            <th><%= t ".place_name" %></th>
+            <th class="text-center"><%= t ".title" %></th>
+            <th class="text-center"><%= t ".content" %></th>
+            <th class="text-center"><%= t ".option" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "user_rating", collection: @user_ratings, as: :user_rating %>
+        </tbody>
+      </table>
+    </div>
+    <div id="pagination">
+      <%= will_paginate @user_ratings %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module OwnerPlacesHelper
+end

@@ -1,0 +1,37 @@
+<div class="col-md-4 col-sm-6">
+    <div class="item big equal-height" data-map-latitude="16.031944" data-map-longitude="108.220556" data-id="1">
+        <div class="item-wrapper">
+            <div class="image">
+                <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="<%= place_descriptions(saved_place.place).html_safe %>"></i></div>
+                <%= link_to place_path(saved_place.place), class: "wrapper" do %>
+                    <div class="">
+                        <%= image_tag saved_place.place.image %>
+                    </div>
+                <% end %>
+                <div class="owl-navigation"></div>
+                <!--end owl-navigation-->
+            </div>
+            <!--end image-->
+            <div class="description">
+                <div class="meta">
+                    <span><i class="fa fa-star"></i><%= saved_place.place.rate_point_average %></span>
+                    <span><i class="fa fa-image"></i><%= saved_place.place.total_images %></span>
+                </div>
+                <div class="info">
+                    <figure class="label label-success"><%= saved_place.place.place_category.name %></figure>
+                    <%= link_to place_path(saved_place.place) do %>
+                        <h3><%= saved_place.place.name %></h3>
+                    <% end %>
+                    <figure class="location"><%= saved_place.place.address %></figure>
+                </div>
+            </div>
+            <!--end description-->
+            <div class="map-item">
+                <button class="btn btn-close"><i class="fa fa-close"></i></button>
+                <div class="map-wrapper"></div>
+            </div>
+            <!--end map-item-->
+        </div>
+    </div>
+    <!--end item-->
+</div>

@@ -1,0 +1,12 @@
+vi:
+  owner_places:
+    index:
+      title: "Địa điểm do bạn quản lý"
+      place_name: "Địa điểm"
+      address: "Địa chỉ"
+      receive_address: "Địa chỉ nhận"
+      ship_price: "Phí ship"
+      total_orders: "Tổng tiền"
+      status: "Trạng thái"
+      payment_status: "Trạng thái thanh toán"
+      action: "Hành động"

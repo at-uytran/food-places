@@ -1,0 +1,21 @@
+<tr>
+  <td class="text-center"><%= user_rating.place.id %></td>
+  <td><%= link_to user_rating.user.name, user_path(user_rating.user) %></td>
+  <td><%= image_tag user_rating.user.avatar, class: "mini-avatar" %></td>
+  <td><%= link_to user_rating.place.name, place_path(user_rating.place) %></td>
+  <td class="text-center">
+    <%= user_rating.title %>
+  </td>
+  <td class="text-center">
+    <%= user_rating.content %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group option">
+        <%= button_tag class: "btn btn-xs btn-danger confirm-delete-user-rating button",
+          id: "confirm-delete-user_rating-#{user_rating.id}",
+          title: t(".delete") do %>
+          <i class="fa fa-trash icon"></i>
+        <% end %>
+      </div>
+  </td>
+</tr>

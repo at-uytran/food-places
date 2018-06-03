@@ -14,6 +14,9 @@
       <%= render "layouts/header" %>
       <%= render "shared/popup_message" %>
       <div id="page-content">
+        <div class="block">
+          <%= render "shared/searching" if request.path == root_path %>
+        </div>
         <div class="container">
           <%= render "shared/bread_crumb" if request.path != root_path %>
           <%= yield %>
@@ -22,7 +25,7 @@
       <%= render "layouts/footer" %>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDTA6W73R5Kmr-i5At5jFi8kW5tqhPN6D4"></script>
-   <a href="#page-header" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
+    <a href="#page-header" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
 
     <script type="text/javascript" src="/assets/js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery-migrate-1.2.1.min.js"></script>

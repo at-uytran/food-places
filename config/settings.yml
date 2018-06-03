@@ -21,3 +21,4 @@ show_limit:
   show_9: 9
   show_6: 6
   show_5: 5
+truncate_place_descriptions: 100

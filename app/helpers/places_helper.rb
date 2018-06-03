@@ -7,6 +7,12 @@ module PlacesHelper
     @points / place.user_ratings.size
   end
 
+  def load_saved_place
+    place_saved = current_user.saved_places.find_by(place_id: params[:id] || params[:place_id])
+    redirect_to "/404" unless place_saved
+    place_saved
+  end
+
   def list_place_categories
     PlaceCategory.all.order_name
   end

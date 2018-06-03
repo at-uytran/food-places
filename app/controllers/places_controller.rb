@@ -30,6 +30,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @place_saved = SavedPlace.find_by user_id: current_user.id, place_id: @place.id
     add_breadcrumb t("bread_crumb.places"), places_path
     add_breadcrumb t("bread_crumb.detail"), place_path(@place)
 

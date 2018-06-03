@@ -1,6 +1,10 @@
 <ul class="links">
-    <li class="<%= active_class? orders_path %>"><a href="about-ú.html"><%= t ".manage_order" %></a></li>
-    <li><a href="become-an-afiliate.html"><%= t ".saved_places" %></a></li>
-    <li><a href="tém-and-conditions.html"><%= t ".manage_places" %></a></li>
-    <li><a href="contact-ú.html">Contact Ú</a></li>
+    <li class="<%= active_class? orders_path %>">
+        <%= link_to t(".manage_order"), orders_path %>
+    <li class="<%= active_class? saved_places_path %>">
+        <%= link_to t(".saved_places"), saved_places_path %>
+    </li>
+    <li class="<%= active_class? owner_places_path %>">
+        <%= link_to t(".manage_places"), owner_places_path %>
+    <li><a href="contact-us.html">Contact Us</a></li>
 </ul>

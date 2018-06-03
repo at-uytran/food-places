@@ -1,5 +1,51 @@
 vi:
+  owner_places:
+    update:
+      success: "Cập nhật thành công"
+      failed: "Cập nhật thất bại"
+    valid_user:
+      not_owner: "Bạn không có quyền chỉnh sửa địa điểm này"
+    edit:
+      by_province: "Bởi tỉnh/ thành phố: "
+      province: "Tỉnh thành"
+      district: "Quận/huyện"
+      select_province: "Chọn tỉnh thành"
+      select_district: "Chọn quận huyện"
+      title: "Thêm mới địa điểm"
+      submit: "Cập nhật"
+      main_info: "Thông tin chính"
+      name: "Tên địa điểm"
+      description: "Mô tả"
+      place_type: "Loại hình"
+      conatain: "Sức chứa "
+      table_count: "Số lượng bàn "
+      location: "Thông tin địa chỉ"
+      address: "Địa chỉ cụ thể"
+      address_placeholder: "vd: số 54 Nguyễn Lương Bằng, Đà Nẵng"
+      place_on_map: "Địa chỉ trên bản đồ"
+      contact_info: "Thông tin liên hệ"
+      email: "email"
+      phone: "Điện thoại"
+      facebook: "Trang Facebook"
+      gallery: "Hình ảnh địa điểm"
+      add_image_btn: "Thêm hình ảnh"
+      addition_info: "Thông tin bổ sung"
+      open_close_time: "Giờ đóng/mở cửa"
+      open_time: "Giờ mở cửa"
+      close_time: "Giờ đóng cửa"
+      ship_price: "Phí ship"
+  saved_places:
+    create:
+      success: "Lưu thành công"
+      failed: "Lưu không thành công"
+    destroy:
+      success: "Hủy lưu thành công"
+      failed: "Không thể bỏ lưu"
   places:
+    save_place:
+      save: "Lưu"
+    unsave_place:
+      unsave: "Bỏ lưu"
     no_descriptions: "Không có mô tả nào"
     no_address: "Địa chỉ đang cập nhật"
     check_district_params:

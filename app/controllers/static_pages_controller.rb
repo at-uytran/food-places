@@ -8,8 +8,9 @@ class StaticPagesController < ApplicationController
       coordinates = [current_location.latitude, current_location.longitude]
     end
     @nearby_places = Place.near(coordinates,
-      5, units: :km).created_desc.approved
+      5, units: :km).created_desc.approved.includes(:place_category)
       .limit 4
     @reviews = UserRating.created_desc.limit 4
+    @top_rating_places = Place.top_rating.includes(:place_category, :user_ratings)
   end
 end

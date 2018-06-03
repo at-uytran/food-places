@@ -1,0 +1,15 @@
+<div class="gallery-item">
+    <%= link_to place_path favorite_place do %>
+        <div class="image"><%= image_tag favorite_place.image %></div>
+    <% end %>
+    <div class="description">
+        <%= link_to place_path favorite_place do %>
+            <h3><%= favorite_place.name %></h3>
+        <% end %>
+        <figure class="label label-success"><%= favorite_place.place_category_name %></figure>
+        <span><i class="fa fa-star"></i> <%= favorite_place.rate_point_average %></span>
+        <p><%= truncate favorite_place.descriptions, length: Settings.truncate_place_descriptions %></p>
+        <%= link_to t("dettails"), place_path(favorite_place), class: "btn btn-default btn-small btn-framed btn-rounded" %>
+    </div>
+</div>
+<!--end gallery-item-->
