@@ -32,6 +32,7 @@ gem "geocoder"
 gem "twitter-bootstrap-rails"
 gem "bootstrap-glyphicons"
 gem "gon"
+gem "breadcrumbs_on_rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

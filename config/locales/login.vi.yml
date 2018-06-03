@@ -4,7 +4,18 @@ vi:
     login:
       login: "Đăng nhập"
       remember: "Tự động đăng nhập"
+      name: "Họ tên"
+      email: "Email"
     sign_in_up:
+      remember: "Tự động đăng nhập"
+      name: "Họ tên"
+      email: "Email"
+      password: "Mật khẩu"
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      forget_password: "Quên mật khẩu? "
+      reset_password: "Lấy lại mật khẩu"
+    sign_up:
       remember: "Tự động đăng nhập"
       name: "Họ tên"
       email: "Email"

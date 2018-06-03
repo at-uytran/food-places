@@ -1,0 +1,2 @@
+class RequestOwner < ApplicationRecord
+end

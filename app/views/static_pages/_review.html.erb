@@ -1,0 +1,12 @@
+<div class="col-md-3 col-sm-3">
+    <div class="review-single">
+        <a href="places/<%= user_rating.place.id %>#reviews"><h3><%= user_rating.user.name %></h3></a>
+        <figure class="location"><%= user_rating.place.name %></figure>
+        <div class="rating"><i class="fa fa-star"></i><%= user_rating.average_points %></div>
+        <p>
+            <%= user_rating.content %>
+        </p>
+        <a href="places/<%= user_rating.place.id %>#reviews" class="link icon"><%=  t(".full_review") %><i class="arrow_right"></i></a>
+    </div>
+    <!--end review-->
+</div>

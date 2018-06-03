@@ -18,33 +18,7 @@
                                     <%= render "shared/login" %>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab-register">
-                                    <%= simple_form_for @user = User.new, remote: true do |f| %>
-                                        <div class="form-group">
-                                            <label for="form-register-name"><%= t ".name" %></label>
-                                            <%= f.input :name, label: false, html: {class: "form-control", id: "form-register-name"} %>
-                                        </div>
-                                        <!--end form-group-->
-                                        <div class="form-group">
-                                            <label for="form-register-email"><%= t ".email" %></label>
-                                            <%= f.input :email, label: false, html: {class: "form-control", id: "form-register-email"} %>
-                                        </div>
-                                        <!--end form-group-->
-                                        <div class="form-group">
-                                            <label for="form-register-password"><%= t ".password" %></label>
-                                            <%= f.input :password, as: :password, label: false,
-                                                html: {class: "form-control", id: "form-register-password"} %>
-                                        </div>
-                                        <!--end form-group-->
-                                        <div class="clearfix action">
-                                            <div class="form-group pull-right">
-                                                <button type="submit" class="btn btn-primary btn-rounded"><%= t ".register" %></button>
-                                            </div>
-                                            <div class="form-group pull-left">
-                                                <label><input type="checkbox" name="1"><%= t ".remember" %></label>
-                                            </div>
-                                        </div>
-                                        <!--end action-->
-                                    <% end %>
+                                    <%= render "shared/sign_up" %>
                                 </div>
                         </div>
 

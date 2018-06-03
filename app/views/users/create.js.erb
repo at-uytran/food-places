@@ -1,8 +1,11 @@
 <% if flash[:success] %>
   window.location.href = '/';
 <% elsif flash[:danger] %>
+  $('#tab-register .errors-sign-up').html('<%= j render "shared/error_messages", object: @user %>')
+  console.log("failed");
   $('.page-wrapper').append('<%= j render "shared/popup_message" %>')
 <% end %>
 $('.close').click(function(){
   $(this).parent().hide();
 });
+

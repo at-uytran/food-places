@@ -5,6 +5,8 @@ console.log("create");
     window.location.href = '/';
   }, 2000);
 <% elsif flash[:danger] %>
+console.log('loi dang nhap')
+  $('.error-login').html('<%= @errors_message %>')
   $('.page-wrapper').append('<%= j render "shared/popup_message" %>')
 <% end %>
 

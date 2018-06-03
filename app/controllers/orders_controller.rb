@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   before_action :load_order, only: :update
+  add_breadcrumb I18n.t("bread_crumb.home"), "/"
 
   def index
+    add_breadcrumb t("bread_crumb.orders"), orders_path
     @orders = current_user.orders.page(params[:page]).per_page(9)
   end
 

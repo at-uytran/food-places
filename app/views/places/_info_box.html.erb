@@ -20,6 +20,7 @@
                 <br>
                 <%= t ".phone" %> <%= show_phone @place %><br>
                 <%= t ".email" %> <a href="#"><%= show_email @place %></a><br>
+                <%= t ".request_owner" %> <%= link_to t(".request_owner"), new_place_request_owner_path(@place) %><br>
             </address>
         </aside>
     </div>

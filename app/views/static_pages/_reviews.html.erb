@@ -2,59 +2,9 @@
 <div class="container">
     <div class="block">
         <div class="title">
-            <h2>Reviews</h2>
+            <h2><%= t ".title" %></h2>
             <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <div class="review-single">
-                        <a href="detail.html#reviews"><h3>White Doe Inn</h3></a>
-                        <figure class="location">Austria</figure>
-                        <div class="rating"><i class="fa fa-star"></i>8.9</div>
-                        <p>Donec bibendum at neque pellentesque viverra. Fusce rhoncus elementum commodo.
-                            In ac nibh nec turpis finibus eleme
-                        </p>
-                        <a href="detail.html#reviews" class="link icon">Full Review<i class="arrow_right"></i></a>
-                    </div>
-                    <!--end review-->
-                </div>
-                <!--end col-md-3-->
-                <div class="col-md-3 col-sm-3">
-                    <div class="review-single">
-                        <a href="detail.html#reviews"><h3>Mountain Valley Motel</h3></a>
-                        <figure class="location">Scotland</figure>
-                        <div class="rating"><i class="fa fa-star"></i>9.3</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae odio ac dui
-                            fermentum tempus. Phasellus sit amet
-                        </p>
-                        <a href="detail.html#reviews" class="link icon">Full Review<i class="arrow_right"></i></a>
-                    </div>
-                    <!--end review-->
-                </div>
-                <!--end col-md-3-->
-                <div class="col-md-3 col-sm-3">
-                    <div class="review-single">
-                        <a href="detail.html#reviews"><h3>Camp Shoresh</h3></a>
-                        <figure class="location">France</figure>
-                        <div class="rating"><i class="fa fa-star"></i>9.6</div>
-                        <p>Sed posuere nunc sit amet arcu rutrum porttitor. Quisque ut ante lacus. Fusce a
-                            lacus fermentum ante iaculis convallis
-                        </p>
-                        <a href="detail.html#reviews" class="link icon">Full Review<i class="arrow_right"></i></a>
-                    </div>
-                    <!--end review-->
-                </div>
-                <!--end col-md-3-->
-                <div class="col-md-3 col-sm-3">
-                    <div class="review-single">
-                        <a href="detail.html#reviews"><h3>Primal Court Resort</h3></a>
-                        <figure class="location">Switzerland</figure>
-                        <div class="rating"><i class="fa fa-star"></i>9.4</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae odio ac dui fermentum tempus.
-                        </p>
-                        <a href="detail.html#reviews" class="link icon">Full Review<i class="arrow_right"></i></a>
-                    </div>
-                    <!--end review-->
-                </div>
-                <!--end col-md-3-->
+                <%= render partial: "review", collection: @reviews, as: :user_rating %>
             </div>
             <!--end row-->
         </div>

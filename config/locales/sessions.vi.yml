@@ -1,0 +1,7 @@
+vi:
+  sessions:
+    set_user:
+      not_found: "Không có tài khoản nào khớp với email đã nhập!"
+    create:
+      wrong_pass: "Mật khẩu không đúng!"
+

@@ -2,3 +2,7 @@ vi:
   shared:
     error_messages:
       des: "Yêu cầu chứa %{error_count} lỗi."
+    user_manage_sidebar:
+      manage_order: "Lịch sử đặt hàng"
+      manage_places: "Địa điểm của bạn"
+      saved_places: "Địa điểm đã lưu"

@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
       remember_user
       redirect_back fallback_location: root_path
     else
+      @errors_message = t ".wrong_pass"
+      @errors_message = t "sessions.set_user.not_found" unless @user
       flash.now[:danger] = t ".failed"
     end
     respond_to do |format|
