@@ -1,5 +1,8 @@
 class UserRating < ApplicationRecord
   acts_as_paranoid
+
+  before_save :set_points
+
   belongs_to :user
   belongs_to :place
   has_many :user_rating_images, dependent: :destroy
@@ -15,5 +18,11 @@ class UserRating < ApplicationRecord
 
   def images_size
     user_rating_images.size
+  end
+
+  private
+
+  def set_points
+    self.points = average_points
   end
 end

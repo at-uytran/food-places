@@ -1,0 +1,9 @@
+vi:
+  admin:
+    user_ratings:
+      index:
+        place_name: "Địa điểm"
+        avatar: "Người dùng"
+        title: "Tiêu đề"
+        content: "Nội dung"
+        option: "Tùy chọn"

@@ -1,0 +1,5 @@
+$('#page-container').append('<%= j render "shared/popup_message" %>');
+$('#btn-save-course').hide();
+$('.button-save-action').html('<%= j render partial: "places/unsave_place" %>');
+
+popup_message.init();

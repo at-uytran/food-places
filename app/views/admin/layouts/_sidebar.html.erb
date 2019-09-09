@@ -32,7 +32,7 @@
             <span class="sidebar-nav-mini-hide"><%= t ".categories" %></span>
           <% end %>
         </li>
-        <%= link_to root_path, class: active_class?(root_path) do %>
+        <%= link_to admin_user_ratings_path, class: active_class?(admin_user_ratings_path) do %>
           <i class="fa fa-comment sidebar-nav-icon"></i>
           <span class="sidebar-nav-mini-hide"><%= t ".comments" %></span>
         <% end %>

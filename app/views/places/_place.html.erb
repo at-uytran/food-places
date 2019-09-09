@@ -6,10 +6,8 @@
                 <div class="mark-circle map" data-toggle="tooltip" data-placement="right" title="Show on map"><i class="fa fa-map-marker"></i></div>
                 <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
                 <%= link_to place_path(place), class: "wrapper" do %>
-                    <div class="gallery">
+                    <div class="">
                         <%= image_tag place.image %>
-                        <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">
-                        <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">
                     </div>
                 <% end %>
                 <div class="owl-navigation"></div>

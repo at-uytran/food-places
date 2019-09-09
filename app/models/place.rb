@@ -17,6 +17,7 @@ class Place < ApplicationRecord
   belongs_to :place_category
   belongs_to :district
   belongs_to :owner, class_name: User.name, optional: true
+  has_many :saved_places, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -29,14 +30,21 @@ class Place < ApplicationRecord
 
   enum status: {pending: 0, approved: 1, discard: 2, blocked: 3}
   delegate :name, :email, to: :owner, prefix: true
+  delegate :name, to: :place_category, prefix: true
 
   scope :created_desc, ->{order created_at: :desc}
   scope :by_categories, ->(ids){where(place_category_id: ids) if ids.present?}
   scope :allow_order, ->{joins(:place_setting).where place_settings: {allow_order: true}}
   scope :orders_desc, ->{joins(:orders).select("places.*, COUNT(orders.id) as order_count").group("orders.id")}
+  scope :order_rating_desc, ->{joins(:user_ratings).order("user_ratings.points desc")}
+  scope :top_rating, ->{joins(:user_ratings).where("user_ratings.points >= 7.5")}
 
   def success_orders_size
     # orders.where()
+  end
+
+  def allow_order?
+    place_setting.allow_order?
   end
 
   def rate_point_average

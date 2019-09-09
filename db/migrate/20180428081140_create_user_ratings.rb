@@ -4,7 +4,7 @@ class CreateUserRatings < ActiveRecord::Migration[5.1]
       t.string :title
       t.references :user
       t.references :place
-      t.integer :points, default: 0
+      t.float :points, default: 0
       t.text :content
       t.integer :score_price
       t.integer :score_location

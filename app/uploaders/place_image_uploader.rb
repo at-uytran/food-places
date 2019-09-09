@@ -1,6 +1,6 @@
 class PlaceImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_and_pad: [Settings.models.place.image.width, Settings.models.place.image.height]
+  # process resize_and_pad: [Settings.models.place.image.width, Settings.models.place.image.height]
   storage :file
 
   def store_dir

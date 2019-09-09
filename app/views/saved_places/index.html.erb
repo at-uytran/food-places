@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="sidebar">
+            <div class="box filter">
+                <h2><%= t ".title" %></h2>
+                <%= render "shared/user_manage_sidebar" %>
+            </div>
+            <!--end filter-->
+        </div>
+        <!--end sidebar-->
+    </div>
+    <!--end col-md-3-->
+    <div class="col-md-9">
+        <div class="main-content">
+            <div class="title">
+                <h1><%= t ".title" %></h1>
+            </div>
+            <!--end title-->
+            <section>
+                <%= render partial: "saved_place", collection: @saved_places, as: :saved_place %>
+            </section>
+        </div>
+        <!--end main-content-->
+    </div>
+    <!--end col-md-9-->
+</div>
+<%= will_paginate @saved_places %>
+<!--end info-->
+<div class="col-md-3"></div>

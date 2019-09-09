@@ -1,0 +1,7 @@
+<div class="child-button">
+  <%= form_for(load_saved_place, html: { method: :delete }, title: t(".unsave"), remote: true) do |f| %>
+    <%= button_tag type: "submit", class: "btn btn-danger", title: t(".unsave") do %>
+      <i class="fa fa-bookmark-o" aria-hidden="true"> <%= t ".unsave" %> </i>
+    <% end %>
+  <% end %>
+</div>

@@ -8,6 +8,7 @@ vi:
       submit: "Tạo đơn hàng"
       delete: "xóa"
       require_login: "Đăng nhập ngay để đặt món"
+      no_allow_order: "Địa điểm này không cho phép đặt món"
     confirm_order:
       food_name: "Tên món"
       quantity: "Số lượng"

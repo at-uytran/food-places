@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="sidebar">
+            <div class="box filter">
+                <h2><%= t ".title" %></h2>
+                <%= render "shared/user_manage_sidebar" %>
+            </div>
+            <!--end filter-->
+        </div>
+        <!--end sidebar-->
+    </div>
+    <!--end col-md-3-->
+    <div class="col-md-9">
+        <div class="main-content">
+            <div class="title">
+                <h1><%= t ".title" %></h1>
+            </div>
+            <!--end title-->
+            <section>
+                <div class="sidebar">
+                    <div class="box">
+                        <table class="table table-consender">
+                            <thead class="header">
+                            <tr>
+                                <th>ID</th>
+                                <th><%= t ".place_name" %></th>
+                                <th><%= t ".address" %></th>
+                                <th><%= t ".status" %></th>
+                                <th><%= t ".total_orders" %></th>
+                                <th><%= t ".action" %></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <%= render partial: "owner_place", collection: @owner_places, as: :owner_place %>
+                            </tbody>
+                        </table>
+                        <!--end reservations-->
+                        <div class="center">
+                            <%= will_paginate @owner_places %>
+                        </div>
+                        <!-- end center-->
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <!--end main-content-->
+    </div>
+    <!--end col-md-9-->
+</div>
+<div class="info">
+    <h2 class="no-margin"><a href="detail.html"><%= t ".title" %></a></h2>
+    <hr>
+</div>
+<!--end info-->
+<div class="col-md-3"></div>

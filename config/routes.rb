@@ -8,11 +8,14 @@ Rails.application.routes.draw do
     get "/foods_timeline", to: "places#foods_timeline"
     get "/reviews_timeline", to: "places#reviews_timeline"
   end
+  resources :saved_places
+  resources :owner_places
   resources :maps, only: %i(show)
   namespace :admin do
     root "static_pages#home"
     resources :places
     resources :users
+    resources :user_ratings
   end
   resources :nearby_places
   resources :provinces

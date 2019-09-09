@@ -15,9 +15,10 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :user_notifications, dependent: :destroy
   has_many :notifications, through: :user_notifications
-  has_many :places, dependent: :destroy
+  has_many :places, dependent: :destroy, foreign_key: :owner_id
   has_one :user_settings, dependent: :destroy
   belongs_to :district, optional: true
+  has_many :saved_places, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
