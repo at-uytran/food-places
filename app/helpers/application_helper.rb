@@ -14,14 +14,15 @@ module ApplicationHelper
   end
 
   def current_location
-    if current_user && current_user.address
-      geo_data = Geocoder.search(current_user.address)
-    elsif Rails.env.development?
-      geo_data = Geocoder.search("Đà Nẵng")
-    else
-      geo_data = Geocoder.search(request.remote_ip)
-    end
-    geo_data[0]
+    # if current_user && current_user.address
+    #   geo_data = Geocoder.search(current_user.address)
+    # elsif Rails.env.development?
+    #   geo_data = Geocoder.search("Đà Nẵng")
+    # else
+    #   geo_data = Geocoder.search(request.remote_ip)
+    # end
+    fake_coor = {latitude: FFaker::Geolocation.lat, longitude: FFaker::Geolocation.lng}
+    fake_coor
   end
 
   def admin_user? user

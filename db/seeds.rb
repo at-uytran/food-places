@@ -326,3 +326,6 @@ end
 
 order = banh_canh_ruong.orders.create!(user_id: User.last.id)
 order.carts.create!(food_id: banh_canh_ruong.foods.first.id, quantity: 2)
+
+User.update_all(latitude: FFaker::Geolocation.lat, longitude: FFaker::Geolocation.lng)
+Place.update_all(latitude: FFaker::Geolocation.lat, longitude: FFaker::Geolocation.lng)
