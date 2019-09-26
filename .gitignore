@@ -43,6 +43,7 @@ config/initializers/secret_token.rb
 /test/*
 /db/*.sqlite3
 config/application.yml
+config/database.yml
 yarn-error.log
 
 config/settings.local.yml

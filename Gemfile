@@ -34,6 +34,24 @@ gem "bootstrap-glyphicons"
 gem "gon"
 gem "breadcrumbs_on_rails"
 gem "execjs"
+gem "sidekiq"
+# Background Job
+gem "resque", require: "resque/server"
+gem "resque-scheduler"
+
+# Background Job
+gem "sidekiq"
+gem "sidekiq-status"
+
+
+# deployment
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
+gem "capistrano-resque", require: false
+gem "capistrano-sidekiq"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

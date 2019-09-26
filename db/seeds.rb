@@ -1,7 +1,3 @@
-%w(db:drop db:create db:migrate).each do |task|
-  Rake::Task[task].invoke
-end
-
 p "Fake provinces"
 @da_nang = Province.create! name: "Đà Nẵng",
   descriptions: "Thành phố du lịch với nhiều bãi biển đẹp và nhiều món ăn ngon"
