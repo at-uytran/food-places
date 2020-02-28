@@ -19,7 +19,7 @@ class Place < ApplicationRecord
   belongs_to :owner, class_name: User.name, optional: true
 
   geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  # after_validation :geocode, if: :address_changed?
   after_save :geocode, if: :address_changed?
 
   mount_uploader :image, PlaceImageUploader

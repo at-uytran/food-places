@@ -1,7 +1,3 @@
-%w(db:drop db:create db:migrate).each do |task|
-  Rake::Task[task].invoke
-end
-
 p "Fake provinces"
 @da_nang = Province.create! name: "Đà Nẵng",
   descriptions: "Thành phố du lịch với nhiều bãi biển đẹp và nhiều món ăn ngon"
@@ -326,3 +322,6 @@ end
 
 order = banh_canh_ruong.orders.create!(user_id: User.last.id)
 order.carts.create!(food_id: banh_canh_ruong.foods.first.id, quantity: 2)
+
+User.update_all(latitude: FFaker::Geolocation.lat, longitude: FFaker::Geolocation.lng)
+Place.update_all(latitude: FFaker::Geolocation.lat, longitude: FFaker::Geolocation.lng)

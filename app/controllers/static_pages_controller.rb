@@ -5,7 +5,11 @@ class StaticPagesController < ApplicationController
     if current_user && current_user.address
       coordinates = [current_user.latitude, current_user.longitude]
     else
-      coordinates = [current_location.latitude, current_location.longitude]
+      if current_location.present?
+        coordinates = [current_location[:latitude], current_location[:longitude]]
+      else
+        coordinates = [0, 0]
+      end
     end
     @nearby_places = Place.near(coordinates,
       5, units: :km).created_desc.approved

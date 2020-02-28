@@ -3,7 +3,7 @@ class NearbyPlacesController < ApplicationController
     if user_location_present?
       coordinates = [current_user.latitude, current_user.longitude]
     else
-      coordinates = [current_location.latitude, current_location.longitude]
+      coordinates = [current_location[:latitude], current_location[:longitude]]
     end
     @nearby_places = Place.near(coordinates,
       5, units: :km).created_desc.approved

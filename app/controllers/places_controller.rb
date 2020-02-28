@@ -10,7 +10,7 @@ class PlacesController < ApplicationController
     add_breadcrumb t("bread_crumb.places"), places_path
 
     @q = Place.search params[:q]
-    @places = @q.result.approved.created_desc.includes(:place_category)
+    @places = @q.result.approved.created_desc.includes(:place_categorys)
       .by_categories(@category_ids).page(params[:page]).per_page(9)
   end
 
