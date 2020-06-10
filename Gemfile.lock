@@ -120,7 +120,7 @@ GEM
       railties (>= 3.2, < 5.2)
     font-awesome-sass (5.0.9)
       sass (>= 3.2)
-    geocoder (1.4.7)
+    geocoder (1.6.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gon (6.2.0)
